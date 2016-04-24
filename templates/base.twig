@@ -1,13 +1,10 @@
 {% block html_head_container %}
-
-{% include 'html-header.twig' %}
+	{% include 'html-header.twig' %}
 	{% block head %}
 	{% endblock %}
 	</head>
 {% endblock %}
-
-	<body class="{{body_class}}" data-template="base.twig">
-
+<body class="{{body_class}}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">
 		<div class="container">
@@ -19,74 +16,50 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="/">{{site.name}}</a>
+				<a class="navbar-brand page-scroll" href="#page-top">{{site.name}}</a>
 			</div>
-
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					{% for item in menu.get_items %}
-						<li class="{{item.classes | join(' ')}}">
-							<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
-							{% include "menu.twig" with {'menu': item.get_children} %}
-						</li>
-					{% endfor %}
-				</ul>
+				{% include "main-menu.twig" %}
+
+
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-
-		{#<header class="header" >#}
-			{#{% block header %}#}
-				{#<div class="wrapper">#}
-					{#<h1 class="hdr-logo" role="banner">#}
-						{#<a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>#}
-					{#</h1>#}
-					{#<nav id="nav-main" class="nav-main" role="navigation">#}
-						{#{% include "menu.twig" with {'menu': menu.get_items} %}#}
-					{#</nav><!-- #nav -->#}
-				{#</div>#}
-			{#{% endblock %}#}
-		{#</header>#}
-
-		<div id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
+	<div id="content" role="main" class="content-wrapper">
+		{% if title %}<h1>{{title}}</h1>{% endif %}
+		<div class="wrapper {{sidebar_class}}">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
 		</div>
+		{% if sidebar %}
+			<aside class="layout-sidebar">
+				{{sidebar}}
+			</aside>
+		{% endif %}
+	</div>
+	{% block footer %}
+		<footer id="footer">
+			{% include 'footer.twig' %}
+		</footer>
+		{{ function('wp_footer') }}
+	{% endblock %}
+	<!-- Bootstrap Core JavaScript -->
+	<script src="{{site.theme.link}}/static/js/bootstrap.min.js"></script>
 
+	<!-- Plugin JavaScript -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="{{site.theme.link}}/static/js/classie.js"></script>
+	<script src="{{site.theme.link}}/static/js/cbpAnimatedHeader.js"></script>
 
-		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
+	<!-- Contact Form JavaScript -->
+	<script src="{{site.theme.link}}/static/js/jqBootstrapValidation.js"></script>
+	<script src="{{site.theme.link}}/static/js/contact_me.js"></script>
 
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="{{site.theme.link}}/static/js/bootstrap.min.js"></script>
-
-		<!-- Plugin JavaScript -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-		<script src="{{site.theme.link}}/static/js/classie.js"></script>
-		<script src="{{site.theme.link}}/static/js/cbpAnimatedHeader.js"></script>
-
-		<!-- Contact Form JavaScript -->
-		<script src="{{site.theme.link}}/static/js/jqBootstrapValidation.js"></script>
-		<script src="{{site.theme.link}}/static/js/contact_me.js"></script>
-
-		<!-- Custom Theme JavaScript -->
-		<script src="{{site.theme.link}}/static/js/agency.js"></script>
-	</body>
+	<!-- Custom Theme JavaScript -->
+	<script src="{{site.theme.link}}/static/js/agency.js"></script>
+</body>
 </html>

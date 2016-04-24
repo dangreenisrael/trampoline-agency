@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<!-- Header -->
+			{%  include "home-page-sections/hero.twig" %}
+
+			<!-- Services Section -->
+			{%  include "home-page-sections/services.twig" %}
+
+			<!-- Portfolio Grid Section -->
+			{%  include "home-page-sections/portfolio.twig" %}
+
+			<!-- Timeline Section -->
+			{% include "home-page-sections/timeline.twig" %}
+			<!-- Team Section -->
+			{% include "home-page-sections/team.twig" %}
+
+			<!-- Contact Section -->
+			{% include "home-page-sections/contact.twig" %}
+
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

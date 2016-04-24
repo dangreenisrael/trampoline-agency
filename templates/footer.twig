@@ -2,24 +2,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website {{"now"|date('Y')}}</span>
+                <span class="copyright">Copyright &copy; {{ site.name }} {{"now"|date('Y')}}</span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
+                    {% if option.twitter %}
+                        <li><a href="{{ option.twitter }}"><i class="fa fa-twitter"></i></a>
+                        </li>
+                    {% endif %}
+
+                    {% if option.facebook %}
+                        <li><a href="{{ option.facebook }}"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    {% endif %}
+                    {% if option.linkedin %}
+                        <li><a href="{{ option.linkedin }}"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
-                    <li><a href="#">Privacy Policy</a>
+                    {% for link in option.footer_links %}
+                    <li>
+                        <a href="{{ link.url }}">
+                            {{ link.text }}
+                        </a>
                     </li>
-                    <li><a href="#">Terms of Use</a>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

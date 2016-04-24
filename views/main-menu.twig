@@ -1,0 +1,41 @@
+<ul class="nav navbar-nav navbar-right">
+	{% if isFrontPage %}
+		<li class="hidden">
+			<a href="#page-top"></a>
+		</li>
+		{% if option.show_services %}
+			<li>
+				<a class="page-scroll" href="#services">
+					{{option.services_title}}
+				</a>
+			</li>
+		{% endif %}
+		{% if option.show_portfolio %}
+			<li>
+				<a class="page-scroll" href="#portfolio">
+					{{ option.portfolio_title}}
+				</a>
+			</li>
+		{% endif %}
+		{% if option.show_timeline %}
+			<li>
+				<a class="page-scroll" href="#timeline">
+					{{ option.timeline_title}}
+				</a>
+			</li>
+		{% endif %}
+		{% if option.show_team %}
+			<li>
+				<a class="page-scroll" href="#team">
+					{{ option.team_title}}
+				</a>
+			</li>
+		{% endif %}
+	{% endif %}
+	{% for item in menu.get_items %}
+		<li class="{{item.classes | join(' ')}}">
+			<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
+			{% include "menu.twig" with {'menu': item.get_children} %}
+		</li>
+	{% endfor %}
+</ul>
