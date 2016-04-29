@@ -1,0 +1,3 @@
+On April 30, 2016 I edited acf-font-awesome-v5.php line 38
+to make it reference the themes folder and not the plugin
+folder for css and js includes
