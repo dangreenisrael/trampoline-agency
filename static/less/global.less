@@ -1,0 +1,207 @@
+@import "variables.less";
+@import "mixins.less";
+
+/* Global Styles */
+p {
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+@media (min-width: 766px) and (max-width:992px) {
+  .container{
+   width: auto;
+  }
+}
+
+/* Nav */
+
+@navHeight: 50px;
+@media (max-width: 768px) {
+  #content{
+    padding-top: @navHeight;
+  }
+  .navbar-mobilized{
+    background-color: @gray-darkest;
+    width: 100vw;
+    left: 0;
+    position: absolute;
+    padding-bottom: 20px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    .transition(ease transform 0.5s);
+    .menu-item-has-children li{
+      padding-bottom: 15px;
+    }
+    .page-scroll{
+      background: none!important;
+      color: white!important;
+    }
+    &.show{
+      transform: rotateX(0);
+    }
+  }
+}
+#nav-main{
+  height: @navHeight;
+}
+.navbar-default {
+  background-color: @gray-darkest;
+  border-color: transparent;
+  .navbar-brand {
+    color: white;
+    .script-font;
+    &:hover,
+    &:focus
+    {
+      color: white;
+    }
+  }
+  .navbar-mobilized {
+    border-color: fade(white, 2%);
+  }
+  .navbar-toggle {
+    background-color: @brand-primary;
+    border-color: @brand-primary;
+    .icon-bar {
+      background-color: white;
+    }
+    &:hover,
+    &:focus {
+      background-color: @brand-primary;
+    }
+  }
+  .nav {
+    li {
+      a {
+        .heading-font;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: white;
+      }
+    }
+  }
+
+  .navbar-nav>{
+    li{
+      a{
+        line-height: 0;
+        padding: 15px 10px;
+        margin: 10px;
+      }
+    }
+  }
+
+}
+
+@media(min-width:768px) {
+  .navbar-default {
+    background-color: fade(@gray-darkest, 0%);
+    .transition(background-color 0.5s);
+    border: none;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+
+    ul.navbar-nav{
+      li a{
+        border-radius: 3px;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          color: lighten(@brand-primary, 10%);
+          outline: none;
+
+        }
+      }
+      .menu-item-has-children{
+        ul{
+          transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
+          transform-origin: 0 0;
+          transform: rotateX(-90deg);
+          backface-visibility: hidden;
+          background-color: fade(@gray-darkest, 100%);
+          list-style: none;
+          padding: 5px 20px 15px 0;
+          white-space: nowrap;
+          position: absolute;
+          right: -15px;
+          text-align: right;
+          .transition(ease transform 0.3s);
+          li{
+            padding: 5px 10px;
+            margin-right:-20px;
+
+          }
+        }
+        &:hover ul{
+          transform: rotateX(0deg);
+        }
+      }
+    }
+  }
+  .navbar-default.navbar-shrink,
+  .navbar-default:hover
+  {
+    background-color: fade(@gray-darkest, 100%);
+    .navbar-nav>.active>a, .navbar-nav>.current-menu-item>a {
+      border-radius: 5px;
+      color: white;
+      background-color: @brand-primary;
+    }
+    .navbar-nav>.current-menu-item>a:hover,
+    .navbar-nav>.current-menu-item>a:focus,
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+      color: white;
+      background-color: darken(@brand-primary, 10%);
+    }
+  }
+}
+
+
+/* Footer */
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+  span.copyright {
+    line-height: 40px;
+    .heading-font;
+    text-transform: none;
+  }
+  ul.quicklinks {
+    margin-bottom: 0;
+    line-height: 40px;
+    .heading-font;
+    text-transform: none;
+  }
+}
+
+/* Social Buttons */
+
+ul.social-buttons {
+  margin-bottom: 0;
+  li {
+    a {
+      display: block;
+      background-color: @gray-darkest;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      font-size: 30px;
+      line-height: 58px;
+      color: white;
+      outline: none;
+      .transition("all 0.3s");
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: @brand-primary;
+      }
+    }
+  }
+}
+

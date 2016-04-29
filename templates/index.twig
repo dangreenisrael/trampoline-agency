@@ -1,9 +1,39 @@
 {% extends "base.twig" %}
+{% block head %}
+	<link href="{{site.theme.link}}/static/css/blog.css" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-	<h2>{{foo}}</h2>
-	<p>{{qux}}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+	{% set backgroundImageURL = TimberImage(option.hero_image).src %}
+	<header class="intro-header" style="background-image: url({{ backgroundImageURL }})">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="site-heading">
+						<h1>{{ title }}</h1>
+						<hr class="small">
+						<span class="subheading">By {{ site.name }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				{% for post in posts %}
+					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+					<hr>
+				{% endfor %}
+				{#<!-- Pager -->#}
+				{#<ul class="pager">#}
+					{#<li class="next">#}
+						{#<a href="#">Older Posts &rarr;</a>#}
+					{#</li>#}
+				{#</ul>#}
+			</div>
+		</div>
+	</div>
+	<hr>
 {% endblock %}

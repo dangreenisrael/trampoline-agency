@@ -41,27 +41,26 @@
 // Background Features
 
 .background-cover() {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+	@mobile: cover;
+	@main: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: top center;
+    -webkit-background-size: @main;
+    -moz-background-size: @main;
+    background-size: @main;
+    -o-background-size: @main;
+	@media(max-width:768px) {
+		-webkit-background-size: @mobile;
+		-moz-background-size: @mobile;
+		background-size: @mobile;
+		-o-background-size: @mobile;
+	}
 }
 
-// Font Selections
 
-.serif-font() {
-	font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.script-font() {
-	font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-}
-
-.body-font() {
-	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.heading-font() {
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
+.transition(@params) {
+	-webkit-transition: @params;
+	-moz-transition: @params;
+	transition: @params;
 }

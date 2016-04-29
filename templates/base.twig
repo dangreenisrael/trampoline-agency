@@ -4,32 +4,47 @@
 	{% endblock %}
 	</head>
 {% endblock %}
+
+{% if isFrontPage %}
+	{% set brand_link = "#page-top" %}
+{% else %}
+	{% set brand_link = "/" %}
+	{% set menu_slash = "/" %}
+{% endif %}
 <body class="{{body_class}}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button type="button" class="navbar-toggle" id="toggleMenu">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="#page-top">{{site.name}}</a>
+				<a class="navbar-brand page-scroll" href="{{ brand_link }}">{{site.name}}</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				{% include "main-menu.twig" %}
-
-
+			<div class="navbar-mobilized">
+				<ul class="nav navbar-nav navbar-right">
+					{% block menu_items %}
+						{% include "front-page/menu-items.twig" %}
+						{% for item in menu.get_items %}
+							<li class="{{item.classes | join(' ')}}">
+								<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
+								{% include "menu.twig" with {'menu': item.get_children} %}
+							</li>
+						{% endfor %}
+					{% endblock %}
+				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
+
 	<div id="content" role="main" class="content-wrapper">
-		{% if title %}<h1>{{title}}</h1>{% endif %}
 		<div class="wrapper {{sidebar_class}}">
 			{% block content %}
 				Sorry, no content

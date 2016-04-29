@@ -1,0 +1,53 @@
+<li class="hidden">
+	<a href="/"></a>
+</li>
+{% if option.show_services %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#services">
+			{{ option.services_menu_text }}
+			{% if not option.services_menu_text %}
+				{{option.services_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if option.show_portfolio %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
+			{{ option.portfolio_menu_text }}
+			{% if not option.portfolio_menu_text %}
+				{{option.portfolio_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if option.show_timeline %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#timeline">
+			{{ option.portfolio_menu_text }}
+			{% if not option.portfolio_menu_text %}
+				{{option.portfolio_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if option.show_team %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#team">
+			{{ option.team_menu_text }}
+			{% if not option.team_menu_text %}
+				{{option.team_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if option.show_contact %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#contact">
+			{{ option.contact_menu_text }}
+			{% if not option.contact_menu_text %}
+				{{option.contact_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}

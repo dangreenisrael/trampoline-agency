@@ -1,0 +1,130 @@
+{
+    "key": "group_571b0c6c45309",
+    "title": "Hero Settings",
+    "fields": [
+        {
+            "key": "field_571b02aa2a869",
+            "label": "Hero Lead-In Text",
+            "name": "hero_lead_in",
+            "type": "text",
+            "instructions": "The catch line in italics",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our site is",
+            "placeholder": "Intro Lead In Text",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_571b02ef2a86a",
+            "label": "Hero Heading Text",
+            "name": "hero_heading",
+            "type": "text",
+            "instructions": "The text for the main hero (intro) heading",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Awesome",
+            "placeholder": "Main Intro Text",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_571b03bce9e2e",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "The main image for the hero (intro) area ",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_571b09903061f",
+            "label": "Hero CTA",
+            "name": "hero_cta",
+            "type": "text",
+            "instructions": "Call to action text for hero area",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Click Me",
+            "placeholder": "Hero Button Text",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_571c4d0d319d4",
+            "label": "Show CTA",
+            "name": "show_hero_cta",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1461895454
+}

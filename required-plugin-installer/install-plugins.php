@@ -46,14 +46,14 @@ function startbootstrap_agency_timber_register_required_plugins() {
 			'slug'      		=> 'timber-library',
 			'required'  		=> true,
 			'force_activation' 	=> true
-		),
-		// This adds Advanced Custom Fields from the WordPress repository.
-		array(
-			'name'      		=> 'Advanced Custom Fields',
-			'slug'      		=> 'advanced-custom-fields',
-			'required'  		=> true,
-			'force_activation' 	=> true
 		)
+		// This adds Advanced Custom Fields from the WordPress repository.
+//		array(
+//			'name'      		=> 'Advanced Custom Fields',
+//			'slug'      		=> 'advanced-custom-fields',
+//			'required'  		=> true,
+//			'force_activation' 	=> true
+//		)
 
 //		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
 //		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.

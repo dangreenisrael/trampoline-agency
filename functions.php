@@ -34,6 +34,11 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title' 	=> 'Team',
 		'parent_slug'	=> 'home-page-options',
 	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Contact',
+		'menu_title' 	=> 'Contact',
+		'parent_slug'	=> 'home-page-options',
+	));
 
 
 	acf_add_options_page(array(
@@ -46,12 +51,6 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 
-//	function my_register_fields()
-//	{
-//		include_once(get_template_directory().'/includes/acf-image-crop-add-on/acf-image-crop.php');
-//	}
-//	add_action('acf/register_fields', 'my_register_fields');
-
 }
 
 /* functions.php */
@@ -62,6 +61,27 @@ function agency_timber_context( $context ) {
 	return $context;
 }
 
+
+
+add_filter('get_twig', 'add_to_twig');
+
+function add_to_twig($twig) {
+	$noCrawlOpen = new Twig_SimpleFilter('noCrawlOpen', function ($bool) {
+		if ($bool)return "\n<!--googleoff: all-->\n";
+		return false;
+	});
+
+	$noCrawlClose = new Twig_SimpleFilter('noCrawlClose', function ($bool) {
+		if ($bool)return "\n<!--googleon: all-->\n";
+		return false;
+	});
+
+	/* this is where you can add your own fuctions to twig */
+	$twig->addFilter($noCrawlOpen);
+	$twig->addFilter($noCrawlClose);
+
+	return $twig;
+}
 
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
@@ -135,3 +155,49 @@ function agency_load_jquery(){
     wp_enqueue_script('jquery');
 }
 add_action( 'wp_enqueue_scripts', 'agency_load_jquery' );
+
+
+
+/*
+ *
+ * Advanced Custom Fields
+ *
+ * */
+
+//// 1. customize ACF path
+//add_filter('acf/settings/path', 'my_acf_settings_path');
+//
+//function my_acf_settings_path( $path ) {
+//	// update path
+//	$path = get_stylesheet_directory() . '/acf/';
+//	// return
+//	return $path;
+//}
+////
+////
+////// 2. customize ACF dir
+//add_filter('acf/settings/dir', 'my_acf_settings_dir');
+//
+//function my_acf_settings_dir( $dir ) {
+//	// update path
+//	$dir = get_stylesheet_directory_uri() . '/acf/';
+//	// return
+//	return $dir;
+//}
+
+
+// 3. Hide ACF field group menu item
+//add_filter('acf/settings/show_admin', '__return_false');
+
+
+// 4. Include ACF
+//include_once( get_stylesheet_directory() . '/acf/advanced-custom-fields/acf.php' );
+include_once( get_stylesheet_directory() . '/acf/advanced-custom-fields-pro/acf.php' );
+
+//	function my_register_fields()
+//	{
+//		include_once(get_template_directory().'/acf/acf-image-crop-add-on/acf-image-crop.php');
+//	}
+//	add_action('acf/register_fields', 'my_register_fields');
+
+//include (get_stylesheet_directory() . '/acf/acf-fields.php');
