@@ -1,12 +1,23 @@
 /* Global Styles */
 p {
   font-size: 20px;
-  line-height: 1.75;
+  line-height: 1.8em;
+}
+@media (max-width: 767px) {
+  p {
+    text-align: justify;
+  }
+}
+li {
+  list-style: none;
 }
 @media (min-width: 766px) and (max-width: 992px) {
   .container {
     width: auto;
   }
+}
+.modal-backdrop.in {
+  opacity: 0.2;
 }
 /* Nav */
 @media (max-width: 1099px) {
@@ -17,6 +28,7 @@ p {
     display: block;
     background-color: #477CA6;
     border-color: #477CA6;
+    margin-right: -15px;
     float: right;
   }
   .navbar-header .navbar-toggle .icon-bar {
@@ -33,7 +45,6 @@ p {
     width: 100vw;
     left: 0;
     position: absolute;
-    padding-bottom: 20px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transform-origin: 0 0;
@@ -48,6 +59,7 @@ p {
   }
   .navbar-mobilized ul {
     float: left!important;
+    margin: 0;
   }
   .navbar-mobilized ul li {
     float: none;
@@ -65,6 +77,7 @@ p {
 }
 #nav-main {
   height: 50px;
+  z-index: 9999;
 }
 .navbar-default {
   background-color: #222222;

@@ -6,14 +6,6 @@
 
 // -- Typography
 
-p {
-
-	line-height: 1.5;
-	margin: 30px 0;
-	a {
-		text-decoration: underline;
-	}
-}
 
 h1,
 h2,
@@ -33,6 +25,9 @@ a {
 	}
 }
 
+p{
+	margin: 10px 0;
+}
 a img {
 	&:hover,
 	&:focus {
@@ -54,100 +49,7 @@ hr.small {
 
 // Navigation
 
-.navbar-custom {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 3;
-	.body-font;
-	.navbar-brand {
-		font-weight: 800;
-	}
-	.nav {
-		li {
-			a {
-				text-transform: uppercase;
-				font-size: 12px;
-				font-weight: 800;
-				letter-spacing: 1px;
-			}
-		}
-	}
-	@media only screen and (min-width: 768px) {
-		background: transparent;
-		border-bottom: 1px solid transparent;
-		.navbar-brand {
-			color: white;
-			padding: 20px;
-			&:hover,
-			&:focus {
-				color: @white-faded;
-			}
-		}
-		.nav {
-			li {
-				a {
-					color: white;
-					padding: 20px;
-					&:hover,
-					&:focus {
-						color: @white-faded;
-					}
-				}
-			}
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		-webkit-transition: background-color 0.3s;
-		-moz-transition: background-color 0.3s;
-		transition: background-color 0.3s;
-		/* Force Hardware Acceleration in WebKit */
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		-ms-transform: translate3d(0, 0, 0);
-		-o-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		&.is-fixed {
-			/* when the user scrolls down, we hide the header right above the viewport */
-			position: fixed;
-			top: -61px;
-			background-color: fade(white, 90%);
-			border-bottom: 1px solid darken(white, 5%);
-			-webkit-transition: -webkit-transform 0.3s;
-			-moz-transition: -moz-transform 0.3s;
-			transition: transform 0.3s;
-			.navbar-brand {
-				color: @gray-darkest;
-				&:hover,
-				&:focus {
-					color: @brand-primary;
-				}
-			}
-			.nav {
-				li {
-					a {
-						color: @gray-darkest;
-						&:hover,
-						&:focus {
-							color: @brand-primary;
-						}
-					}
-				}
-			}
-		}
-		&.is-visible {
-			/* if the user changes the scrolling direction, we show the header */
-			-webkit-transform: translate3d(0, 100%, 0);
-			-moz-transform: translate3d(0, 100%, 0);
-			-ms-transform: translate3d(0, 100%, 0);
-			-o-transform: translate3d(0, 100%, 0);
-			transform: translate3d(0, 100%, 0);
-		}
-	}
-}
+
 
 // Header
 
@@ -155,7 +57,9 @@ hr.small {
 	background-color: @gray;
 	.background-cover;
 	// NOTE: Background images are set within the HTML using inline CSS!
-	margin-bottom: 50px;
+	@media (min-width: 768px) {
+		margin-bottom: 50px;
+	}
 	.site-heading,
 	.post-heading,
 	.page-heading {
@@ -170,7 +74,7 @@ hr.small {
 		text-align: center;
 		h1 {
 			margin-top: 0;
-			font-size: 50px;
+			font-size: 40px;
 		}
 		.subheading {
 			font-size: 24px;
@@ -187,6 +91,7 @@ hr.small {
 		}
 	}
 	.post-heading {
+		text-align: center;
 		h1 {
 			font-size: 35px;
 		}
@@ -431,8 +336,4 @@ img::selection {
 img::-moz-selection {
 	color: white;
 	background: transparent;
-}
-
-body {
-	webkit-tap-highlight-color: @brand-primary;
 }
