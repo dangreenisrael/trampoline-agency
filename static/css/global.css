@@ -9,12 +9,27 @@ p {
   }
 }
 /* Nav */
-@media (max-width: 768px) {
-  #content {
-    padding-top: 50px;
+@media (max-width: 1099px) {
+  .navbar-header {
+    width: 100%;
+  }
+  .navbar-header .navbar-toggle {
+    display: block;
+    background-color: #477CA6;
+    border-color: #477CA6;
+    float: right;
+  }
+  .navbar-header .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+  .navbar-header .navbar-toggle:hover,
+  .navbar-header .navbar-toggle:focus {
+    background-color: #477CA6;
   }
   .navbar-mobilized {
     background-color: #222222;
+    margin-top: 50px;
+    top: 0;
     width: 100vw;
     left: 0;
     position: absolute;
@@ -26,6 +41,16 @@ p {
     -webkit-transition: ease transform 0.5s;
     -moz-transition: ease transform 0.5s;
     transition: ease transform 0.5s;
+  }
+  .navbar-mobilized > ul {
+    border-top: solid 1px #f7f7f7;
+    width: 100vw;
+  }
+  .navbar-mobilized ul {
+    float: left!important;
+  }
+  .navbar-mobilized ul li {
+    float: none;
   }
   .navbar-mobilized .menu-item-has-children li {
     padding-bottom: 15px;
@@ -56,17 +81,6 @@ p {
 .navbar-default .navbar-mobilized {
   border-color: rgba(255, 255, 255, 0.02);
 }
-.navbar-default .navbar-toggle {
-  background-color: #477CA6;
-  border-color: #477CA6;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #477CA6;
-}
 .navbar-default .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -79,7 +93,7 @@ p {
   padding: 15px 10px;
   margin: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
   .navbar-default {
     background-color: rgba(34, 34, 34, 0);
     -webkit-transition: background-color 0.5s;

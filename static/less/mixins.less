@@ -1,5 +1,5 @@
 // Bootstrap Button Variant
-
+@import "variables";
 .button-variant(@color; @background; @border) {
 	color: @color;
 	background-color: @background;
@@ -41,21 +41,18 @@
 // Background Features
 
 .background-cover() {
-	@mobile: cover;
 	@main: cover;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
-	background-position: top center;
+	background-position: center center;
     -webkit-background-size: @main;
     -moz-background-size: @main;
     background-size: @main;
     -o-background-size: @main;
-	@media(max-width:768px) {
-		-webkit-background-size: @mobile;
-		-moz-background-size: @mobile;
-		background-size: @mobile;
-		-o-background-size: @mobile;
-	}
+	background-color: @gray;
+	//@media(max-width:1024px){
+	//	background-image: none;
+	//}
 }
 
 

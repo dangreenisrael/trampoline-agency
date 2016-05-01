@@ -122,23 +122,15 @@ hr.small {
   }
 }
 .intro-header {
-  background-color: #777;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: top center;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-color: #777;
   margin-bottom: 50px;
-}
-@media (max-width: 768px) {
-  .intro-header {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
 }
 .intro-header .site-heading,
 .intro-header .post-heading,

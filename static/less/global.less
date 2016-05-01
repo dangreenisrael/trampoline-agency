@@ -16,12 +16,30 @@ p {
 /* Nav */
 
 @navHeight: 50px;
-@media (max-width: 768px) {
+@media (max-width: 1099px) {
   #content{
-    padding-top: @navHeight;
+    //padding-top: @navHeight;
+  }
+  .navbar-header{
+    width: 100%;
+    .navbar-toggle {
+      display: block;
+      background-color: @brand-primary;
+      border-color: @brand-primary;
+      float:right;
+      .icon-bar {
+        background-color: white;
+      }
+      &:hover,
+      &:focus {
+        background-color: @brand-primary;
+      }
+    }
   }
   .navbar-mobilized{
     background-color: @gray-darkest;
+    margin-top: @navHeight;
+    top: 0;
     width: 100vw;
     left: 0;
     position: absolute;
@@ -30,6 +48,16 @@ p {
     -webkit-transform-style: preserve-3d;
     transform-origin: 0 0;
     transform: rotateX(-90deg);
+    >ul{
+      border-top: solid 1px @gray-lighter;
+      width: 100vw;
+    }
+    ul{
+      float: left!important;
+      li{
+        float: none;
+      }
+    }
     .transition(ease transform 0.5s);
     .menu-item-has-children li{
       padding-bottom: 15px;
@@ -61,17 +89,6 @@ p {
   .navbar-mobilized {
     border-color: fade(white, 2%);
   }
-  .navbar-toggle {
-    background-color: @brand-primary;
-    border-color: @brand-primary;
-    .icon-bar {
-      background-color: white;
-    }
-    &:hover,
-    &:focus {
-      background-color: @brand-primary;
-    }
-  }
   .nav {
     li {
       a {
@@ -95,7 +112,7 @@ p {
 
 }
 
-@media(min-width:768px) {
+@media(min-width:1100px) {
   .navbar-default {
     background-color: fade(@gray-darkest, 0%);
     .transition(background-color 0.5s);

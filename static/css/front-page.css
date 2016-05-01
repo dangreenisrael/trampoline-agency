@@ -162,21 +162,14 @@ fieldset[disabled] .btn-xl.active {
 header {
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: top center;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-color: #777;
   text-align: center;
   color: white;
-}
-@media (max-width: 768px) {
-  header {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-  }
 }
 header .intro-text {
   padding: 100px 0;
