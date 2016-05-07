@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block head %}
+	<link href="{{site.theme.link}}/static/css/internal.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+	<!-- Page Header -->
+	<header class="intro-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="page-heading">
+						<h1>
+							{{page.title}}
+						</h1>
+						<hr class="small">
+						<span class="meta">
+							{{ page.subtitle }}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Post Content -->
+	<article>
+
+		{#<pre>#}
+			{#{{ dump(page) }}#}
+		{#</pre>#}
+			<div class="portfolio">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							{% if page.client_site %}
+								<a href="{{ page.client_site }}">
+									<img src="{{TimberImage(page.thumbnail).src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
+								</a>
+							{% else %}
+								<img src="{{TimberImage(page.thumbnail).src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
+							{% endif %}
+							{{ page.content }}
+						</div>
+					</div>
+				</div>
+			</div>
+	</article>
+	<hr>
+{% endblock %}

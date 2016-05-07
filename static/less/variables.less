@@ -2,7 +2,7 @@
 
 @brand-primary: #477CA6; // This is the color of the logo and text selection
 @brand-danger: #e74c3c; // This is the color of error messages
-@gray-darkest: #222222; // This is the color instead of black #131317 (Adobe Stock)
+@gray-darkest: lighten(#131317, 10%); // This is the color instead of black #131317 (Adobe Stock)
 @gray: #777; // This is the color of subheadings
 @gray-lighter: #f7f7f7; // This is the color of grey background areas
 @placeholder-text: #bbbbbb; // This is the color of placeholder text
@@ -31,7 +31,11 @@
 
 
 .serif-font() {
-  font-family: 'Lora', 'Times New Roman', serif;
+  //font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: oblique;
+  font-size: 25px;
+  font-weight: 100;
 }
 
 .body-font () {

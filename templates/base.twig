@@ -17,8 +17,7 @@
 {% else %}
 	{% set heroImage = site.theme.link~"/static/img/header-bg.jpg" %}
 {% endif %}
-
-<body class="{{body_class}}" data-template="base.twig">
+<body class="{{body_class}} {{ white_header }}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">
 		<div class="container">

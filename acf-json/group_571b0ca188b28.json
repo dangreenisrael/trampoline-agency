@@ -799,6 +799,26 @@
                     "new_lines": "wpautop",
                     "readonly": 0,
                     "disabled": 0
+                },
+                {
+                    "key": "field_572c62f9013f5",
+                    "label": "Service Page",
+                    "name": "page",
+                    "type": "page_link",
+                    "instructions": "Choose a page to link the service to",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0
                 }
             ]
         }
@@ -820,5 +840,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1461895482
+    "modified": 1462526944
 }

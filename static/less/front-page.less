@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-header {
+header#page-top {
 	.background-cover;
 	text-align: center;
 	color: white;
@@ -126,7 +126,7 @@ header {
 }
 
 @media(min-width:768px) {
-	header {
+	header#page-top {
 		.intro-text {
 			padding-top: 200px;
 			padding-bottom: 200px;
@@ -151,34 +151,56 @@ header {
 // Global Section Styles
 
 section {
-    padding: 100px 0;
-    h2.section-heading {
-		font-size: 40px;
-		margin-top: 0;
-		margin-bottom: 15px;
-    }
-    h3.section-subheading {
-		font-size: 16px;
-		.serif-font;
-		text-transform: none;
-		font-style: italic;
-		font-weight: 400;
+	header{
 		margin-bottom: 75px;
-    }
+		h2.section-heading {
+			font-size: 40px;
+			margin-top: 0;
+			margin-bottom: 15px;
+		}
+		h3.section-subheading {
+			font-size: 16px;
+			.serif-font;
+			text-transform: none;
+			font-style: italic;
+			font-weight: 400;
+		}
+		@media (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+	}
+    padding: 100px 0;
+	@media(max-width: 767px) {
+		padding: 30px 0;
+	}
 }
 
 @media(min-width:768px) {
 	section {
-		padding: 150px 0;
+		padding: 100px 0;
 	}
 }
 
 // Services Section
 
-.service-heading {
-	margin: 15px 0;
-	text-transform: none;
+#services{
+	.service-heading {
+		margin: 15px 0;
+		text-transform: none;
+	}
+	a{
+		color: @gray-darkest;
+	}
+	@media (max-width: 767px) {
+		p{
+			text-align: left;
+		}
+		.fa-stack{
+			display: none;
+		}
+	}
 }
+
 
 // Portfolio Section
 
@@ -439,7 +461,7 @@ section {
 
 .team-member {
 	text-align: center;
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 	img {
 		margin: 0 auto;
 		border: 7px solid;
@@ -462,58 +484,6 @@ section {
 aside.clients {
 	img {
 		margin: 50px auto;
-	}
-}
-
-// Contact Section
-
-section#contact {
-	background-color: @gray-darkest;
-	background-image: url('../img/map-image.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	.section-heading {
-		color: white;
-	}
-	.form-group {
-		margin-bottom: 25px;
-		input,
-		textarea {
-			padding: 20px;
-		}
-		input.form-control {
-			height: auto;
-		}
-		textarea.form-control {
-			height: 236px;
-		}
-	}
-	.form-control:focus {
-		border-color: @brand-primary;
-		box-shadow: none;
-	}
-	::-webkit-input-placeholder {
-	   .heading-font;
-	   font-weight: 700;
-	   color: @placeholder-text;
-	}
-	:-moz-placeholder { /* Firefox 18- */
-	   .heading-font;
-	   font-weight: 700;
-	   color: @placeholder-text;
-	}
-	::-moz-placeholder {  /* Firefox 19+ */
-	   .heading-font;
-	   font-weight: 700;
-	   color: @placeholder-text;
-	}
-	:-ms-input-placeholder {  
-	   .heading-font;
-	   font-weight: 700;
-	   color: @placeholder-text;
-	}
-	.text-danger {
-		color: @brand-danger;
 	}
 }
 

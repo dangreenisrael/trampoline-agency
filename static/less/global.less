@@ -3,11 +3,17 @@
 
 /* Global Styles */
 p {
-  font-size: 20px;
-  line-height: 1.8em;
+  font-size: 1.40em;
+  line-height: 1.6em;
   @media (max-width: 767px) {
-    text-align: justify;
+    font-size: 1.3em;
   }
+  color: @gray-darkest  ;
+}
+
+code{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 li{
@@ -25,6 +31,46 @@ li{
 /* Nav */
 
 @navHeight: 50px;
+#nav-main {
+  height: @navHeight;
+  z-index: 9999;
+}
+  .navbar-default {
+    background-color: @gray-darkest;
+    border-color: transparent;
+    .navbar-brand {
+      color: white;
+      .script-font;
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+    .navbar-mobilized {
+      border-color: fade(white, 2%);
+    }
+    .nav {
+      li {
+        a {
+          .heading-font;
+          font-weight: 400;
+          letter-spacing: 1px;
+          color: white;
+        }
+      }
+    }
+
+    .navbar-nav > {
+      li {
+        a {
+          line-height: 0;
+
+        }
+      }
+    }
+
+  }
+
 @media (max-width: 1099px) {
   #content{
     //padding-top: @navHeight;
@@ -61,18 +107,21 @@ li{
     >ul{
       border-top: solid 1px @gray-lighter;
       width: 100vw;
+      padding: 10px;
+    }
+    li{
+      a{
+        padding: 13px;
+        display: block;
+        font-size: 1.2em;
+      }
+      float: none;
     }
     ul{
-      float: left!important;
+      float: none!important;
       margin: 0;
-      li{
-        float: none;
-      }
     }
     .transition(ease transform 0.5s);
-    .menu-item-has-children li{
-      padding-bottom: 15px;
-    }
     .page-scroll{
       background: none!important;
       color: white!important;
@@ -85,46 +134,6 @@ li{
     }
   }
 }
-#nav-main {
-  height: @navHeight;
-  z-index: 9999;
-}
-  .navbar-default {
-    background-color: @gray-darkest;
-    border-color: transparent;
-    .navbar-brand {
-      color: white;
-      .script-font;
-      &:hover,
-      &:focus {
-        color: white;
-      }
-    }
-    .navbar-mobilized {
-      border-color: fade(white, 2%);
-    }
-    .nav {
-      li {
-        a {
-          .heading-font;
-          font-weight: 400;
-          letter-spacing: 1px;
-          color: white;
-        }
-      }
-    }
-
-    .navbar-nav > {
-      li {
-        a {
-          line-height: 0;
-          padding: 15px 10px;
-          margin: 10px;
-        }
-      }
-    }
-
-  }
 
 @media(min-width:1100px) {
   .navbar-default {
@@ -139,6 +148,8 @@ li{
       li a{
         border-radius: 3px;
         text-decoration: none;
+        padding: 15px 10px;
+        margin: 10px;
         &:hover,
         &:focus {
           color: lighten(@brand-primary, 10%);
@@ -173,8 +184,10 @@ li{
       }
     }
   }
+  .white-header .navbar-default,
   .navbar-default.navbar-shrink,
   .navbar-default:hover
+
   {
     background-color: fade(@gray-darkest, 100%);
     .navbar-nav>.active>a, .navbar-nav>.current-menu-item>a {
@@ -209,6 +222,9 @@ footer {
     .heading-font;
     text-transform: none;
   }
+  @media (max-width: 767px) {
+    padding: 0;
+  }
 }
 
 /* Social Buttons */
@@ -233,6 +249,60 @@ ul.social-buttons {
         background-color: @brand-primary;
       }
     }
+  }
+}
+
+
+
+// Contact Section
+
+section#contact {
+  background-color: @gray-darkest;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  .section-heading {
+    color: white;
+  }
+  .form-group {
+    margin-bottom: 25px;
+    input,
+    textarea {
+      padding: 20px;
+    }
+    input.form-control {
+      height: auto;
+    }
+    textarea.form-control {
+      height: 236px;
+    }
+  }
+  .form-control:focus {
+    border-color: @brand-primary;
+    box-shadow: none;
+  }
+  ::-webkit-input-placeholder {
+    .heading-font;
+    font-weight: 700;
+    color: @placeholder-text;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    .heading-font;
+    font-weight: 700;
+    color: @placeholder-text;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    .heading-font;
+    font-weight: 700;
+    color: @placeholder-text;
+  }
+  :-ms-input-placeholder {
+    .heading-font;
+    font-weight: 700;
+    color: @placeholder-text;
+  }
+  .text-danger {
+    color: @brand-danger;
   }
 }
 

@@ -1,14 +1,45 @@
 {% extends "base.twig" %}
 
+{% block head %}
+	<link href="{{site.theme.link}}/static/css/internal.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
+
+
+	<!-- Page Header -->
+	<!-- Set your background image for this header on the line below. -->
+	{% set backgroundImageURL = heroImage %}
+	<header class="intro-header" style="background-image: url( {{ backgroundImageURL }} )">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="post-heading">
+						<h1>
+							{{post.title}}
+						</h1>
+						{% if post.subtitle %}
+							<hr class="small">
+							<span class="meta">
+								{{ post.subtitle }}
+							</span>
+						{% endif %}
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Post Content -->
+	<article>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+					{{ TimberImage(post.gallery[1]) }}
 					{{post.content}}
 				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+			</div>
+		</div>
+	</article>
+	<hr>
 {% endblock %}

@@ -2,10 +2,12 @@
     <section id="team" class="alternating-light-gray">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <header class="col-lg-12 text-center">
                     <h2 class="section-heading">{{ option.team_title }}</h2>
-                    <span class="section-subheading text-muted">{{ option.team_subtitle }}</span>
-                </div>
+                    {% if  option.team_subtitle%}
+                        <span class="section-subheading text-muted">{{ option.team_subtitle }}</span>
+                    {% endif %}
+                </header>
             </div>
             <div class="">
                 {% for team_member in option.team_members %}

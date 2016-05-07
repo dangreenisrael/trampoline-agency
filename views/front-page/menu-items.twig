@@ -2,23 +2,51 @@
 	<a href="/"></a>
 </li>
 {% if option.show_services %}
-	<li>
+	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#services">
 			{{ option.services_menu_text }}
 			{% if not option.services_menu_text %}
 				{{option.services_title}}
 			{% endif %}
 		</a>
+		{% if option.service_links %}
+			<ul>
+				{% for item in option.services %}
+					{% if item.page %}
+						<li>
+							<a href="{{ item.page }}">
+								{{ item.name }}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		{% endif %}
 	</li>
 {% endif %}
 {% if option.show_portfolio %}
-	<li>
+	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
 			{{ option.portfolio_menu_text }}
 			{% if not option.portfolio_menu_text %}
 				{{option.portfolio_title}}
 			{% endif %}
 		</a>
+
+		{% if  portfolio_items %}
+			<ul>
+			{% for item in portfolio_items %}
+				<li>
+					<a href="{{ item | permalink }}">
+						{{ item.menu_title }}
+						{% if not item.menu_title %}
+							{{item.post_title}}
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
 	</li>
 {% endif %}
 {% if option.show_timeline %}

@@ -2,25 +2,33 @@
     <section id="services" class="alternating-light-gray">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <header class="col-lg-12 text-center">
                     <h2 class="section-heading">{{ option.services_title }}</h2>
-                    <h3 class="section-subheading text-muted">{{ option.services_subtitle }}</h3>
-                </div>
+                    {% if  option.services_subtitle %}
+                        <h3 class="section-subheading text-muted">{{ option.services_subtitle }}</h3>
+                    {% endif %}
+                </header>
             </div>
             <div class="row text-center">
                 {% for service in option.services %}
+                    {% if service.page %}
+                        <a href="{{ service.page }}">
+                    {% endif %}
                     <div class="{{ loop.length|bootstrapCol }}">
                                 <span class="fa-stack fa-4x">
                                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                     <i class="fa {{ service.icon }} fa-stack-1x fa-inverse"></i>
                                 </span>
-                        <h4 class="service-heading">
+                        <h3 class="service-heading">
                             {{ service.name }}
-                        </h4>
+                        </h3>
                         <p class="text-muted">
                             {{ service.description }}
                         </p>
                     </div>
+                    {% if service.page %}
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
