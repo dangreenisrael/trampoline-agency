@@ -25,20 +25,16 @@
 	</header>
 	<!-- Post Content -->
 	<article>
-
-		{#<pre>#}
-			{#{{ dump(page) }}#}
-		{#</pre>#}
 			<div class="portfolio">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
 							{% if page.client_site %}
 								<a href="{{ page.client_site }}">
-									<img src="{{TimberImage(page.thumbnail).src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
+									<img src="{{page.thumbnail.src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
 								</a>
 							{% else %}
-								<img src="{{TimberImage(page.thumbnail).src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
+								<img src="{{page.thumbnail.src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
 							{% endif %}
 							{{ page.content }}
 						</div>

@@ -8,6 +8,4 @@ $page = new TimberPost();
 $context['page'] = $page;
 $context['white_header'] = "white-header";
 
-
-
 Timber::render('portfolio.twig', $context );

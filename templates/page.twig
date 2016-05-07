@@ -8,19 +8,21 @@
 
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
-	{% set backgroundImageURL = heroImage %}
-	<header class="intro-header" style="background-image: url( {{ backgroundImageURL }} )">
+	{% if post.thumbnail %}
+		{% set backgroundImage = "background-image: " ~ post.thumbnail.src %}
+	{% endif %}
+	<header class="intro-header" style="{{ backgroundImage }}">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="post-heading">
+					<div class="page-heading">
 						<h1>
-							{{post.title}}
+							{{page.title}}
 						</h1>
-						{% if post.subtitle %}
+						{% if page.subtitle %}
 							<hr class="small">
 							<span class="meta">
-								{{ post.subtitle }}
+								{{ page.subtitle }}
 							</span>
 						{% endif %}
 					</div>
@@ -36,7 +38,7 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 					{{ TimberImage(post.gallery[1]) }}
-					{{post.content}}
+					{{page.content}}
 				</div>
 			</div>
 		</div>
