@@ -16,6 +16,13 @@ code{
   word-wrap: break-word;
 }
 
+a:hover,
+a:hover *:not(.fa),
+a:active,
+a:active *:not(.fa){
+  color: @brand-primary!important;
+}
+
 li{
   list-style: none;
 }
@@ -35,45 +42,46 @@ li{
   height: @navHeight;
   z-index: 9999;
 }
-  .navbar-default {
-    background-color: @gray-darkest;
-    border-color: transparent;
-    .navbar-brand {
+.navbar-default {
+  background-color: @gray-darkest;
+  border-color: transparent;
+  .navbar-brand {
+    color: white;
+    .script-font;
+    &:hover,
+    &:focus {
       color: white;
-      .script-font;
-      &:hover,
-      &:focus {
+    }
+  }
+  .navbar-mobilized {
+    border-color: fade(white, 2%);
+  }
+  .nav {
+    li {
+      a {
+        .heading-font;
+        font-weight: 400;
+        letter-spacing: 1px;
         color: white;
       }
     }
-    .navbar-mobilized {
-      border-color: fade(white, 2%);
-    }
-    .nav {
-      li {
-        a {
-          .heading-font;
-          font-weight: 400;
-          letter-spacing: 1px;
-          color: white;
-        }
-      }
-    }
-
-    .navbar-nav > {
-      li {
-        a {
-          line-height: 0;
-
-        }
-      }
-    }
-
   }
 
+  .navbar-nav > {
+    li {
+      a {
+        line-height: 0;
+
+      }
+    }
+  }
+
+}
+
 @media (max-width: 1099px) {
+
   #content{
-    //padding-top: @navHeight;
+    margin-top: @navHeight;
   }
   .navbar-header{
     width: 100%;
@@ -93,6 +101,9 @@ li{
     }
   }
   .navbar-mobilized{
+    a.active {
+      color: darken(@brand-primary, 10%);
+    }
     background-color: @gray-darkest;
     margin-top: @navHeight;
     top: 0;
@@ -104,28 +115,31 @@ li{
     transform-origin: 0 0;
     transform: rotateX(-90deg);
 
-    >ul{
+    >ul.navbar-nav{
       border-top: solid 1px @gray-lighter;
       width: 100vw;
-      padding: 10px;
-    }
-    li{
-      a{
-        padding: 13px;
-        display: block;
-        font-size: 1.2em;
-      }
-      float: none;
-    }
-    ul{
-      float: none!important;
+      padding: 15px;
       margin: 0;
+      .page-scroll, .active>a{
+        background: none!important;
+        color: white;
+      }
+      li{
+        a{
+          padding: 15px 10px;
+          display: inline-block;
+          font-size: 1.2em;
+        }
+        float: none;
+      }
+      ul{
+        float: none!important;
+        margin: 0;
+      }
     }
+
     .transition(ease transform 0.5s);
-    .page-scroll{
-      background: none!important;
-      color: white!important;
-    }
+
     &.show{
       transform: rotateX(0);
       .backdrop{
@@ -306,3 +320,27 @@ section#contact {
   }
 }
 
+
+// Highlight Color Customization
+
+::-moz-selection {
+  text-shadow: none;
+  background: @selection-color;
+}
+
+::selection {
+  text-shadow: none;
+  background: @selection-color;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  -webkit-tap-highlight-color: @selection-color;
+}

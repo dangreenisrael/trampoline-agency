@@ -37,4 +37,7 @@ if ( is_day() ) {
 
 $context['posts'] = Timber::get_posts();
 
+$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
+
+
 Timber::render( $templates, $context );

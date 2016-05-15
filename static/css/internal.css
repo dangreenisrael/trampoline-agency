@@ -27,6 +27,9 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
+img {
+  padding: 20px 0;
+}
 .intro-header {
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -45,14 +48,14 @@ hr.small {
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0;
+  padding: 20px 0;
   color: white;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 200px 0;
   }
 }
 .intro-header .site-heading,
@@ -114,7 +117,11 @@ body.white-header .intro-header {
 }
 body.white-header .intro-header .page-heading {
   color: #2a2a33;
-  padding: 100px 0 20px;
+}
+@media only screen and (min-width: 768px) {
+  body.white-header .intro-header .page-heading {
+    padding: 100px 0 20px;
+  }
 }
 body.white-header .intro-header hr {
   border-color: #2a2a33;
@@ -171,78 +178,6 @@ body.white-header .intro-header hr {
   display: block;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-}
-.portfolio .modal-content {
-  border-radius: 0;
-  background-clip: border-box;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: none;
-  min-height: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-.portfolio .modal-content h2 {
-  margin-bottom: 15px;
-  font-size: 3em;
-}
-.portfolio .modal-content p {
-  margin-bottom: 30px;
-}
-.portfolio .modal-content p.item-intro {
-  margin: 20px 0 30px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: oblique;
-  font-size: 25px;
-  font-weight: 100;
-  font-style: italic;
-  font-size: 16px;
-}
-.portfolio .modal-content ul.list-inline {
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-.portfolio .modal-content img {
-  margin-bottom: 30px;
-}
-.portfolio .close-modal {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  background-color: transparent;
-  top: 25px;
-  right: 25px;
-  cursor: pointer;
-}
-.portfolio .close-modal:hover {
-  opacity: 0.3;
-}
-.portfolio .close-modal .lr {
-  height: 75px;
-  width: 1px;
-  margin-left: 35px;
-  background-color: #2a2a33;
-  transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  /* IE 9 */
-  -webkit-transform: rotate(45deg);
-  /* Safari and Chrome */
-  z-index: 1051;
-}
-.portfolio .close-modal .lr .rl {
-  height: 75px;
-  width: 1px;
-  background-color: #2a2a33;
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(90deg);
-  /* Safari and Chrome */
-  z-index: 1052;
-}
-.portfolio .modal-backdrop {
-  opacity: 0;
-  display: none;
 }
 .floating-label-form-group {
   font-size: 14px;

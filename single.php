@@ -12,6 +12,11 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
+if (has_post_thumbnail($post)){
+	$context['background'] = "background-image: url(".get_the_post_thumbnail_url().")";
+} else{
+	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
+}
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

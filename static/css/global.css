@@ -13,6 +13,12 @@ code {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+a:hover,
+a:hover *:not(.fa),
+a:active,
+a:active *:not(.fa) {
+  color: #477CA6 !important;
+}
 li {
   list-style: none;
 }
@@ -55,6 +61,9 @@ li {
   line-height: 0;
 }
 @media (max-width: 1099px) {
+  #content {
+    margin-top: 50px;
+  }
   .navbar-header {
     width: 100%;
   }
@@ -87,26 +96,31 @@ li {
     -moz-transition: ease transform 0.5s;
     transition: ease transform 0.5s;
   }
-  .navbar-mobilized > ul {
+  .navbar-mobilized a.active {
+    color: #386182;
+  }
+  .navbar-mobilized > ul.navbar-nav {
     border-top: solid 1px #f7f7f7;
     width: 100vw;
-    padding: 10px;
-  }
-  .navbar-mobilized li {
-    float: none;
-  }
-  .navbar-mobilized li a {
-    padding: 13px;
-    display: block;
-    font-size: 1.2em;
-  }
-  .navbar-mobilized ul {
-    float: none!important;
+    padding: 15px;
     margin: 0;
   }
-  .navbar-mobilized .page-scroll {
+  .navbar-mobilized > ul.navbar-nav .page-scroll,
+  .navbar-mobilized > ul.navbar-nav .active > a {
     background: none!important;
-    color: white!important;
+    color: white;
+  }
+  .navbar-mobilized > ul.navbar-nav li {
+    float: none;
+  }
+  .navbar-mobilized > ul.navbar-nav li a {
+    padding: 15px 10px;
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .navbar-mobilized > ul.navbar-nav ul {
+    float: none!important;
+    margin: 0;
   }
   .navbar-mobilized.show {
     transform: rotateX(0);
@@ -289,4 +303,21 @@ section#contact :-ms-input-placeholder {
 }
 section#contact .text-danger {
   color: #e74c3c;
+}
+::-moz-selection {
+  text-shadow: none;
+  background: lightblue;
+}
+::selection {
+  text-shadow: none;
+  background: lightblue;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: lightblue;
 }

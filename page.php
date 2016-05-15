@@ -24,5 +24,5 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['page'] = $post;
-if(!has_post_thumbnail($post)) $context['white_header'] = "white-header";
+$context['white_header'] = "white-header";
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

@@ -258,7 +258,7 @@ section header h3.section-subheading {
     text-align: left;
   }
   #services .fa-stack {
-    display: none;
+    font-size: 3em;
   }
 }
 #portfolio .portfolio-item {
@@ -595,21 +595,4 @@ aside.clients img {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
-}
-::-moz-selection {
-  text-shadow: none;
-  background: lightblue;
-}
-::selection {
-  text-shadow: none;
-  background: lightblue;
-}
-img::selection {
-  background: transparent;
-}
-img::-moz-selection {
-  background: transparent;
-}
-body {
-  webkit-tap-highlight-color: lightblue;
 }

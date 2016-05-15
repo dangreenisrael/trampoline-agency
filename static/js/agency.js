@@ -1,6 +1,7 @@
 /*!
  * Agency v1.0.x (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2016 Start Bootstrap
+ * Original work Copyright 2013-2016 Start Bootstrap
+ * Changes Copyright 2016 Droplet Development
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
@@ -49,4 +50,12 @@ jQuery(document).ready(function () {
         navBox.removeClass('show');
         backdrop.modal('hide');
     });
+    navBox.find('a').click(function () {
+        var item = jQuery(this);
+        item.addClass('active');
+        setTimeout(function (){
+            item.removeClass('active');
+        }, 500);
+    });
+
 });
