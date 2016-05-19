@@ -3,8 +3,9 @@
         <div class="intro-text">
             <div class="intro-lead-in">{{option.hero_lead_in}}</div>
             <div class="intro-heading">{{option.hero_heading}}</div>
+
             {% if option.show_hero_cta %}
-                <a href="#{{ option.cta_section_link }}" class="page-scroll btn btn-xl">{{option.hero_cta}}</a>
+                <a href="{{ option.hero_link }}" class="page-scroll btn btn-xl">{{option.hero_cta}}</a>
             {% endif %}
         </div>
     </div>

@@ -18,6 +18,9 @@ if (has_post_thumbnail($post)){
 	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
 }
 
+wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
+wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
+
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

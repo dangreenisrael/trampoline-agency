@@ -1,0 +1,6 @@
+acf-google_font_selector-v5.php line 180 - changed reference to theme folder
+input.js line 57
+    preview_text = container.find('.acfgfs-preview div').text();
+    font = new_font.replace( ' ', '+' );
+    container.find('.acfgfs-preview').html('<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' + font + '"><div style="font-family:' + new_font + '"></div>');
+    container.find('.acfgfs-preview div').text(preview_text);

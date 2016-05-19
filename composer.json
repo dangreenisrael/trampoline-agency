@@ -13,18 +13,23 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/sanchothefat/wp-less.git"
     }
   ],
   "extra": {
   	"installer-paths": {
-      "../../plugins/{$name}/": [
+      "./vendor/{$name}/": [
         "wpackagist-plugin/*",
         "type:wordpress-plugin"
       ]
   	}
 	},
   "require": {
-	  "wpackagist-plugin/timber-library": "0.22.*",
-    "timber/timber": "^1.0"
+    "wpackagist-plugin/timber-library": "0.22.*",
+    "timber/timber": "^1.0.3",
+    "icit/wp-less": "dev-master"
   }
 }

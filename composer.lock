@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8b268b19fb3aab85c00e770905e21dae",
-    "content-hash": "2b6d2a1555f597305a54d700a7859733",
+    "hash": "81805af771120188c4140550d16a4f0f",
+    "content-hash": "af0cd949ea5d8f505648af8ad6cf1bf1",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -210,17 +210,84 @@
             "time": "2016-04-13 19:46:30"
         },
         {
-            "name": "timber/timber",
-            "version": "1.0.1",
+            "name": "icit/wp-less",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/timber/timber.git",
-                "reference": "eebe90f073c36af7a1a9ee599c0d4fa8a06ebf38"
+                "url": "https://github.com/sanchothefat/wp-less.git",
+                "reference": "62fb8fd59c26171347cd75713d759c8b5da0e7a3"
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "leafo/lessphp": "0.4.0",
+                "php": ">5.2.4"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Interconnect/IT",
+                    "homepage": "http://interconnectit.com/"
+                }
+            ],
+            "description": "Provides a LESS compiler compatible with wp_enqueue_style() for rapid CSS development in themes and plugins.",
+            "time": "2015-03-17 16:48:53"
+        },
+        {
+            "name": "leafo/lessphp",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/lessphp.git",
+                "reference": "51f3f06f0fe78a722dabfd14578444bdd078d9de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/eebe90f073c36af7a1a9ee599c0d4fa8a06ebf38",
-                "reference": "eebe90f073c36af7a1a9ee599c0d4fa8a06ebf38",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/51f3f06f0fe78a722dabfd14578444bdd078d9de",
+                "reference": "51f3f06f0fe78a722dabfd14578444bdd078d9de",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "lessphp is a compiler for LESS written in PHP.",
+            "homepage": "http://leafo.net/lessphp/",
+            "time": "2013-08-09 17:09:19"
+        },
+        {
+            "name": "timber/timber",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timber/timber.git",
+                "reference": "b5d15a6a83d2fe7db41546af10ddac8cc74b8568"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timber/timber/zipball/b5d15a6a83d2fe7db41546af10ddac8cc74b8568",
+                "reference": "b5d15a6a83d2fe7db41546af10ddac8cc74b8568",
                 "shasum": ""
             },
             "require": {
@@ -271,7 +338,7 @@
                 "timber",
                 "twig"
             ],
-            "time": "2016-05-05 01:10:14"
+            "time": "2016-05-14 17:07:04"
         },
         {
             "name": "twig/twig",
@@ -387,16 +454,16 @@
         },
         {
             "name": "wpackagist-plugin/timber-library",
-            "version": "0.22.5",
+            "version": "0.22.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/0.22.5"
+                "reference": "tags/0.22.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.0.22.5.zip",
-                "reference": "tags/0.22.5",
+                "url": "https://downloads.wordpress.org/plugin/timber-library.0.22.6.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -409,7 +476,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "icit/wp-less": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

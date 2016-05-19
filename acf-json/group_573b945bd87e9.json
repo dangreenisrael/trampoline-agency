@@ -1,0 +1,92 @@
+{
+    "key": "group_573b945bd87e9",
+    "title": "Fonts",
+    "fields": [
+        {
+            "key": "field_573b945f80a06",
+            "label": "Heading Font",
+            "name": "heading_font",
+            "type": "google_font_selector",
+            "instructions": "Choose only the variant that you want to use",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Duru Sans"
+        },
+        {
+            "key": "field_573ca0258df2b",
+            "label": "Body Font",
+            "name": "body_font",
+            "type": "google_font_selector",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Droid Sans"
+        },
+        {
+            "key": "field_573ca03a0e865",
+            "label": "Serif Font",
+            "name": "serif_font",
+            "type": "google_font_selector",
+            "instructions": "SELECT ITALIC",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Playfair Display"
+        },
+        {
+            "key": "field_573ca04ddb7a8",
+            "label": "Script Font",
+            "name": "script_font",
+            "type": "google_font_selector",
+            "instructions": "SELECT ITALIC",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 1,
+            "enqueue_font": 1,
+            "default_font": "Droid Sans"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1463592166
+}

@@ -39,7 +39,7 @@ hr.small {
 	max-width: 100px;
 	margin: 15px auto;
 	border-width: 4px;
-	border-color: white;
+	border-color: @brand-white;
 }
 
 img{
@@ -57,7 +57,7 @@ img{
 	.post-heading,
 	.page-heading {
 		padding: 20px 0;
-		color: white;
+		color: @brand-white;
 		@media only screen and (min-width: 768px) {
 			padding: 200px 0;
 		}
@@ -83,7 +83,7 @@ img{
 		.meta {
 			.serif-font;
 			a {
-				color: white;
+				color: @brand-white;
 			}
 		}
 		@media only screen and (min-width: 768px) {
@@ -257,7 +257,7 @@ form .row:first-child .floating-label-form-group {
 	&:focus {
 		background-color: @brand-primary;
 		border: 1px solid @brand-primary;
-		color: white;
+		color: @brand-white;
 	}
 }
 
@@ -276,13 +276,13 @@ form .row:first-child .floating-label-form-group {
 			font-weight: 800;
 			letter-spacing: 1px;
 			padding: 15px 25px;
-			background-color: white;
+			background-color: @brand-white;
 			border-radius: 0;
 		}
 
 		> a:hover,
 		> a:focus {
-			color: white;
+			color: @brand-white;
 			background-color: @brand-primary;
 			border: 1px solid @brand-primary;
 		}
@@ -300,26 +300,3 @@ form .row:first-child .floating-label-form-group {
 	}
 }
 
-// -- Highlight Color Customization
-
-::-moz-selection {
-	color: white;
-	text-shadow: none;
-	background: @brand-primary;
-}
-
-::selection {
-	color: white;
-	text-shadow: none;
-	background: @brand-primary;
-}
-
-img::selection {
-	color: white;
-	background: transparent;
-}
-
-img::-moz-selection {
-	color: white;
-	background: transparent;
-}

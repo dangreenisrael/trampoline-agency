@@ -29,9 +29,11 @@ function my_acf_settings_dir( $dir ) {
 //add_filter('acf/settings/show_admin', '__return_false');
 
 // 4. Include ACF
-include_once( get_stylesheet_directory() . '/acf/advanced-custom-fields-pro/acf.php' );
+include_once(get_stylesheet_directory() . '/acf/advanced-custom-fields-pro/acf.php' );
 include_once(get_stylesheet_directory().'/acf/advanced-custom-fields-font-awesome-customized/acf-font-awesome.php');
 include_once(get_stylesheet_directory() . '/acf/acf-image-crop-add-on-customized/acf-image-crop.php');
+include_once(get_stylesheet_directory() . '/acf/acf-google-font-selector-field/acf-google_font_selector.php');
+
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(

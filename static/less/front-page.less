@@ -65,11 +65,11 @@ h1, h2, h3, h4, h5, h6 {
 .alternating-light-gray:nth-of-type(even){
 	background-color: @gray-lighter;
 	.alternating-border{
-		border-color: white;
+		border-color: @brand-white;
 	}
 }
 .alternating-light-gray:nth-of-type(odd){
-	background-color: white;
+	background-color: @brand-white;
 	.alternating-border{
 		border-color: @gray-lighter;
 	}
@@ -86,13 +86,13 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-	.button-variant(white; @brand-primary; @brand-primary);
+	.button-variant(@brand-white; @brand-contrast; @brand-contrast);
 	.heading-font;
 	font-weight: 700;
 }
 
 .btn-xl {
-	.button-variant(white; @brand-primary; @brand-primary);
+	.button-variant(@brand-white; @brand-contrast; @brand-contrast);
 	.heading-font;
 	font-weight: 700;
 	border-radius: 3px;
@@ -101,15 +101,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 header#page-top {
 	.background-cover;
 	text-align: center;
-	color: white;
+	color: @brand-white;
 	.intro-text {
 		padding: 100px 0;
 		.intro-lead-in {
-			.home-serif-font;
+			.serif-font;
 			font-style: italic;
 			font-size: 30px;
 			line-height: 30px;
@@ -131,7 +130,7 @@ header#page-top {
 			padding-top: 200px;
 			padding-bottom: 200px;
 			.intro-lead-in {
-				.home-serif-font;
+				.serif-font;
 				font-style: italic;
 				font-size: 50px;
 				line-height: 50px;
@@ -232,7 +231,7 @@ section {
                     text-align: center;
                     top: 50%;
                     margin-top: -12px;
-                    color: white;
+                    color: @brand-white;
                     i {
                         margin-top: -12px;
                     }
@@ -246,7 +245,7 @@ section {
         .portfolio-caption {
         	max-width: 400px;
         	margin: 0 auto;
-        	background-color: white;
+        	background-color: @brand-white;
         	text-align: center;
         	padding: 25px;
         	h4 {
@@ -329,7 +328,7 @@ section {
             position: absolute;
             z-index: 100;
             background-color: @brand-primary;
-            color: white;
+            color: @brand-white;
             border-radius: 100%;
             border: 7px solid #f1f1f1;
             text-align: center;
@@ -496,75 +495,75 @@ aside.clients {
 	outline: none;
 }
 
-.portfolio-modal {
-	.modal-content {
-	    border-radius: 0;
-	    background-clip: border-box;
-	    -webkit-box-shadow: none;
-	    box-shadow: none;
-	    border: none;
-	    min-height: 100%;
-	    padding: 100px 0;
-	    text-align: center;
-		h2 {
-	    	margin-bottom: 15px;
-	    	font-size: 3em;
-		}
-		p {
-			margin-bottom: 30px;
-		}
-		p.item-intro {
-			margin: 20px 0 30px;
-			.serif-font;
-			font-style: italic;
-			font-size: 16px;
-		}
-		ul.list-inline {
-			margin-bottom: 30px;
-			margin-top: 0;
-		}
-		img {
-			margin-bottom: 30px;
-		}
-	}
-    .close-modal {
-        position: absolute;
-        width:75px;
-        height:75px;
-        background-color:transparent;
-        top: 25px;
-        right: 25px;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.3;
-        }
-        .lr {
-            height:75px;
-            width:1px;
-            margin-left:35px;
-            background-color:@gray-darkest;
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            /* IE 9 */
-            -webkit-transform: rotate(45deg);
-            /* Safari and Chrome */
-            z-index:1051;
-            .rl {
-                height:75px;
-                width:1px;
-                background-color:@gray-darkest;
-                transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-                /* IE 9 */
-                -webkit-transform: rotate(90deg);
-                /* Safari and Chrome */
-                z-index:1052;
-            }            
-        }        
-    }
-    .modal-backdrop {
-    	opacity: 0;
-    	display: none;
-    }
-}
+//.portfolio-modal {
+//	.modal-content {
+//	    border-radius: 0;
+//	    background-clip: border-box;
+//	    -webkit-box-shadow: none;
+//	    box-shadow: none;
+//	    border: none;
+//	    min-height: 100%;
+//	    padding: 100px 0;
+//	    text-align: center;
+//		h2 {
+//	    	margin-bottom: 15px;
+//	    	font-size: 3em;
+//		}
+//		p {
+//			margin-bottom: 30px;
+//		}
+//		p.item-intro {
+//			margin: 20px 0 30px;
+//			.serif-font;
+//			font-style: italic;
+//			font-size: 16px;
+//		}
+//		ul.list-inline {
+//			margin-bottom: 30px;
+//			margin-top: 0;
+//		}
+//		img {
+//			margin-bottom: 30px;
+//		}
+//	}
+//    .close-modal {
+//        position: absolute;
+//        width:75px;
+//        height:75px;
+//        background-color:transparent;
+//        top: 25px;
+//        right: 25px;
+//        cursor: pointer;
+//        &:hover {
+//            opacity: 0.3;
+//        }
+//        .lr {
+//            height:75px;
+//            width:1px;
+//            margin-left:35px;
+//            background-color:@gray-darkest;
+//            transform: rotate(45deg);
+//            -ms-transform: rotate(45deg);
+//            /* IE 9 */
+//            -webkit-transform: rotate(45deg);
+//            /* Safari and Chrome */
+//            z-index:1051;
+//            .rl {
+//                height:75px;
+//                width:1px;
+//                background-color:@gray-darkest;
+//                transform: rotate(90deg);
+//                -ms-transform: rotate(90deg);
+//                /* IE 9 */
+//                -webkit-transform: rotate(90deg);
+//                /* Safari and Chrome */
+//                z-index:1052;
+//            }
+//        }
+//    }
+//    .modal-backdrop {
+//    	opacity: 0;
+//    	display: none;
+//    }
+//}
 

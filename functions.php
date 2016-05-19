@@ -1,6 +1,7 @@
 <?php
-require_once(__DIR__."/acf/fields.php");
+require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
+require_once(__DIR__ . '/vendor/wp-less/wp-less.php' );
 
 Timber::$dirname = array('templates', 'views');
 
@@ -39,6 +40,10 @@ class AgencySite extends TimberSite {
 		$context['option'] = get_fields('option');
 		$context['option']['service_links'] = $serviceLinks;
 		$context['portfolio_items'] = $portfolio_items;
+
+		if ($context['option']['cta_section_link'] != "other"){
+			$context['option']['hero_link'] = "#".['cta_section_link'];
+		}
 		return $context;
 	}
 
@@ -113,3 +118,21 @@ function page_template_column_content( $column_name, $post_id ) {
 add_action('admin_head', 'page_template_column_css');
 add_filter( 'manage_pages_columns', 'pages_template_columns' );
 add_action( 'manage_pages_custom_column', 'page_template_column_content', 10, 2 );
+
+
+// pass variables into all .less files
+add_filter( 'less_vars', 'my_less_vars', 10, 2 );
+function my_less_vars( $vars, $handle ) {
+	// $handle is a reference to the handle used with wp_enqueue_style()
+	$vars['brand-primary' ] = get_field('brand_primary', 'option');
+	$vars['brand-accent'] = get_field('accent_color', 'option');
+	$vars['brand-contrast'] = get_field('contrast_color', 'option');
+	$vars['brand-light-gray'] 	= get_field('light_gray_color', 'option');
+	$vars['brand-white'] 	= get_field('whitish_color', 'option');
+	$vars['heading-font'] 	= '"'.get_field('heading_font', 'option')['font'].'"';
+	$vars['body-font'] 		= '"'.get_field('body_font', 	'option')['font'].'"';
+	$vars['serif-font'] 	= '"'.get_field('serif_font', 	'option')['font'].'"';
+	$vars['script-font'] 	= '"'.get_field('script_font', 	'option')['font'].'"';
+
+	return $vars;
+}
