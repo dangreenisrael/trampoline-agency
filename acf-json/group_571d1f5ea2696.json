@@ -87,35 +87,6 @@
             "media_upload": 1
         },
         {
-            "key": "field_571d202756954",
-            "label": "Phone Number",
-            "name": "phone_number",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_571d1fb256953",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_571d206356955",
             "label": "Email",
             "name": "email",
@@ -140,6 +111,56 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_574805e706e5e",
+            "label": "Phone Number Display",
+            "name": "phone_number_display",
+            "type": "text",
+            "instructions": "i.e. +1(416)123-4567",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_571d202756954",
+            "label": "Phone Number For Dialing",
+            "name": "phone_number_for_dialing",
+            "type": "text",
+            "instructions": "i.e. +14161234567",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571d1fb256953",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -159,5 +180,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1464335061
+    "modified": 1464338101
 }
