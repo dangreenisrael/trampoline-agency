@@ -42,7 +42,7 @@ class AgencySite extends TimberSite {
 		$context['portfolio_items'] = $portfolio_items;
 
 		if ($context['option']['cta_section_link'] != "other"){
-			$context['option']['hero_link'] = "#".['cta_section_link'];
+			$context['option']['hero_link'] = "#".$context['option']['cta_section_link'];
 		}
 		return $context;
 	}
