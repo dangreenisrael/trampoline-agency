@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "81805af771120188c4140550d16a4f0f",
-    "content-hash": "af0cd949ea5d8f505648af8ad6cf1bf1",
+    "hash": "81248efca80f64ff11c4850e36587ec3",
+    "content-hash": "2390d89a003cc477e38022693d5036b8",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -57,6 +57,48 @@
                 "routing"
             ],
             "time": "2014-04-16 09:44:40"
+        },
+        {
+            "name": "aristath/kirki",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aristath/kirki.git",
+                "reference": "87a6e28a8cb81f754f669e1c48c76dfe13cfb372"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aristath/kirki/zipball/87a6e28a8cb81f754f669e1c48c76dfe13cfb372",
+                "reference": "87a6e28a8cb81f754f669e1c48c76dfe13cfb372",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "aristath",
+                    "email": "aristath@gmail.com",
+                    "homepage": "http://aristeides.com"
+                },
+                {
+                    "name": "fovoc",
+                    "email": "kalliris.d@gmail.com",
+                    "homepage": "https://github.com/fovoc"
+                }
+            ],
+            "description": "Extending the WordPress customizer",
+            "homepage": "http://kirki.org",
+            "time": "2016-05-01 22:21:52"
         },
         {
             "name": "asm89/twig-cache-extension",
@@ -278,16 +320,16 @@
         },
         {
             "name": "timber/timber",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timber/timber.git",
-                "reference": "b5d15a6a83d2fe7db41546af10ddac8cc74b8568"
+                "reference": "34518600d0ac3d2f13d96d3f363afe9efd9196fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/b5d15a6a83d2fe7db41546af10ddac8cc74b8568",
-                "reference": "b5d15a6a83d2fe7db41546af10ddac8cc74b8568",
+                "url": "https://api.github.com/repos/timber/timber/zipball/34518600d0ac3d2f13d96d3f363afe9efd9196fd",
+                "reference": "34518600d0ac3d2f13d96d3f363afe9efd9196fd",
                 "shasum": ""
             },
             "require": {
@@ -302,7 +344,6 @@
                 "phpdocumentor/phpdocumentor": "2.*",
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "1.0.*",
-                "wp-cli/wp-cli": "*",
                 "wpackagist-plugin/advanced-custom-fields": "4.*"
             },
             "type": "library",
@@ -338,20 +379,20 @@
                 "timber",
                 "twig"
             ],
-            "time": "2016-05-14 17:07:04"
+            "time": "2016-06-08 03:28:13"
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.0",
+            "version": "v1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8"
+                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
-                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
+                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
                 "shasum": ""
             },
             "require": {
@@ -399,7 +440,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-01-25 21:22:18"
+            "time": "2016-05-30 09:11:59"
         },
         {
             "name": "upstatement/routes",
@@ -451,26 +492,6 @@
                 "routing"
             ],
             "time": "2015-03-07 13:41:29"
-        },
-        {
-            "name": "wpackagist-plugin/timber-library",
-            "version": "0.22.6",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/0.22.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.0.22.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/timber-library/"
         }
     ],
     "packages-dev": [],

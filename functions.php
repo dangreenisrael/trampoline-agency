@@ -2,9 +2,13 @@
 require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/vendor/wp-less/wp-less.php' );
+require_once(__DIR__ . '/vendor/kirki/kirki.php' );
+require_once(__DIR__ . '/defaults.php');
+
 
 Timber::$dirname = array('templates', 'views');
 
+define('DOMAIN', 'agency-blog');
 class AgencySite extends TimberSite {
 	function __construct() {
 		add_theme_support( 'post-formats' );
@@ -33,10 +37,12 @@ class AgencySite extends TimberSite {
 			'meta_value' => 'template-portfolio.php'
 		));
 		$serviceLinks = false;
-		foreach (get_fields('option')['services'] as $service){
-			if ($service['page']) $serviceLinks = true;
-			break;
-		};
+		if (@get_fields('option')['services']){
+			foreach (get_fields('option')['services'] as $service){
+				if ($service['page']) $serviceLinks = true;
+				break;
+			};
+		}
 		$context['option'] = get_fields('option');
 		$context['option']['service_links'] = $serviceLinks;
 		$context['portfolio_items'] = $portfolio_items;
@@ -81,10 +87,10 @@ class AgencySite extends TimberSite {
 }
 new AgencySite();
 
-function agency_load_jquery(){
+function agency_blog_load_jquery(){
     wp_enqueue_script('jquery');
 }
-add_action( 'wp_enqueue_scripts', 'agency_load_jquery' );
+add_action( 'wp_enqueue_scripts', 'agency_blog_load_jquery' );
 
 
 /* Add the column for our custom page templates */
@@ -120,19 +126,154 @@ add_filter( 'manage_pages_columns', 'pages_template_columns' );
 add_action( 'manage_pages_custom_column', 'page_template_column_content', 10, 2 );
 
 
+
+if ( ! function_exists( 'my_theme_kirki_update_url' ) ) {
+function my_theme_kirki_update_url( $config ) {
+	$config['url_path'] = get_stylesheet_directory_uri() . '/vendor/kirki/';
+	return $config;
+}
+}
+add_filter( 'kirki/config', 'my_theme_kirki_update_url' );
+
+
+Kirki::add_config( DOMAIN , array(
+	'capability'    => 'edit_theme_options',
+	'option_type'   => 'theme_mod',
+) );
+
+Kirki::add_section( 'typography', array(
+	'title'          => __( 'Site Fonts' ),
+	'description'    => __( 'Choose the fonts for this site' ),
+	'priority'       => 15,
+	'capability'     => 'edit_theme_options',
+) );
+
+$defaults = new Defaults();
+
+foreach ($defaults->get_fonts() as $font){
+	Kirki::add_field( 'config', array(
+		'type'        => 'typography',
+		'settings'    => $font['slug'],
+		'label'       => esc_attr__( $font['label'], DOMAIN ),
+		'section'     => 'typography',
+		'default'     => array(
+			'font-family'    => $font['font-family'],
+			'variant'		 => 'regular',
+			'subsets'        => array( 'latin-ext' )
+		),
+		'priority'    => 10
+	) );
+}
+
+foreach ($defaults->get_colors() as $color){
+	Kirki::add_field( 'config', array(
+		'type'        => 'color',
+		'settings'    => $color['slug'],
+		'label'       => __( $color['label'], DOMAIN ),
+		'section'     => 'colors',
+		'default'     => $color['value'],
+		'priority'    => 10
+	) );
+}
+
+
 // pass variables into all .less files
 add_filter( 'less_vars', 'my_less_vars', 10, 2 );
 function my_less_vars( $vars, $handle ) {
+	$defaults = new Defaults();
 	// $handle is a reference to the handle used with wp_enqueue_style()
-	$vars['brand-primary' ] = get_field('brand_primary', 'option');
-	$vars['brand-accent'] = get_field('accent_color', 'option');
-	$vars['brand-contrast'] = get_field('contrast_color', 'option');
-	$vars['brand-light-gray'] 	= get_field('light_gray_color', 'option');
-	$vars['brand-white'] 	= get_field('whitish_color', 'option');
-	$vars['heading-font'] 	= '"'.get_field('heading_font', 'option')['font'].'"';
-	$vars['body-font'] 		= '"'.get_field('body_font', 	'option')['font'].'"';
-	$vars['serif-font'] 	= '"'.get_field('serif_font', 	'option')['font'].'"';
-	$vars['script-font'] 	= '"'.get_field('script_font', 	'option')['font'].'"';
+	$fonts = $defaults->get_fonts();
+	$colors = $defaults->get_colors();
+	$heading_font 	= get_theme_mod( 'heading-font', $fonts['heading-font'])['font-family'];
+	$body_font 		= get_theme_mod( 'body-font', $fonts['body-font'])['font-family'];
+	$serif_font 	= get_theme_mod( 'serif-font', $fonts['serif-font'])['font-family'];
+	$script_font 	= get_theme_mod( 'script-font', $fonts['script-font'])['font-family'];
+
+	$vars['brand-primary' ] 	= get_theme_mod('brand-primary', $colors['brand-primary']['value']);
+	$vars['brand-accent'] 		= get_theme_mod('accent-color', $colors['accent-color']['value']);
+	$vars['brand-contrast'] 	= get_theme_mod('contrast-color', $colors['contrast-color']['value']);
+	$vars['brand-light-gray'] 	= get_theme_mod('light-gray-color', $colors['light-gray-color']['value']);
+	$vars['brand-white'] 		= get_theme_mod('whitish-color', $colors['whitish-color']['value']);
+	$vars['heading-font'] 		= "'$heading_font''";
+	$vars['body-font'] 			= "'$body_font'";
+	$vars['serif-font'] 		= "'$serif_font'";
+	$vars['script-font'] 		= "'$script_font'";
 
 	return $vars;
 }
+
+
+
+/*
+ *  Footer Stuff
+ */
+
+Kirki::add_section( 'footer', array(
+	'title'          => __( 'Footer Menu' ),
+	'description'    => __( 'The stuff that goes in the site footer' ),
+	'priority'       => 16,
+	'capability'     => 'edit_theme_options',
+) );
+
+Kirki::add_field( 'config', array(
+	'type'        	=> 'repeater',
+	'label'       	=> esc_attr__( 'Footer Links', DOMAIN ),
+	'section'     	=> 'footer',
+	'priority'    	=> 10,
+	'settings'    	=> 'footer-links',
+	'transport' 	=> "postMessage",
+	'row_label'  	=> array (
+			'value' => 'Link'
+	),
+	'default'     => array(
+		array(
+			'text' => esc_attr__( 'Kirki Site', DOMAIN ),
+			'url'  => 'https://kirki.org',
+		),
+		array(
+			'text' => esc_attr__( 'Kirki Repository', DOMAIN ),
+			'url'  => 'https://github.com/aristath/kirki',
+		),
+	),
+	'fields' => array(
+		'text' => array(
+			'type'        => 'text',
+			'label'       => esc_attr__( 'Link Text', 'DOMAIN' ),
+			'description' => esc_attr__( 'This will be the label for your link', DOMAIN ),
+			'default'     => '',
+		),
+		'url' => array(
+			'type'        => 'text',
+			'label'       => esc_attr__( 'Link URL', 'DOMAIN' ),
+			'description' => esc_attr__( 'This will be the link URL', DOMAIN ),
+			'default'     => '',
+		),
+	)
+) );
+
+Kirki::add_field( 'facebook', array(
+	'type'     => 'text',
+	'settings' => 'facebook',
+	'label'    => __( 'Facebook Link', DOMAIN ),
+	'section'  => 'footer',
+	'default'  => esc_attr__( '', DOMAIN ),
+	'priority' => 10,
+) );
+
+Kirki::add_field( 'twitter', array(
+	'type'     => 'text',
+	'settings' => 'twitter',
+	'label'    => __( 'Twitter Link', DOMAIN ),
+	'section'  => 'footer',
+	'default'  => esc_attr__( '', DOMAIN ),
+	'priority' => 10,
+) );
+
+Kirki::add_field( 'linkedin', array(
+	'type'     => 'text',
+	'settings' => 'linkedin',
+	'label'    => __( 'Linkedin Link', DOMAIN ),
+	'section'  => 'footer',
+	'default'  => esc_attr__( '', DOMAIN ),
+	'priority' => 10,
+) );
