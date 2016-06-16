@@ -39,7 +39,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Contact Us",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -81,7 +81,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Reach out to us, we love to talk",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1
@@ -107,7 +107,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "info@example.com",
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -117,7 +117,7 @@
             "label": "Phone Number Display",
             "name": "phone_number_display",
             "type": "text",
-            "instructions": "i.e. +1(416)123-4567",
+            "instructions": "i.e. +1(1800)123-4567",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -125,7 +125,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "1(800)123-4567",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -154,7 +154,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "+18001234567",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -166,9 +166,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_type",
                 "operator": "==",
-                "value": "acf-options-contact"
+                "value": "front_page"
             }
         ]
     ],
@@ -180,5 +180,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1464338101
+    "modified": 1466034561
 }

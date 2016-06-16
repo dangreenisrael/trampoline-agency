@@ -36,7 +36,7 @@ include_once(get_stylesheet_directory() . '/acf/acf-image-crop-add-on-customized
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
-        'page_title' 	=> 'Home Page',
+        'page_title' 	=> 'Front Page Content',
         'menu_slug' 	=> 'home-page-options',
         'icon_url' 		=> 'dashicons-admin-home',
         'redirect'		=> true,
@@ -71,13 +71,5 @@ if( function_exists('acf_add_options_page') ) {
         'page_title' 	=> 'Contact',
         'menu_title' 	=> 'Contact',
         'parent_slug'	=> 'home-page-options',
-    ));
-    acf_add_options_page(array(
-        'page_title' 	=> 'Site Settings',
-        'menu_slug' 	=> 'site-general-settings',
-        'capability'	=> 'edit_posts',
-        'icon_url'		=> 'dashicons-admin-customizer',
-        'redirect'		=> false,
-        'position'		=> "3.02"
     ));
 }
