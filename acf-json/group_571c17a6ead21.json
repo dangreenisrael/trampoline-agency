@@ -16,7 +16,7 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 1
+            "default_value": 0
         },
         {
             "key": "field_571c17a97c81c",
@@ -83,7 +83,15 @@
             "type": "text",
             "instructions": "Text for the top nav menu",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571c17c47c81d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -104,7 +112,15 @@
             "type": "textarea",
             "instructions": "A blurb to have at the end of the team section",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571c17c47c81d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -124,15 +140,23 @@
             "name": "team_members",
             "type": "repeater",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571c17c47c81d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "collapsed": "field_571c185584cba",
-            "min": "",
+            "min": 1,
             "max": "",
             "layout": "block",
             "button_label": "Add Team Member",
@@ -307,19 +331,21 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf-options-team"
+                "value": "template-front.php"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 5,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1461895507
+    "modified": 1466182484
 }

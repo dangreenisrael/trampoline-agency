@@ -16,7 +16,7 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 1
+            "default_value": 0
         },
         {
             "key": "field_571d1f8d56951",
@@ -24,7 +24,7 @@
             "name": "contact_title",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -54,7 +54,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571d1fb256953",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -75,7 +83,15 @@
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571d1fb256953",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -92,7 +108,7 @@
             "name": "email",
             "type": "email",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -107,7 +123,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "info@example.com",
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -118,8 +134,16 @@
             "name": "phone_number_display",
             "type": "text",
             "instructions": "i.e. +1(1800)123-4567",
-            "required": 0,
-            "conditional_logic": 0,
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571d1fb256953",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -139,7 +163,7 @@
             "name": "phone_number_for_dialing",
             "type": "text",
             "instructions": "i.e. +14161234567",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -166,19 +190,21 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "front_page"
+                "value": "template-front.php"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 6,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1466034561
+    "modified": 1466182450
 }

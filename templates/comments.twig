@@ -1,0 +1,30 @@
+{% if post.comment_status != 'closed' %}
+	<hr>
+	<section class="comments-area panel panel-default">
+		<div class="panel-heading">
+			<h3>
+				Comments
+			</h3>
+		</div>
+		<div class="respond panel-body">
+			<div class="respond">
+				{{ fn('comment_form', formArgs) }}
+			</div>
+		</div>
+		<ul class="list-group">
+			{% for comment in post.get_comments() %}
+				<li class="list-group-item">
+					{% if comment.author.id == post.author.id %}
+						{% set author = "<i><small>Article Author</small></i>" %}
+					{% else %}
+						{% set author = null %}
+					{% endif %}
+					<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+						<h5 class="comment-author">{{ author }} {{comment.author.name}} says:</h5>
+						<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endif %}

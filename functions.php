@@ -127,6 +127,8 @@ add_action( 'manage_pages_custom_column', 'page_template_column_content', 10, 2 
 
 
 
+
+
 if ( ! function_exists( 'my_theme_kirki_update_url' ) ) {
 function my_theme_kirki_update_url( $config ) {
 	$config['url_path'] = get_stylesheet_directory_uri() . '/vendor/kirki/';

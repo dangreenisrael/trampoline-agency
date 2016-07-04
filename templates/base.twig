@@ -35,7 +35,7 @@
 			<div class="navbar-mobilized">
 				<ul class="nav navbar-nav navbar-right">
 					{% block menu_items %}
-						{% include "front-page/menu-items.twig" %}
+						{% include "menu-items.twig" %}
 						{% for item in menu.get_items %}
 							<li class="{{item.classes | join(' ')}}">
 								<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>

@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			{% include "front/hero.twig" %}
+			{% include "front/services.twig" %}
+			{% include "front/portfolio.twig" %}
+			{% include "front/timeline.twig" %}
+			{% include "front/team.twig" %}
+		</article>
+		{% include "front/contact.twig" %}
+	</div><!-- /content-wrapper -->
+{% endblock %}

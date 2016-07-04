@@ -1,18 +1,18 @@
-{% if option.show_timeline %}
+{% if page.show_timeline %}
     <section id="timeline" class="alternating-light-gray">
         <div class="container">
             <div class="row">
                 <header class="col-lg-12 text-center">
-                    <h2 class="section-heading">{{ option.timeline_title }}</h2>
-                    {% if option.timeline_subtitle%}
-                        <h3 class="section-subheading text-muted">{{ option.timeline_subtitle }}</h3>
+                    <h2 class="section-heading">{{ page.timeline_title }}</h2>
+                    {% if page.timeline_subtitle%}
+                        <h3 class="section-subheading text-muted">{{ page.timeline_subtitle }}</h3>
                     {% endif %}
                 </header>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        {% for timeline_item in option.timeline_items %}
+                        {% for timeline_item in page.timeline_items %}
                             {% if loop.index is even %}
                                 {% set timeline_class = "timeline-inverted" %}
                             {% endif %}
@@ -36,7 +36,7 @@
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>
-                                    {{ option.timeline_cta }}
+                                    {{ page.timeline_cta }}
                                 </h4>
                             </div>
                         </li>

@@ -16,7 +16,7 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 1
+            "default_value": 0
         },
         {
             "key": "field_571bd05a1b85f",
@@ -83,7 +83,15 @@
             "type": "text",
             "instructions": "Text for the top nav menu",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571bd0021b85e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -248,17 +256,19 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-timeline"
+                "value": ""
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 4,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1461895515
+    "modified": 1466182523
 }

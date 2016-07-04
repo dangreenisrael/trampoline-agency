@@ -1,16 +1,16 @@
-{% if option.show_services %}
+{% if page.show_services %}
     <section id="services" class="alternating-light-gray">
         <div class="container">
             <div class="row">
                 <header class="col-lg-12 text-center">
-                    <h2 class="section-heading">{{ option.services_title }}</h2>
-                    {% if  option.services_subtitle %}
-                        <h3 class="section-subheading text-muted">{{ option.services_subtitle }}</h3>
+                    <h2 class="section-heading">{{ page.services_title }}</h2>
+                    {% if  page.services_subtitle %}
+                        <h3 class="section-subheading text-muted">{{ page.services_subtitle }}</h3>
                     {% endif %}
                 </header>
             </div>
             <div class="row text-center">
-                {% for service in option.services %}
+                {% for service in page.services %}
                     {% if service.page %}
                         <a href="{{ service.page }}">
                     {% endif %}

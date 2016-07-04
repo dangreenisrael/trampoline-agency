@@ -1,9 +1,9 @@
 {
     "key": "group_572a7c65e5920",
-    "title": "Portfolio",
+    "title": "Portfolio Item",
     "fields": [
         {
-            "key": "field_572ba4e50a552__trashed",
+            "key": "field_572ba4e50a552",
             "label": "Client Site",
             "name": "client_site",
             "type": "url",
@@ -19,7 +19,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_572bdd60bc723__trashed",
+            "key": "field_572bdd60bc723",
             "label": "Menu Title",
             "name": "menu_title",
             "type": "text",
@@ -40,7 +40,7 @@
             "disabled": 0
         },
         {
-            "key": "field_572be378098c1__trashed",
+            "key": "field_572be378098c1",
             "label": "Subtitle",
             "name": "subtitle",
             "type": "text",
@@ -78,5 +78,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466041038
+    "modified": 1466080126
 }

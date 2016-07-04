@@ -1,0 +1,81 @@
+<li class="hidden">
+	<a href="/"></a>
+</li>
+{% if page.show_services %}
+	<li class="menu-item-has-children">
+		<a class="page-scroll" href="{{ menu_slash }}#services">
+			{{ page.services_menu_text }}
+			{% if not page.services_menu_text %}
+				{{page.services_title}}
+			{% endif %}
+		</a>
+		{% if page.service_links %}
+			<ul>
+				{% for item in page.services %}
+					{% if item.page %}
+						<li>
+							<a href="{{ item.page }}">
+								{{ item.name }}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</li>
+{% endif %}
+{% if page.show_portfolio %}
+	<li class="menu-item-has-children">
+		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
+			{{ page.portfolio_menu_text }}
+			{% if not page.portfolio_menu_text %}
+				{{page.portfolio_title}}
+			{% endif %}
+		</a>
+
+		{% if  portfolio_items %}
+			<ul>
+			{% for item in portfolio_items %}
+				<li>
+					<a href="{{ item | permalink }}">
+						{{ item.menu_title }}
+						{% if not item.menu_title %}
+							{{item.post_title}}
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	</li>
+{% endif %}
+{% if page.show_timeline %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#timeline">
+			{{ page.portfolio_menu_text }}
+			{% if not page.portfolio_menu_text %}
+				{{page.portfolio_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if page.show_team %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#team">
+			{{ page.team_menu_text }}
+			{% if not page.team_menu_text %}
+				{{page.team_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}
+{% if page.show_contact %}
+	<li>
+		<a class="page-scroll" href="{{ menu_slash }}#contact">
+			{{ page.contact_menu_text }}
+			{% if not page.contact_menu_text %}
+				{{page.contact_title}}
+			{% endif %}
+		</a>
+	</li>
+{% endif %}

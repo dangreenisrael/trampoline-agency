@@ -16,9 +16,10 @@
 
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-$templates = array( 'index.twig' );
+$templates = array( 'single.twig' );
 if ( is_home() ) {
-	array_unshift( $templates, 'home.twig' );
+	array_unshift( $templates, 'archive.twig' );
+	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
 }
 
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
