@@ -10,7 +10,7 @@
                 </header>
             </div>
             <div class="row text-center">
-                {% for service in page.services %}
+                {% for service in page.get_field('services') %}
                     {% if service.page %}
                         <a href="{{ service.page }}">
                     {% endif %}

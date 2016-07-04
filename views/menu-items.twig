@@ -1,13 +1,10 @@
 <li class="hidden">
 	<a href="/"></a>
 </li>
-{% if option.show_services %}
+{% if theme.theme_mods.menu_services %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#services">
-			{{ option.services_menu_text }}
-			{% if not option.services_menu_text %}
-				{{option.services_title}}
-			{% endif %}
+			{{__('Services', domain)}}
 		</a>
 		{% if option.service_links %}
 			<ul>
@@ -24,13 +21,10 @@
 		{% endif %}
 	</li>
 {% endif %}
-{% if option.show_portfolio %}
+{% if theme.theme_mods.menu_portfolio %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
-			{{ option.portfolio_menu_text }}
-			{% if not option.portfolio_menu_text %}
-				{{option.portfolio_title}}
-			{% endif %}
+			{{__('Portfolio', domain)}}
 		</a>
 
 		{% if  portfolio_items %}
@@ -49,33 +43,17 @@
 		{% endif %}
 	</li>
 {% endif %}
-{% if option.show_timeline %}
-	<li>
-		<a class="page-scroll" href="{{ menu_slash }}#timeline">
-			{{ option.portfolio_menu_text }}
-			{% if not option.portfolio_menu_text %}
-				{{option.portfolio_title}}
-			{% endif %}
-		</a>
-	</li>
-{% endif %}
-{% if option.show_team %}
+{% if theme.theme_mods.menu_team %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#team">
-			{{ option.team_menu_text }}
-			{% if not option.team_menu_text %}
-				{{option.team_title}}
-			{% endif %}
+			{{__('Team', domain)}}
 		</a>
 	</li>
 {% endif %}
-{% if option.show_contact %}
+{% if theme.theme_mods.menu_contact %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#contact">
-			{{ option.contact_menu_text }}
-			{% if not option.contact_menu_text %}
-				{{option.contact_title}}
-			{% endif %}
+			{{__('Contact', domain)}}
 		</a>
 	</li>
 {% endif %}

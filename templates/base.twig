@@ -12,11 +12,12 @@
 	{% set menu_slash = "/" %}
 {% endif %}
 
-{% if TimberImage(option.hero_image).src %}
-	{% set heroImage = TimberImage(option.hero_image).src %}
-{% else %}
-	{% set heroImage = site.theme.link~"/static/img/header-bg.jpg" %}
-{% endif %}
+{#{% if TimberImage(option.hero_image).src %}#}
+	{#{% set heroImage = TimberImage(option.hero_image).src %}#}
+{#{% else %}#}
+	{#{% set heroImage = site.theme.link~"/static/img/header-bg.jpg" %}#}
+{#{% endif %}#}
+
 <body class="{{body_class}} {{ white_header }}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">

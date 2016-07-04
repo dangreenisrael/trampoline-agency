@@ -9,6 +9,7 @@ require_once(__DIR__ . '/defaults.php');
 Timber::$dirname = array('templates', 'views');
 
 define('DOMAIN', 'agency-blog');
+
 class AgencySite extends TimberSite {
 	function __construct() {
 		add_theme_support( 'post-formats' );
@@ -30,6 +31,7 @@ class AgencySite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
+		$context['domain'] = DOMAIN;
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		$portfolio_items = get_pages(array(
@@ -44,12 +46,12 @@ class AgencySite extends TimberSite {
 			};
 		}
 		$context['option'] = get_fields('option');
-		$context['option']['service_links'] = $serviceLinks;
+//		$context['option']['service_links'] = $serviceLinks;
 		$context['portfolio_items'] = $portfolio_items;
 
-		if ($context['option']['cta_section_link'] != "other"){
-			$context['option']['hero_link'] = "#".$context['option']['cta_section_link'];
-		}
+//		if ($context['option']['cta_section_link'] != "other"){
+//			$context['option']['hero_link'] = "#".$context['option']['cta_section_link'];
+//		}
 		return $context;
 	}
 
@@ -178,7 +180,6 @@ foreach ($defaults->get_colors() as $color){
 	) );
 }
 
-
 // pass variables into all .less files
 add_filter( 'less_vars', 'my_less_vars', 10, 2 );
 function my_less_vars( $vars, $handle ) {
@@ -205,9 +206,56 @@ function my_less_vars( $vars, $handle ) {
 }
 
 
+/*
+ * Menu stuff
+ */
+
+Kirki::add_section( 'home-sections', array(
+	'title'          => __( 'Homepage Menu Links' ),
+	'description'    => __( 'These links to homepage sections will show in the main menu' ),
+	'priority'       => 200,
+	'capability'     => 'edit_theme_options',
+));
+
+Kirki::add_field( 'config', array(
+	'type'        	=> 'checkbox',
+	'section'		=> 'home-sections',
+	'settings'    	=> 'menu_services',
+	'label'       	=> __( 'Services', DOMAIN ),
+	'default'     	=> '0',
+	'priority'    	=> 10,
+));
+
+Kirki::add_field( 'config', array(
+	'type'        	=> 'checkbox',
+	'section'		=> 'home-sections',
+	'settings'    	=> 'menu_team',
+	'label'       	=> __( 'Team', DOMAIN ),
+	'default'     	=> '0',
+	'priority'    	=> 11,
+));
+
+Kirki::add_field( 'config', array(
+	'type'        	=> 'checkbox',
+	'section'		=> 'home-sections',
+	'settings'    	=> 'menu_portfolio',
+	'label'       	=> __( 'Portfolio', DOMAIN ),
+	'default'     	=> '0',
+	'priority'    	=> 12,
+));
+
+Kirki::add_field( 'config', array(
+	'type'        	=> 'checkbox',
+	'section'		=> 'home-sections',
+	'settings'    	=> 'menu_contact',
+	'label'       	=> __( 'Contact', DOMAIN ),
+	'default'     	=> '0',
+	'priority'    	=> 13,
+));
+
 
 /*
- *  Footer Stuff
+ * Footer Stuff
  */
 
 Kirki::add_section( 'footer', array(
@@ -229,11 +277,11 @@ Kirki::add_field( 'config', array(
 	),
 	'default'     => array(
 		array(
-			'text' => esc_attr__( 'Kirki Site', DOMAIN ),
+			'text' => esc_attr__( 'Site 1', DOMAIN ),
 			'url'  => 'https://kirki.org',
 		),
 		array(
-			'text' => esc_attr__( 'Kirki Repository', DOMAIN ),
+			'text' => esc_attr__( 'Site 2', DOMAIN ),
 			'url'  => 'https://github.com/aristath/kirki',
 		),
 	),
