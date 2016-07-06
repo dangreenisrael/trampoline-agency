@@ -1,8 +1,9 @@
 <header id="page-top" style="background-image: url({{ heroImage }})">
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">{{page.hero_lead_in}}</div>
+            <div class="intro-lead">{{page.hero_lead_in}}</div>
             <div class="intro-heading">{{page.hero_heading}}</div>
+            <div class="intro-lead">{{page.hero_lead_out}}</div>
             {% if page.show_hero_cta %}
                 <a href="#{{ page.cta_section_link }}" class="page-scroll btn btn-xl">{{page.hero_cta}}</a>
             {% endif %}

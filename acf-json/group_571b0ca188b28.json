@@ -77,6 +77,24 @@
             "disabled": 0
         },
         {
+            "key": "field_577d7708dae89",
+            "label": "Blurb",
+            "name": "services_blurb",
+            "type": "wysiwyg",
+            "instructions": "This is a great place for a blurb about who you are as a company",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 0
+        },
+        {
             "key": "field_571c5ae7458e0",
             "label": "Services Menu Text",
             "name": "services_menu_text",
@@ -866,5 +884,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466089839
+    "modified": 1467841035
 }
