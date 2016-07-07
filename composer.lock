@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "81248efca80f64ff11c4850e36587ec3",
-    "content-hash": "2390d89a003cc477e38022693d5036b8",
+    "hash": "df59943cc7a34ee56350262d5f9e10fd",
+    "content-hash": "5b579a21960995da3eb0e2c42cd3f5b7",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -322,16 +322,16 @@
         },
         {
             "name": "timber/timber",
-            "version": "1.1.0",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timber/timber.git",
-                "reference": "ba39c3824b77e3c4b352f71829e4a314e2af8a43"
+                "reference": "1d519f6eb75669f994407f0eeeabe0d2ea995066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/ba39c3824b77e3c4b352f71829e4a314e2af8a43",
-                "reference": "ba39c3824b77e3c4b352f71829e4a314e2af8a43",
+                "url": "https://api.github.com/repos/timber/timber/zipball/1d519f6eb75669f994407f0eeeabe0d2ea995066",
+                "reference": "1d519f6eb75669f994407f0eeeabe0d2ea995066",
                 "shasum": ""
             },
             "require": {
@@ -352,7 +352,10 @@
             "autoload": {
                 "psr-4": {
                     "Timber\\": "lib/"
-                }
+                },
+                "files": [
+                    "init.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -378,7 +381,7 @@
                 "timber",
                 "twig"
             ],
-            "time": "2016-07-05 23:33:53"
+            "time": "2016-06-21 22:45:40"
         },
         {
             "name": "twig/twig",
