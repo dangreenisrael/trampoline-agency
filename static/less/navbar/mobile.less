@@ -1,0 +1,111 @@
+
+.navbar-default {
+  background-color: @brand-darken;
+  border-color: transparent;
+  .navbar-brand {
+    color: @menu-text-color-scroll;
+    .script-font;
+    &:hover,
+    &:focus {
+      color: @menu-text-color-scroll;
+    }
+  }
+  .navbar-mobilized {
+    border-color: fade(@menu-text-color-scroll, 2%);
+  }
+  .nav {
+    li {
+      a {
+        .heading-font;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: @menu-text-color-scroll;
+      }
+    }
+  }
+
+  .navbar-nav > {
+    li {
+      a {
+        line-height: 0;
+
+      }
+    }
+  }
+
+}
+
+
+
+  #content{
+    margin-top: @navHeight;
+  }
+  .navbar-default{
+    background-color: @brand-primary;
+  }
+  .navbar-header{
+    width: 100%;
+    background-color: @brand-primary;
+    .navbar-toggle {
+      display: block;
+      background-color: @contrast-color;
+      border-color: @contrast-color;
+      margin-right: -15px;
+      float:right;
+      .icon-bar {
+        background-color: @menu-text-color-scroll;
+      }
+      &:hover,
+      &:focus {
+        background-color: @contrast-color;
+      }
+    }
+  }
+  .navbar-mobilized{
+    a.active {
+      border-bottom: 2px solid @accent-color;
+    }
+    background-color: @brand-primary;
+    margin-top: @navHeight;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    position: absolute;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+
+    >ul.navbar-nav{
+      width: 100vw;
+      padding: 15px;
+      margin: 0;
+      .page-scroll, .active>a{
+        background: none!important;
+        color: @menu-text-color-scroll!important;
+      }
+      li{
+        a{
+          padding: 15px 10px;
+          display: inline-block;
+          font-size: 1.2em;
+          text-decoration: none;
+        }
+        float: none;
+      }
+      ul{
+        float: none!important;
+        margin: 0;
+      }
+    }
+
+    .transition(ease transform 0.5s);
+
+    &.show{
+      transform: rotateX(0);
+      .backdrop{
+
+      }
+    }
+  }
+

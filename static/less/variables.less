@@ -1,11 +1,9 @@
 // Variables
 
-
 @brand-darken: darken(@brand-primary, 0%);
 @brand-danger: #e74c3c; // This is the color of error messages
 @gray-darkest: lighten(#131317, 10%); // This is the color instead of black #131317 (Adobe Stock)
 @gray: #777; // This is the color of subheadings
-@gray-lighter: @brand-light-gray; // This is the color of grey background areas
 @placeholder-text: #bbbbbb; // This is the color of placeholder text
 @selection-color: lightblue;
 
@@ -18,6 +16,10 @@
 
 .heading-font() {
   font-family: @heading-font, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.hero-font() {
+  font-family:  @hero-font, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 

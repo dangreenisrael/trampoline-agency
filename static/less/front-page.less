@@ -54,25 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 auto;
 }
 
-.bg-light-gray {
-	background-color: @gray-lighter;
-}
-
-.bg-darkest-gray {
-	background-color: @gray-darkest;
-}
-
-.alternating-light-gray:nth-of-type(even){
-	background-color: @gray-lighter;
-	.alternating-border{
-		border-color: @brand-white;
-	}
-}
 .alternating-light-gray:nth-of-type(odd){
-	background-color: @brand-white;
-	.alternating-border{
-		border-color: @gray-lighter;
-	}
+	background-color: @background-primary-color;
+}
+.alternating-light-gray:nth-of-type(even){
+	background-color: @background-secondary-color;
 }
 
 .verticallyCenter{
@@ -86,13 +72,13 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-	.button-variant(@brand-white; @brand-contrast; @brand-contrast);
+	.button-variant(@whitish-color; @contrast-color; @contrast-color);
 	.heading-font;
 	font-weight: 700;
 }
 
 .btn-xl {
-	.button-variant(@brand-white; @brand-contrast; @brand-contrast);
+	.button-variant(@whitish-color; @contrast-color; @contrast-color);
 	.heading-font;
 	font-weight: 700;
 	border-radius: 3px;
@@ -101,11 +87,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-header#page-top {
+header#hero {
 	.background-cover;
+	background-position-y: 0;
 	//.vertically-center;
 	text-align: center;
-	color: @brand-white;
+	color: @hero-color;
 	.btn{
 		margin-top: 40px;
 	}
@@ -119,7 +106,7 @@ header#page-top {
 			margin-bottom: 0;
 		}
 		.intro-heading {
-			.heading-font;
+			.hero-font;
 			font-weight: 700;
 			font-size: 50px;
 			line-height: 50px;
@@ -129,17 +116,15 @@ header#page-top {
 }
 
 @media(min-width:768px) {
-	header#page-top {
+	header#hero {
 		.intro-text {
 			padding-top: 200px;
 			padding-bottom: 200px;
 			.intro-lead-in {
-				.serif-font;
 				font-size: 50px;
 				line-height: 50px;
 			}
 			.intro-heading {
-				.heading-font;
 				font-size: 75px;
 				line-height: 75px;
 			}
@@ -233,7 +218,7 @@ section {
                     text-align: center;
                     top: 50%;
                     margin-top: -12px;
-                    color: @brand-white;
+                    color: @whitish-color;
                     i {
                         margin-top: -12px;
                     }
@@ -247,7 +232,7 @@ section {
         .portfolio-caption {
         	max-width: 400px;
         	margin: 0 auto;
-        	background-color: @brand-white;
+        	background-color: @whitish-color;
         	text-align: center;
         	padding: 25px;
         	h4 {
@@ -330,7 +315,7 @@ section {
             position: absolute;
             z-index: 100;
             background-color: @brand-primary;
-            color: @brand-white;
+            color: @whitish-color;
             border-radius: 100%;
             border: 7px solid #f1f1f1;
             text-align: center;
@@ -495,76 +480,3 @@ aside.clients {
 .btn:active:focus {
 	outline: none;
 }
-
-//.portfolio-modal {
-//	.modal-content {
-//	    border-radius: 0;
-//	    background-clip: border-box;
-//	    -webkit-box-shadow: none;
-//	    box-shadow: none;
-//	    border: none;
-//	    min-height: 100%;
-//	    padding: 100px 0;
-//	    text-align: center;
-//		h2 {
-//	    	margin-bottom: 15px;
-//	    	font-size: 3em;
-//		}
-//		p {
-//			margin-bottom: 30px;
-//		}
-//		p.item-intro {
-//			margin: 20px 0 30px;
-//			.serif-font;
-//			font-style: italic;
-//			font-size: 16px;
-//		}
-//		ul.list-inline {
-//			margin-bottom: 30px;
-//			margin-top: 0;
-//		}
-//		img {
-//			margin-bottom: 30px;
-//		}
-//	}
-//    .close-modal {
-//        position: absolute;
-//        width:75px;
-//        height:75px;
-//        background-color:transparent;
-//        top: 25px;
-//        right: 25px;
-//        cursor: pointer;
-//        &:hover {
-//            opacity: 0.3;
-//        }
-//        .lr {
-//            height:75px;
-//            width:1px;
-//            margin-left:35px;
-//            background-color:@gray-darkest;
-//            transform: rotate(45deg);
-//            -ms-transform: rotate(45deg);
-//            /* IE 9 */
-//            -webkit-transform: rotate(45deg);
-//            /* Safari and Chrome */
-//            z-index:1051;
-//            .rl {
-//                height:75px;
-//                width:1px;
-//                background-color:@gray-darkest;
-//                transform: rotate(90deg);
-//                -ms-transform: rotate(90deg);
-//                /* IE 9 */
-//                -webkit-transform: rotate(90deg);
-//                /* Safari and Chrome */
-//                z-index:1052;
-//            }
-//        }
-//    }
-//    .modal-backdrop {
-//    	opacity: 0;
-//    	display: none;
-//    }
-//}
-

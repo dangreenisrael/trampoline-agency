@@ -6,7 +6,7 @@
  * Date: 15/06/2016
  * Time: 14:13
  */
-class Defaults
+class CustomizerDefaults
 {
     protected $fonts;
     protected $colors;
@@ -17,25 +17,31 @@ class Defaults
             'heading-font'=>
                 array(
                     'slug'			=> 'heading-font',
-                    'label'		=> 'Heading Font',
+                    'label'		    => 'Heading Font',
+                    'font-family' 	=> 'Open Sans'
+                ),
+            'hero-font'=>
+                array(
+                    'slug'			=> 'hero-font',
+                    'label'		    => 'Hero Font',
                     'font-family' 	=> 'Open Sans'
                 ),
             'body-font'=>
                 array(
                     'slug'			=> 'body-font',
-                    'label'		=> 'Body Font',
+                    'label'		    => 'Body Font',
                     'font-family'	=> 'Open Sans'
                 ),
             'serif-font' =>
                 array(
                     'slug'			=> 'serif-font',
-                    'label'		=> 'Serif Font',
+                    'label'		    => 'Serif Font',
                     'font-family'	=> 'Droid Serif'
                 ),
             'script-font'=>
                 array(
                     'slug'			=> 'script-font',
-                    'label'		=> 'Script Font',
+                    'label'		    => 'Script Font',
                     'font-family'	=> 'Lobster Two'
                 )
         );
@@ -59,18 +65,51 @@ class Defaults
                     'label' => 'Contrast Color',
                     'value' => '#fc4349'
                 ),
-            'light-gray-color'=>
-                array(
-                    'slug'  => 'light-gray-color',
-                    'label' => 'Light Gray Color',
-                    'value' => '#f8fbfc'
-                ),
             'whitish-color' =>
                 array(
                     'slug'  => 'whitish-color',
                     'label' => 'Whitish Color',
                     'value' => '#ffffff'
-                )
+                ),
+            'background-primary-color' =>
+                array(
+                    'slug'  => 'background-primary-color',
+                    'label' => 'Primary background color',
+                    'value' => '#ffffff'
+                ),
+            'background-secondary-color' =>
+                array(
+                    'slug'  => 'background-secondary-color',
+                    'label' => 'Secondary background Color',
+                    'value' => '#cecece'
+                ),
+            'logo-color' =>
+                array(
+                    'slug'  => 'logo-color',
+                    'label' => 'Logo Color',
+                    'value' => '#ffffff'
+                ),
+            'hero-color' =>
+                array(
+                    'slug'  => 'hero-color',
+                    'label' => 'Hero Color',
+                    'value' => '#ffffff'
+                ),
+            'menu-text-color-top' =>
+                array(
+                    'slug'  => 'menu-text-color-top',
+                    'label' => 'Menu Text Color (without background color)',
+                    'value' => '#000000'
+                ),
+            'menu-text-color-scroll' =>
+                array(
+                    'slug'  => 'menu-text-color-scroll',
+                    'label' => 'Menu Text Color (with background color)',
+                    'value' => '#ffffff'
+                ),
+
+
+
         );
     }
 

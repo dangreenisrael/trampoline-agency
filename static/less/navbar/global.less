@@ -1,0 +1,17 @@
+
+/* Nav */
+
+@navHeight: 50px;
+#nav-main {
+  height: @navHeight;
+  z-index: 9999;
+}
+
+
+@media(min-width:1100px) {
+  @import "desktop.less";
+}
+
+@media (max-width: 1099px) {
+  @import "mobile.less";
+}

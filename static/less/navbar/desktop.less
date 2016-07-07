@@ -1,0 +1,85 @@
+#nav-main{
+  a{
+    .heading-font;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1em;
+    .heading-font;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 10px 5px;
+    margin: 8px 5px;
+  }
+  &.navbar-shrink, &:hover{
+    a{
+      color: @menu-text-color-scroll!important;
+    }
+  }
+  &:not(.navbar-shrink):not(:hover){
+    a{
+      color: @menu-text-color-top!important;
+    }
+    a.navbar-brand{
+      color: @logo-color!important;
+    }
+  }
+  .navbar-brand {
+    .script-font;
+  }
+}
+
+
+.navbar-default {
+  background: none;
+  .transition(background-color 0.5s);
+  border: none;
+
+  ul.navbar-nav{
+    li a{
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    .menu-item-has-children{
+      ul{
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transform-origin: 0 0;
+        transform: rotateX(-90deg);
+        backface-visibility: hidden;
+        background-color: @brand-darken;
+        list-style: none;
+        padding: 5px 20px 15px 0;
+        white-space: nowrap;
+        position: absolute;
+        right: -15px;
+        text-align: right;
+        .transition(ease transform 0.3s);
+        li{
+          padding: 5px 10px;
+          margin-right:-20px;
+        }
+      }
+      &:hover ul{
+        transform: rotateX(0deg);
+      }
+    }
+  }
+}
+
+.white-header .navbar-default,
+.navbar-default.navbar-shrink,
+.navbar-default:hover
+{
+  background-color: @brand-darken;
+  .navbar-nav>.active>a, .navbar-nav>.current-menu-item>a {
+    border-radius: 5px;
+    background-color: @contrast-color;
+  }
+  .navbar-nav>.current-menu-item>a:hover,
+  .navbar-nav>.current-menu-item>a:focus,
+  .navbar-nav>.active>a:hover,
+  .navbar-nav>.active>a:focus {
+    background-color: @contrast-color;
+  }
+}
+
