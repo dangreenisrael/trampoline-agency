@@ -1,6 +1,6 @@
 <?php
-update_option('siteurl','http://trampolinedigital.com');
-update_option('home','http://trampolinedigital.com');
+update_option('siteurl','http://dev.trampolinedigital.com');
+update_option('home','http://dev.trampolinedigital.com');
 define('DOMAIN', 'agency-blog');
 
 require_once(__DIR__ . "/acf/fields.php");
