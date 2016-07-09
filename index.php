@@ -14,8 +14,8 @@
  */
 
 
-$context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
+$context = Timber\Timber::get_context();
+$context['posts'] = Timber\Timber::get_posts();
 $templates = array( 'single.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'archive.twig' );
@@ -25,4 +25,4 @@ if ( is_home() ) {
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
 wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
-Timber::render( $templates, $context );
+Timber\Timber::render( $templates, $context );
