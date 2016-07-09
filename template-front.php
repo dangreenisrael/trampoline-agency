@@ -3,8 +3,8 @@
  * Template Name: Front Page
  */
 // Code to display Page goes here...
-$context = Timber::get_context();
-$page = new TimberPost();
+$context = Timber\Timber::get_context();
+$page = new Timber\Post();
 $context['page'] = $page;
 $context['isFrontPage'] = true;
 
@@ -17,4 +17,4 @@ if (!$context['heroImage']){
     $context['heroImage'] = get_stylesheet_directory_uri()."/static/img/header-bg.jpg";
 }
 
-Timber::render('front.twig', $context );
+Timber\Timber::render('front.twig', $context );

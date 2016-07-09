@@ -9,8 +9,8 @@
  * @since    Timber 0.1
  */
 
-$context = Timber::get_context();
-$post = Timber::query_post();
+$context = Timber\Timber::get_context();
+$post = Timber\Timber::query_post();
 $context['post'] = $post;
 if (has_post_thumbnail($post)){
 	$context['background'] = "background-image: url(".get_the_post_thumbnail_url().")";
@@ -22,7 +22,7 @@ wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/globa
 wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
 if ( post_password_required( $post->ID ) ) {
-	Timber::render( 'single-password.twig', $context );
+	Timber\Timber::render( 'single-password.twig', $context );
 } else {
-	Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
+	Timber\Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
 }

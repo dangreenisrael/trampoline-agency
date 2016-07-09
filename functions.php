@@ -8,9 +8,9 @@ require_once(__DIR__ . '/vendor/kirki/kirki.php' );
 require_once(__DIR__ . '/customizer-defaults.php');
 require_once(__DIR__ . '/customizer.php');
 
-Timber::$dirname = array('templates', 'views');
+Timber\Timber::$dirname = array('templates', 'views');
 
-class AgencySite extends TimberSite {
+class AgencySite extends Timber\Site {
 	function __construct() {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
@@ -32,7 +32,7 @@ class AgencySite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['domain'] = DOMAIN;
-		$context['menu'] = new TimberMenu();
+		$context['menu'] = new Timber\Menu();
 		$context['site'] = $this;
 		$context['portfolio_items'] = get_pages(array(
 			'meta_key' => '_wp_page_template',

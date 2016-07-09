@@ -16,7 +16,7 @@
 
 $templates = array( 'archive.twig', 'index.twig' );
 
-$context = Timber::get_context();
+$context = Timber\Timber::get_context();
 
 $context['title'] = 'Archive';
 if ( is_day() ) {
@@ -35,11 +35,11 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
-$context['posts'] = Timber::get_posts();
+$context['posts'] = Timber\Timber::get_posts();
 
 $context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
 
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
 wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
-Timber::render( $templates, $context );
+Timber\Timber::render( $templates, $context );

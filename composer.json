@@ -28,7 +28,7 @@
   	}
 	},
   "require": {
-    "timber/timber"  : "1.0.5",
+    "timber/timber"  : "^1.0.5",
     "icit/wp-less"   : "dev-master",
     "aristath/kirki" : "2.3.2"
   }
