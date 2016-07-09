@@ -10,9 +10,6 @@ require_once(__DIR__ . '/customizer.php');
 
 Timber::$dirname = array('templates', 'views');
 
-update_option('siteurl','http://dev.trampolinedigital.com');
-update_option('home','http://dev.trampolinedigital.com');
-
 class AgencySite extends TimberSite {
 	function __construct() {
 		add_theme_support( 'post-formats' );
