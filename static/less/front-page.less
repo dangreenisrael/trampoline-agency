@@ -45,10 +45,6 @@ a.active {
 	color: darken(@brand-primary, 10%);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	.heading-font;
-	font-weight: 700;
-}
 
 .img-centered {
 	margin: 0 auto;
@@ -84,6 +80,9 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 3px;
 	font-size: 18px;
 	padding: 20px 40px;
+	@media (max-width: 760px) {
+		padding: 20px;
+	}
 }
 
 

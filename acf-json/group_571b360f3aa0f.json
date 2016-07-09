@@ -48,35 +48,6 @@
             "disabled": 0
         },
         {
-            "key": "field_571c5aaa87c21",
-            "label": "Portfolio Menu Text",
-            "name": "portfolio_menu_text",
-            "type": "text",
-            "instructions": "Text for the top nav menu",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_571b36afb6784",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_571b364ab6783",
             "label": "Portfolio Subtitle",
             "name": "portfolio_subtitle",
@@ -125,5 +96,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1466089858
+    "modified": 1468079536
 }

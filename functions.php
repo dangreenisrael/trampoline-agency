@@ -1,4 +1,6 @@
 <?php
+update_option('siteurl','http://dev.trampolinedigital.com');
+update_option('home','http://dev.trampolinedigital.com');
 define('DOMAIN', 'agency-blog');
 
 require_once(__DIR__ . "/acf/fields.php");
@@ -10,6 +12,8 @@ require_once(__DIR__ . '/customizer.php');
 
 Timber::$dirname = array('templates', 'views');
 
+update_option('siteurl','http://dev.trampolinedigital.com');
+update_option('home','http://dev.trampolinedigital.com');
 
 class AgencySite extends TimberSite {
 	function __construct() {
@@ -35,9 +39,13 @@ class AgencySite extends TimberSite {
 		$context['domain'] = DOMAIN;
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
-		$portfolio_items = get_pages(array(
+		$context['portfolio_items'] = get_pages(array(
 			'meta_key' => '_wp_page_template',
 			'meta_value' => 'template-portfolio.php'
+		));
+		$context['service_items'] = get_pages(array(
+			'meta_key' => '_wp_page_template',
+			'meta_value' => 'template-service.php'
 		));
 		$serviceLinks = false;
 		if (@get_fields('option')['services']){
@@ -46,13 +54,7 @@ class AgencySite extends TimberSite {
 				break;
 			};
 		}
-		$context['option'] = get_fields('option');
-//		$context['option']['service_links'] = $serviceLinks;
-		$context['portfolio_items'] = $portfolio_items;
 
-//		if ($context['option']['cta_section_link'] != "other"){
-//			$context['option']['hero_link'] = "#".$context['option']['cta_section_link'];
-//		}
 		return $context;
 	}
 

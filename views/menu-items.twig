@@ -6,16 +6,17 @@
 		<a class="page-scroll" href="{{ menu_slash }}#services">
 			{{__('Services', domain)}}
 		</a>
-		{% if option.service_links %}
+		{% if  service_items %}
 			<ul>
-				{% for item in option.services %}
-					{% if item.page %}
-						<li>
-							<a href="{{ item.page }}">
-								{{ item.name }}
-							</a>
-						</li>
-					{% endif %}
+				{% for item in service_items %}
+					<li>
+						<a href="{{ item | permalink }}">
+							{{ item.menu_title }}
+							{% if not item.menu_title %}
+								{{item.post_title}}
+							{% endif %}
+						</a>
+					</li>
 				{% endfor %}
 			</ul>
 		{% endif %}
@@ -26,7 +27,6 @@
 		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
 			{{__('Portfolio', domain)}}
 		</a>
-
 		{% if  portfolio_items %}
 			<ul>
 			{% for item in portfolio_items %}

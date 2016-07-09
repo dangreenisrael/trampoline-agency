@@ -17,7 +17,4 @@ if (!$context['heroImage']){
     $context['heroImage'] = get_stylesheet_directory_uri()."/static/img/header-bg.jpg";
 }
 
-//<!--{% set heroImage = site.theme.link~"/static/img/header-bg.jpg" %}-->
-
-
 Timber::render('front.twig', $context );

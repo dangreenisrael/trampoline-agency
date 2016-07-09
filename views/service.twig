@@ -1,8 +1,5 @@
 {% extends "base.twig" %}
 
-{#{% block head %}#}
-	{#<link href="{{site.theme.link}}/static/css/internal.css" rel="stylesheet">#}
-{#{% endblock %}#}
 {% block content %}
 	<!-- Page Header -->
 	<header class="intro-header" style="">
@@ -11,12 +8,12 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="page-heading">
 						<h1>
-							{{page.title}}
+							{{service.title}}
 						</h1>
-						{% if page.subtitle %}
+						{% if service.subtitle %}
 							<hr class="small">
 							<span class="meta">
-								{{ page.subtitle }}
+								{{ service.subtitle }}
 							</span>
 						{% endif %}
 					</div>
@@ -32,7 +29,7 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 					{{ TimberImage(post.gallery[1]) }}
-					{{page.content}}
+					{{service.content}}
 				</div>
 			</div>
 		</div>

@@ -14,7 +14,7 @@
                 <!--googleoff: all-->
                 {% for item in portfolio_items %}
                     <div class="{{ loop.length | bootstrapCol }} portfolio-item">
-                        <a href="{{ item | permalink }}" class="portfolio-link" data-toggle="modal">
+                        <a href="{{ item | permalink }}" class="portfolio-link">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
@@ -23,8 +23,8 @@
                             <img src="{{item|thumbnail}}" class="img-responsive" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
                         </a>
                     </div>
-                    <!--googleon: all-->
                 {% endfor %}
+                <!--googleon: all-->
             </div>
         </div>
     </section>

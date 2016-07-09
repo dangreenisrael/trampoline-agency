@@ -1,8 +1,5 @@
 {% extends "base.twig" %}
 
-{% block head %}
-	<link href="{{site.theme.link}}/static/css/internal.css" rel="stylesheet">
-{% endblock %}
 {% block content %}
 
 	<!-- Page Header -->
@@ -30,7 +27,7 @@
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
 							{% if page.client_site %}
-								<a href="{{ page.client_site }}">
+								<a href="{{ page.client_site }}" target="_blank">
 									<img src="{{page.thumbnail.src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
 								</a>
 							{% else %}
@@ -42,5 +39,5 @@
 				</div>
 			</div>
 	</article>
-	<hr>
+	{% include "contact.twig" %}
 {% endblock %}

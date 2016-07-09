@@ -28,6 +28,7 @@ Kirki::add_section( 'typography', array(
     'capability'     => 'edit_theme_options',
 ) );
 
+
 $defaults = new CustomizerDefaults();
 
 foreach ($defaults->get_fonts() as $font){
@@ -178,3 +179,55 @@ Kirki::add_field( 'linkedin', array(
     'default'  => esc_attr__( '', DOMAIN ),
     'priority' => 10,
 ) );
+
+
+
+Kirki::add_section( 'contact', array(
+    'title'          => __( 'Contact Area' ),
+    'description'    => __( 'Set the info for the contact area' ),
+    'priority'       => 1,
+    'capability'     => 'edit_theme_options',
+) );
+
+Kirki::add_field( 'contact_title', array(
+    'type'     => 'text',
+    'settings' => 'contact_title',
+    'label'    => __( 'Contact Area Title', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( '', DOMAIN ),
+    'priority' => 5,
+) );
+Kirki::add_field( 'contact_blurb', array(
+    'type'     => 'text',
+    'settings' => 'contact_blurb',
+    'label'    => __( 'Contact Area Blurb', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( '', DOMAIN ),
+    'priority' => 5,
+) );
+Kirki::add_field( 'public_phone_number_display', array(
+    'type'     => 'text',
+    'settings' => 'public_phone_number_display',
+    'label'    => __( 'Publicly Visible Display Number (1-800-123-4567)', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( '', DOMAIN ),
+    'priority' => 5,
+) );
+Kirki::add_field( 'public_phone_number_for_dialing', array(
+    'type'     => 'text',
+    'settings' => 'public_phone_number_for_dialing',
+    'label'    => __( 'Publicly Visible Actual Number (18001234567)', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( '', DOMAIN ),
+    'priority' => 5,
+) );
+
+Kirki::add_field( 'public_email', array(
+    'type'     => 'text',
+    'settings' => 'public_email',
+    'label'    => __( 'Publicly Visible Contact Email', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( '', DOMAIN ),
+    'priority' => 5,
+) );
+

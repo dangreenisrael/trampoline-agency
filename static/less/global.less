@@ -1,7 +1,7 @@
 @import "variables.less";
 @import "mixins.less";
 @import "navbar/global.less";
-
+@import "contact.less";
 
 /* Global Styles */
 p {
@@ -43,6 +43,13 @@ a:active,
 a:active *:not(.fa){
   //color: @brand-darken!important;
 }
+
+
+h1, h2, h3 {
+  .heading-font;
+  font-weight: 700;
+}
+
 
 hr.small {
   max-width: 100px;
@@ -112,24 +119,7 @@ ul.social-buttons {
 
 
 
-// Contact Section
 
-section#contact {
-  background-color: @brand-primary;
-  .section-heading, i, .section-subheading, a, p {
-    color: @whitish-color;
-  }
-  a{
-    border-bottom: 3px solid @contrast-color;
-    word-break: break-all;
-  }
-  a:hover{
-    text-decoration: none;
-    border-bottom: 3px solid lighten(@contrast-color, 20%);
-
-  }
-  text-align: center;
-}
 
 
 /* Bootstrap Callouts */

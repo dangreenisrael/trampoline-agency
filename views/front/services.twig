@@ -14,26 +14,24 @@
                     {{page.get_field('services_blurb')}}
                 </div>
             </div>
+
             <div class="row text-center">
-                {% for service in page.get_field('services') %}
-                    {% if service.page %}
-                        <a href="{{ service.page }}">
-                    {% endif %}
-                    <div class="{{ loop.length|bootstrapCol }}">
-                                <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa {{ service.icon }} fa-stack-1x fa-inverse"></i>
-                                </span>
-                        <h3 class="service-heading">
-                            {{ service.name }}
-                        </h3>
-                        <p class="text-muted">
-                            {{ service.description }}
-                        </p>
-                    </div>
-                    {% if service.page %}
-                        </a>
-                    {% endif %}
+                {% for service in service_items %}
+                    <a href="{{ item | permalink }}">
+                        <div class="{{ loop.length|bootstrapCol }}">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa {{ service.icon }} fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h3 class="service-heading">
+                                {{ service.post_title }}
+                            </h3>
+
+                            <p>
+                                {{ service.blurb }}
+                            </p>
+                        </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>

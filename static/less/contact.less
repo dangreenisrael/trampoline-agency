@@ -1,0 +1,29 @@
+// Contact Section
+
+section#contact {
+  background-color: @brand-primary;
+  .section-heading, i, .section-subheading, a, p {
+    color: @whitish-color;
+  }
+  a{
+    border-bottom: 3px solid @contrast-color;
+    word-break: break-all;
+  }
+  a:hover{
+    text-decoration: none;
+    border-bottom: 3px solid lighten(@contrast-color, 20%);
+
+  }
+  text-align: center;
+}
+
+body:not(.home){
+  section#contact{
+    margin-top: 100px;
+    padding: 60px 0;
+    .section-heading{
+      margin-top:0;
+      text-transform: uppercase;
+    }
+  }
+}

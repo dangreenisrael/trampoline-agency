@@ -1,6 +1,6 @@
 {
     "key": "group_571b0c6c45309",
-    "title": "Hero Settings",
+    "title": "Hero",
     "fields": [
         {
             "key": "field_571b02aa2a869",
@@ -210,5 +210,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1467839899
+    "modified": 1468077186
 }
