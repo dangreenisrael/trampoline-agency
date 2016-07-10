@@ -10,7 +10,7 @@
                 </header>
             </div>
             <div class="row">
-                {% for team_member in page.get_field('team_members') %}
+                {% for team_member in team_members %}
                     <div class="{{ loop.length|bootstrapCol }}">
                         <div class="team-member">
                             <img src="{{ TimberImage(team_member.picture).src }}" class="img-responsive img-circle" alt="Profile picture for {{ team_member.name }}">

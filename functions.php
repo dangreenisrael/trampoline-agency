@@ -42,13 +42,6 @@ class AgencySite extends Timber\Site {
 			'meta_key' => '_wp_page_template',
 			'meta_value' => 'template-service.php'
 		));
-		$serviceLinks = false;
-		if (@get_fields('option')['services']){
-			foreach (get_fields('option')['services'] as $service){
-				if ($service['page']) $serviceLinks = true;
-				break;
-			};
-		}
 
 		return $context;
 	}
