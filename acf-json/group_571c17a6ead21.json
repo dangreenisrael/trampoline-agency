@@ -80,8 +80,8 @@
             "key": "field_571c1ed77dc20",
             "label": "Team Blurb",
             "name": "team_blurb",
-            "type": "textarea",
-            "instructions": "A blurb to have at the end of the team section",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
@@ -98,12 +98,9 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": "wpautop",
-            "readonly": 0,
-            "disabled": 0
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 1
         },
         {
             "key": "field_571c181d84cb9",
@@ -318,5 +315,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468124216
+    "modified": 1468437227
 }

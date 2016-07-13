@@ -90,7 +90,7 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
+            "tabs": "visual",
             "toolbar": "full",
             "media_upload": 1
         }
@@ -114,5 +114,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468435688
+    "modified": 1468437203
 }
