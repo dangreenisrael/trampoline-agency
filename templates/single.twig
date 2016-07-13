@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	{% set backgroundImageURL = heroImage %}
@@ -14,7 +13,7 @@
 							{{post.title}}
 						</h1>
 						<hr class="small">
-						<span class="meta">By <a href="{{post.author.path}}"> {{ post.author.name }} </a> on {{ post.post_date|date}}</span>
+						<span class="meta">By {#<a href="{{post.author.path}}">#} {{ post.author.name }} on {{ post.post_date|date}}</span>
 					</div>
 				</div>
 			</div>
