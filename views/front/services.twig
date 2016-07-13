@@ -10,13 +10,12 @@
                 </header>
             </div>
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                <div class="col-lg-8 col-lg-offset-2">
                     <p>
                         {{page.get_field('services_blurb')}}
                     </p>
                 </div>
             </div>
-
             <div class="row text-center">
                 {% for service in service_items %}
                     <a href="{{ service | permalink }}">

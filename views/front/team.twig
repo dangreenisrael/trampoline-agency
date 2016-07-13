@@ -10,6 +10,13 @@
                 </header>
             </div>
             <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 ">
+                    <p>
+                        {{page.get_field('team_blurb')}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
                 {% for team_member in team_members %}
                     <div class="{{ loop.length|bootstrapCol }}">
                         <div class="team-member">

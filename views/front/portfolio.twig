@@ -9,7 +9,13 @@
                     {% endif %}
                 </header>
             </div>
-
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 ">
+                    <p>
+                        {{page.get_field('portfolio_blurb')}}
+                    </p>
+                </div>
+            </div>
             <div class="row">
                 <!--googleoff: all-->
                 {% for item in portfolio_items %}
