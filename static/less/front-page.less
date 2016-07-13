@@ -65,26 +65,6 @@ a.active {
 	transform: translateY(-50%);
 }
 
-// Restyled Primary Buttons
-
-.btn-primary {
-	.button-variant(@whitish-color; @contrast-color; @contrast-color);
-	.heading-font;
-	font-weight: 700;
-}
-
-.btn-xl {
-	.button-variant(@whitish-color; @contrast-color; @contrast-color);
-	.heading-font;
-	font-weight: 700;
-	border-radius: 3px;
-	font-size: 18px;
-	padding: 20px 40px;
-	@media (max-width: 760px) {
-		padding: 20px;
-	}
-}
-
 
 header#hero {
 	.background-cover;
@@ -151,13 +131,12 @@ section {
 			font-style: italic;
 			font-weight: 400;
 		}
-		@media (max-width: 767px) {
-			margin-bottom: 30px;
-		}
+		
 	}
     padding: 20px 0;
 	.row{
-		margin: 20px 0;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 	@media(max-width: 767px) {
 		padding: 30px 0;
@@ -477,9 +456,3 @@ aside.clients {
 
 
 
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn:active:focus {
-	outline: none;
-}

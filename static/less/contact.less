@@ -2,6 +2,10 @@
 
 section#contact {
   background-color: @brand-primary;
+  text-align: center;
+  h2{
+    margin-top: 0;
+  }
   .section-heading, i, .section-subheading, a, p {
     color: @whitish-color;
   }
@@ -14,12 +18,17 @@ section#contact {
     border-bottom: 3px solid lighten(@contrast-color, 20%);
 
   }
-  text-align: center;
+  .show-mobile{
+    span{
+      text-align: center;
+      font-size: 1.2em;
+    }
+  }
 }
 
 body:not(.home){
   section#contact{
-    margin-top: 100px;
+    margin-top: 40px;
     padding: 60px 0;
     .section-heading{
       margin-top:0;

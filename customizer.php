@@ -106,6 +106,19 @@ Kirki::add_field( 'config', array(
 ));
 
 
+
+/*
+ * General Stuff
+ */
+Kirki::add_section( 'misc', array(
+    'title'          => __( 'Misc Menu' ),
+    'description'    => __( 'Miscellaneous Settings' ),
+    'priority'       => 16,
+    'capability'     => 'edit_theme_options',
+) );
+
+
+
 /*
  * Footer Stuff
  */
@@ -231,3 +244,20 @@ Kirki::add_field( 'public_email', array(
     'priority' => 5,
 ) );
 
+Kirki::add_field( 'phone_mobile_text', array(
+    'type'     => 'text',
+    'settings' => 'phone_mobile_text',
+    'label'    => __( 'Text for "Phone Us" button on mobile', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( 'Call', DOMAIN ),
+    'priority' => 5,
+) );
+
+Kirki::add_field( 'email_mobile_text', array(
+    'type'     => 'text',
+    'settings' => 'email_mobile_text',
+    'label'    => __( 'Text for "Email Us" button on mobile', DOMAIN ),
+    'section'  => 'contact',
+    'default'  => esc_attr__( 'Email', DOMAIN ),
+    'priority' => 6,
+) );

@@ -23,6 +23,5 @@ if ( is_home() ) {
 }
 
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
-wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
 Timber\Timber::render( $templates, $context );

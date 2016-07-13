@@ -1,5 +1,37 @@
 {% extends "base.twig" %}
 
+{#{% block head %}#}
+{#<!-- JSON-LD Data for Google Rich Snippets-->#}
+	{#<script type="application/ld+json">#}
+	{#{#}
+		{#"@context": "http://schema.org",#}
+		{#"@type": "Product",#}
+		{#"name": "{{ service.title }}",#}
+		{#"description": "{{ service.subtitle }}",#}
+		{#"offers": [#}
+			{#{#}
+				{#"@type": "Offer",#}
+				{#"category": "Entry Level",#}
+				{#"availability": "http://schema.org/InStock",#}
+				{#"priceSpecification":{#}
+					{#"price": "10.00",#}
+					{#"priceCurrency": "CAD"#}
+				{#}#}
+			{#},#}
+			{#{#}
+				{#"@type": "Offer",#}
+				{#"category": "High End",#}
+				{#"availability": "http://schema.org/InStock",#}
+				{#"priceSpecification":{#}
+					{#"price": "50.00",#}
+					{#"priceCurrency": "CAD"#}
+				{#}#}
+			{#}#}
+		{#]#}
+	{#}#}
+	{#</script>#}
+{#{% endblock %}#}
+
 {% block content %}
 	<!-- Page Header -->
 	<header class="intro-header" style="">

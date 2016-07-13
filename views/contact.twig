@@ -1,3 +1,5 @@
+
+
 <section id="contact" class="alternating-light-gray">
     <div class="container">
         <div class="row">
@@ -32,19 +34,18 @@
         <div class="row show-mobile">
             <a href="tel:{{ theme.theme_mod('public_phone_number_for_dialing') }}">
                 <div  class="btn btn-primary col-xs-4 col-xs-offset-1">
-
-                    <i class="fa fa-phone fa-3x"></i>
-                    <p>
-                        Call Us
-                    </p>
+                    <i class="fa fa-phone fa-3x"></i><br>
+                    <span>
+                        {{ theme.theme_mod('phone_mobile_text') }}
+                    </span>
                 </div>
             </a>
             <a href="mailto:{{ theme.theme_mod('public_email') }}">
                 <div class="col-xs-4 col-xs-offset-2 btn btn-primary">
-                    <i class="fa fa-envelope-o fa-3x"></i>
-                    <p>
-                        Email Us
-                    </p>
+                    <i class="fa fa-envelope-o fa-3x"></i><br>
+                    <span>
+                        {{ theme.theme_mod('email_mobile_text') }}
+                    </span>
                 </div>
             </a>
         </div>

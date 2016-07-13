@@ -1,6 +1,24 @@
+{#{% block head %}#}
+	{#<!-- JSON-LD Data for Google Rich Snippets-->#}
+	{#<script type="application/ld+json">#}
+	{#{#}
+	  {#"@context": "http://schema.org",#}
+	  {#"@type": "Organization",#}
+	  {#"url": "{{ site.url }}",#}
+	  {#"contactPoint": [{#}
+		{#"@type": "ContactPoint",#}
+		{#"telephone": "{{ theme.theme_mod('public_phone_number_for_dialing') }}",#}
+		{#"email" : "{{ theme.theme_mod('public_email') }}",#}
+		{#"contactType": "{{__('sales', domain)}}"#}
+	  {#}]#}
+	{#}#}
+	{#</script>#}
+{#{% endblock %}#}
+
 {% extends "base.twig" %}
 
-{% block content %}
+	{% block content %}
+
 	<div class="content-wrapper">
 		<div class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			{% include "front/hero.twig" %}

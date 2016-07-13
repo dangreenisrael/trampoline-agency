@@ -19,7 +19,6 @@ if (has_post_thumbnail($post)){
 }
 
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
-wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
 if ( post_password_required( $post->ID ) ) {
 	Timber\Timber::render( 'single-password.twig', $context );

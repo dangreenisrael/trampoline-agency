@@ -2,13 +2,16 @@
 @import "mixins.less";
 @import "navbar/global.less";
 @import "contact.less";
+@import "internal.less";
 
 /* Global Styles */
+body{
+  font-size: 18px;
+}
 p {
-  font-size: 1.40em;
-  line-height: 1.6em;
+  line-height: 1.7em;
   @media (max-width: 767px) {
-    font-size: 1.3em;
+    //line-height: 2em;
   }
   color: @gray-darkest  ;
 }
@@ -50,6 +53,9 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
+h1{
+  text-transform: uppercase;
+}
 
 hr.small {
   max-width: 100px;
@@ -215,4 +221,48 @@ img::selection {
 img::-moz-selection {
   color: @whitish-color;
   background: transparent;
+}
+
+
+/*
+ * Buttons
+ */
+
+.btn-lg {
+  font-size: 16px;
+  padding: 25px 35px;
+}
+
+.btn-default {
+  &:hover,
+  &:focus {
+    background-color: @brand-primary;
+    border: 1px solid @brand-primary;
+    color: @whitish-color;
+  }
+}
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+  outline: none;
+}
+
+
+.btn-primary {
+  .button-variant(@whitish-color; @contrast-color; @contrast-color);
+  .heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  .button-variant(@whitish-color; @contrast-color; @contrast-color);
+  .heading-font;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+  @media (max-width: 760px) {
+    padding: 20px;
+  }
 }

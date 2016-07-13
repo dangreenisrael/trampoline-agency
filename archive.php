@@ -40,6 +40,5 @@ $context['posts'] = Timber\Timber::get_posts();
 $context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
 
 wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
-wp_enqueue_style( 'internal', get_stylesheet_directory_uri() . '/static/less/internal.less' );
 
 Timber\Timber::render( $templates, $context );
