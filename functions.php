@@ -25,7 +25,7 @@ add_action( 'wp_enqueue_scripts', 'agency_blog_load_styles' );
 
 function agency_blog_load_scripts(){
 	wp_enqueue_script('bootstrap', get_stylesheet_directory_uri().'/assets/js/bootstrap.min.js', 'jQuery', null, true);
-	wp_enqueue_script('jquery_easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', 'jQuery', null, true);
+	wp_enqueue_script('jquery_easing', get_stylesheet_directory_uri().'/assets/js/jquery.easing.min.js', 'jQuery', null, true);
 	wp_enqueue_script('classie', get_stylesheet_directory_uri().'/assets/js/classie.js', 'jQuery', null, true);
 	wp_enqueue_script('animated_header', get_stylesheet_directory_uri().'/assets/js/cbpAnimatedHeader.js', 'jQuery', null, true);
 	wp_enqueue_script('agency_scripts', get_stylesheet_directory_uri().'/assets/js/agency.js', 'jQuery', null, true);
