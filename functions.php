@@ -8,6 +8,32 @@ require_once(__DIR__ . '/vendor/kirki/kirki.php' );
 require_once(__DIR__ . '/customizer-defaults.php');
 require_once(__DIR__ . '/customizer.php');
 
+wp_scripts()->add_data( 'jquery', 'group', 1 );
+wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+function agency_blog_load_jquery(){
+	wp_enqueue_script('jquery');
+}
+add_action( 'wp_enqueue_scripts', 'agency_blog_load_jquery' );
+
+function agency_blog_load_styles(){
+	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
+}
+add_action( 'wp_enqueue_scripts', 'agency_blog_load_styles' );
+
+function agency_blog_load_scripts(){
+	wp_enqueue_script('bootstrap', get_stylesheet_directory_uri().'/assets/js/bootstrap.min.js', 'jQuery', null, true);
+	wp_enqueue_script('jquery_easing', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', 'jQuery', null, true);
+	wp_enqueue_script('classie', get_stylesheet_directory_uri().'/assets/js/classie.js', 'jQuery', null, true);
+	wp_enqueue_script('animated_header', get_stylesheet_directory_uri().'/assets/js/cbpAnimatedHeader.js', 'jQuery', null, true);
+	wp_enqueue_script('agency_scripts', get_stylesheet_directory_uri().'/assets/js/agency.js', 'jQuery', null, true);
+}
+add_action( 'wp_enqueue_scripts', 'agency_blog_load_scripts' );
+
+add_image_size( 'front_page_feature', 360, 196);
+
 Timber\Timber::$dirname = array('templates', 'views');
 
 class AgencySite extends Timber\Site {
@@ -68,8 +94,15 @@ class AgencySite extends Timber\Site {
 		$filters[] = new Twig_SimpleFilter('permalink', function($page){
 			return get_permalink($page);
 		});
-		$filters[] = new Twig_SimpleFilter('thumbnail', function($page, $class="", $alt=""){
-			$originalImage = get_the_post_thumbnail($page->ID, 'large', array(
+		$filters[] = new Twig_SimpleFilter('front_page_featured_image', function($page, $class="", $alt=""){
+			$originalImage = get_the_post_thumbnail($page->ID, 'front_page_feature', array(
+				'class' => $class,
+				'alt' => $alt
+			));
+			return $originalImage;
+		});
+		$filters[] = new Twig_SimpleFilter('full_image', function($page, $class="", $alt=""){
+			$originalImage = get_the_post_thumbnail($page->ID, 'full', array(
 				'class' => $class,
 				'alt' => $alt
 			));
@@ -84,13 +117,6 @@ class AgencySite extends Timber\Site {
 }
 new AgencySite();
 
-wp_scripts()->add_data( 'jquery', 'group', 1 );
-wp_scripts()->add_data( 'jquery-core', 'group', 1 );
-wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
-function agency_blog_load_jquery(){
-    wp_enqueue_script('jquery');
-}
-add_action( 'wp_enqueue_scripts', 'agency_blog_load_jquery' );
 
 
 /* Add the column for our custom page templates */

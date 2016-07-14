@@ -26,7 +26,7 @@
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            {{ item|thumbnail("img-responsive", "Portfolio image for"~portfolio_item.project_title)}}
+                            {{ item|front_page_featured_image("img-responsive", "Portfolio image for"~portfolio_item.project_title)}}
                         </a>
                     </div>
                 {% endfor %}

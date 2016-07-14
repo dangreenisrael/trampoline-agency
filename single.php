@@ -15,10 +15,8 @@ $context['post'] = $post;
 if (has_post_thumbnail($post)){
 	$context['background'] = "background-image: url(".get_the_post_thumbnail_url().")";
 } else{
-	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
+	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/assets/img/post-default-bg.jpg)";
 }
-
-wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
 
 if ( post_password_required( $post->ID ) ) {
 	Timber\Timber::render( 'single-password.twig', $context );

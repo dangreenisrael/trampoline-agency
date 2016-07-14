@@ -37,8 +37,7 @@ if ( is_day() ) {
 
 $context['posts'] = Timber\Timber::get_posts();
 
-$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
+$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/assets/img/post-default-bg.jpg)";
 
-wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
 
 Timber\Timber::render( $templates, $context );
