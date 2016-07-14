@@ -68,8 +68,12 @@ class AgencySite extends Timber\Site {
 		$filters[] = new Twig_SimpleFilter('permalink', function($page){
 			return get_permalink($page);
 		});
-		$filters[] = new Twig_SimpleFilter('thumbnail', function($page){
-			return get_the_post_thumbnail_url($page);
+		$filters[] = new Twig_SimpleFilter('thumbnail', function($page, $class="", $alt=""){
+			$originalImage = get_the_post_thumbnail($page->ID, 'large', array(
+				'class' => $class,
+				'alt' => $alt
+			));
+			return $originalImage;
 		});
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		foreach ($filters as $filter){
@@ -80,6 +84,9 @@ class AgencySite extends Timber\Site {
 }
 new AgencySite();
 
+wp_scripts()->add_data( 'jquery', 'group', 1 );
+wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
 function agency_blog_load_jquery(){
     wp_enqueue_script('jquery');
 }

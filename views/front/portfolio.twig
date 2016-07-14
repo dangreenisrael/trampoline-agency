@@ -26,7 +26,7 @@
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="{{item|thumbnail}}" class="img-responsive" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
+                            {{ item|thumbnail("img-responsive", "Portfolio image for"~portfolio_item.project_title)}}
                         </a>
                     </div>
                 {% endfor %}
@@ -35,5 +35,4 @@
         </div>
     </section>
     <!-- Portfolio Modals -->
-
 {% endif %}
