@@ -118,6 +118,15 @@ Kirki::add_section( 'misc', array(
 ) );
 
 
+Kirki::add_field( 'header_logo', array(
+    'type'        => 'image',
+    'settings'    => 'header_logo',
+    'label'       => __( 'Header Logo', DOMAIN ),
+    'description' => __( 'This is the Logo in the header', DOMAIN ),
+    'section'     => 'misc',
+    'default'     => '',
+    'priority'    => 10,
+) );
 
 /*
  * Footer Stuff

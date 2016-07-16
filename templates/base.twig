@@ -12,11 +12,6 @@
 	{% set menu_slash = "/" %}
 {% endif %}
 
-{#{% if TimberImage(option.hero_image).src %}#}
-	{#{% set heroImage = TimberImage(option.hero_image).src %}#}
-{#{% else %}#}
-	{#{% set heroImage = site.theme.link~"/static/img/header-bg.jpg" %}#}
-{#{% endif %}#}
 
 <body class="{{body_class}} {{ white_header }}" data-template="base.twig">
 	<!-- Navigation -->
@@ -30,7 +25,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="/">{{site.name}}</a>
+				<a class="navbar-brand page-scroll" href="/">
+
+					{% if theme.theme_mods.header_logo %}
+						<img src="{{theme.theme_mods.header_logo}}">
+					{% else %}
+						{{site.name}}
+					{% endif %}
+				</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="navbar-mobilized">
