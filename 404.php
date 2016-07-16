@@ -10,6 +10,6 @@
  */
 
 $context = Timber\Timber::get_context();
-wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
+//wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
 
 Timber\Timber::render( '404.twig', $context );

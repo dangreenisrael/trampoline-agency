@@ -26,6 +26,6 @@ $post = new Timber\Post();
 $context['page'] = $post;
 $context['white_header'] = "white-header";
 
-wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/static/less/global.less' );
+//wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
 
 Timber\Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
