@@ -1,7 +1,7 @@
 <?php
 
-$context = Timber\Timber::get_context();
-$post = new Timber\Post();
+$context = Timber::get_context();
+$post = new TimberPost();
 $context['post'] = $post;
 
 $context['formArgs'] =  array(
@@ -33,4 +33,4 @@ $context['formArgs'] =  array(
 );
 
 
-Timber\Timber::render("comments.twig", $context );
+Timber::render("comments.twig", $context );

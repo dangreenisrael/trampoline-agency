@@ -16,7 +16,7 @@
 
 $templates = array( 'archive.twig', 'index.twig' );
 
-$context = Timber\Timber::get_context();
+$context = Timber::get_context();
 
 $context['title'] = 'Archive';
 if ( is_day() ) {
@@ -35,9 +35,9 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
-$context['posts'] = Timber\Timber::get_posts();
+$context['posts'] = Timber::get_posts();
 
 $context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/assets/img/post-default-bg.jpg)";
 
 
-Timber\Timber::render( $templates, $context );
+Timber::render( $templates, $context );

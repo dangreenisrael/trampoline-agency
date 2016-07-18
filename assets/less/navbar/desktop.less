@@ -12,15 +12,15 @@
 
   &.navbar-shrink, &:hover{
     a{
-      color: @menu-text-color-scroll!important;
+      color: @menu-text-color!important;
     }
   }
   &:not(.navbar-shrink):not(:hover){
     a{
-      color: @menu-text-color-scroll!important;
+      color: @menu-text-color!important;
     }
     a.navbar-brand{
-      color: @logo-color!important;
+      color: @menu-text-color!important;
       .script-font;
     }
   }
@@ -33,7 +33,11 @@
       margin: 10px;
       height: 30px;
     }
+    &.text{
+      padding: 15px;
+    }
   }
+
 }
 
 

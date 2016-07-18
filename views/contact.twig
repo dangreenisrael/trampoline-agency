@@ -1,11 +1,11 @@
 
-
-<section id="contact" class="alternating-light-gray">
+{% if theme.theme_mod('show_contact') %}
+    <section id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">
-                    {{ theme.theme_mod('contact_title') }}
+                    {{ theme.theme_mod('contact_title', 'Contact Us') }}
                 </h2>
                 <hr class="small">
                 <div class="section-subheading text-muted">
@@ -26,7 +26,7 @@
                 <i class="fa fa-envelope-o fa-3x"></i>
                 <p>
                     <a href="mailto:{{ theme.theme_mod('public_email') }}">
-                        {{ theme.theme_mod('public_email') }}
+                        {{ theme.theme_mod('public_email', "Add an Email") }}
                     </a>
                 </p>
             </div>
@@ -36,7 +36,7 @@
                 <div  class="btn btn-primary col-xs-4 col-xs-offset-1">
                     <i class="fa fa-phone fa-3x"></i><br>
                     <span>
-                        {{ theme.theme_mod('phone_mobile_text') }}
+                        {{ theme.theme_mod('phone_mobile_text', 'Add a Phone Number') }}
                     </span>
                 </div>
             </a>
@@ -51,3 +51,4 @@
         </div>
     </div>
 </section>
+{% endif %}

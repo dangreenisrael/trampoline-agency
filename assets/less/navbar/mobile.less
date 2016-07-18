@@ -3,11 +3,11 @@
   background-color: @brand-darken;
   border-color: transparent;
   .navbar-brand {
-    color: @menu-text-color-scroll;
+    color: @menu-text-color;
     .script-font;
     &:hover,
     &:focus {
-      color: @menu-text-color-scroll;
+      color: @menu-text-color;
     }
     padding: 0;
     margin: 0;
@@ -16,9 +16,12 @@
       margin: 10px;
       height: 30px;
     }
+    &.text{
+      padding: 15px;
+    }
   }
   .navbar-mobilized {
-    border-color: fade(@menu-text-color-scroll, 2%);
+    border-color: fade(@menu-text-color, 2%);
   }
   .nav {
     li {
@@ -26,7 +29,7 @@
         .heading-font;
         font-weight: 400;
         letter-spacing: 1px;
-        color: @menu-text-color-scroll;
+        color: @menu-text-color;
       }
     }
   }
@@ -60,7 +63,7 @@
       margin-right: -15px;
       float:right;
       .icon-bar {
-        background-color: @menu-text-color-scroll;
+        background-color: @menu-text-color;
       }
       &:hover,
       &:focus {
@@ -89,7 +92,7 @@
       margin: 0;
       .page-scroll, .active>a{
         background: none!important;
-        color: @menu-text-color-scroll!important;
+        color: @menu-text-color!important;
       }
       li{
         a{

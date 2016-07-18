@@ -14,14 +14,12 @@
  */
 
 
-$context = Timber\Timber::get_context();
-$context['posts'] = Timber\Timber::get_posts();
+$context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
 $templates = array( 'single.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'archive.twig' );
 	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
 }
 
-//wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
-
-Timber\Timber::render( $templates, $context );
+Timber::render( $templates, $context );

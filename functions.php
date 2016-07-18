@@ -1,5 +1,7 @@
 <?php
+
 define('DOMAIN', 'agency-blog');
+
 
 require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -7,6 +9,8 @@ require_once(__DIR__ . '/vendor/wp-less/wp-less.php' );
 require_once(__DIR__ . '/vendor/kirki/kirki.php' );
 require_once(__DIR__ . '/customizer-defaults.php');
 require_once(__DIR__ . '/customizer.php');
+
+$timber = new \Timber\Timber();
 
 wp_scripts()->add_data( 'jquery', 'group', 1 );
 wp_scripts()->add_data( 'jquery-core', 'group', 1 );
@@ -32,13 +36,12 @@ function agency_blog_load_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_scripts' );
 
-add_image_size( 'front_page_feature', 360, 196);
+add_image_size( 'front_page_feature', 360);
 
-Timber\Timber::$dirname = array('templates', 'views');
+Timber::$dirname = array('templates', 'views');
 
-class AgencySite extends Timber\Site {
+class AgencySite extends TimberSite {
 	function __construct() {
-		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
@@ -58,7 +61,7 @@ class AgencySite extends Timber\Site {
 
 	function add_to_context( $context ) {
 		$context['domain'] = DOMAIN;
-		$context['menu'] = new Timber\Menu();
+		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		$context['portfolio_items'] = get_pages(array(
 			'meta_key' => '_wp_page_template',
@@ -94,6 +97,7 @@ class AgencySite extends Timber\Site {
 		$filters[] = new Twig_SimpleFilter('permalink', function($page){
 			return get_permalink($page);
 		});
+
 		$filters[] = new Twig_SimpleFilter('front_page_featured_image', function($page, $class="", $alt=""){
 			$originalImage = get_the_post_thumbnail($page->ID, 'front_page_feature', array(
 				'class' => $class,

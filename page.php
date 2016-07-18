@@ -21,11 +21,9 @@
  * @since    Timber 0.1
  */
 
-$context = Timber\Timber::get_context();
-$post = new Timber\Post();
+$context = Timber::get_context();
+$post = new TimberPost();
 $context['page'] = $post;
 $context['white_header'] = "white-header";
 
-//wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
-
-Timber\Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

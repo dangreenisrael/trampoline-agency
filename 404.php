@@ -9,7 +9,6 @@
  * @since    Timber 0.1
  */
 
-$context = Timber\Timber::get_context();
-//wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
+$context = Timber::get_context();
 
-Timber\Timber::render( '404.twig', $context );
+Timber::render( '404.twig', $context );

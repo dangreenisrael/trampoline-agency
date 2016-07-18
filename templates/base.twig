@@ -25,12 +25,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="/">
 
 					{% if theme.theme_mods.header_logo %}
-						<img src="{{theme.theme_mods.header_logo}}">
+						<a class="navbar-brand page-scroll logo" href="/">
+							<img src="{{theme.theme_mods.header_logo}}">
+						</a>
 					{% else %}
-						{{site.name}}
+						<a class="navbar-brand page-scroll text" href="/">
+							{{site.name}}
+						</a>
 					{% endif %}
 				</a>
 			</div>
@@ -39,12 +42,14 @@
 				<ul class="nav navbar-nav navbar-right">
 					{% block menu_items %}
 						{% include "menu-items.twig" %}
-						{% for item in menu.get_items %}
-							<li class="{{item.classes | join(' ')}}">
-								<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
-								{% include "menu.twig" with {'menu': item.get_children} %}
-							</li>
-						{% endfor %}
+						{% if  theme.theme_mods.show_main_menu %}
+							{% for item in menu.get_items %}
+								<li class="{{item.classes | join(' ')}}">
+									<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
+									{% include "menu.twig" with {'menu': item.get_children} %}
+								</li>
+							{% endfor %}
+						{% endif %}
 					{% endblock %}
 				</ul>
 			</div>

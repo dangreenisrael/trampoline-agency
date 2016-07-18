@@ -83,7 +83,15 @@
             "type": "wysiwyg",
             "instructions": "This is a great place for a blurb about who you are as a company",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571b11ac3e774",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -114,5 +122,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468086114
+    "modified": 1468861261
 }

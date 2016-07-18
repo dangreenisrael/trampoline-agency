@@ -50,66 +50,51 @@ class CustomizerDefaults
             'brand-primary'=>
                 array(
                     'slug'  => 'brand-primary',
-                    'label' => 'Brand Primary Color',
+                    'label' => 'Brand Primary Colour',
                     'value' => '#2c3e50'
                 ),
             'accent-color'=>
                 array(
                     'slug'  => 'accent-color',
-                    'label' => 'Accent Color',
+                    'label' => 'Accent Colour',
                     'value' => '#6dbcdb'
                 ),
             'contrast-color'=>
                 array(
                     'slug'  => 'contrast-color',
-                    'label' => 'Contrast Color',
+                    'label' => 'Contrast Colour',
                     'value' => '#fc4349'
                 ),
             'whitish-color' =>
                 array(
                     'slug'  => 'whitish-color',
-                    'label' => 'Whitish Color',
+                    'label' => 'Whitish Colour',
                     'value' => '#ffffff'
                 ),
             'background-primary-color' =>
                 array(
                     'slug'  => 'background-primary-color',
-                    'label' => 'Primary background color',
+                    'label' => 'Primary background colour',
                     'value' => '#ffffff'
                 ),
             'background-secondary-color' =>
                 array(
                     'slug'  => 'background-secondary-color',
-                    'label' => 'Secondary background Color',
+                    'label' => 'Secondary background Colour',
                     'value' => '#cecece'
-                ),
-            'logo-color' =>
-                array(
-                    'slug'  => 'logo-color',
-                    'label' => 'Logo Color',
-                    'value' => '#ffffff'
                 ),
             'hero-color' =>
                 array(
                     'slug'  => 'hero-color',
-                    'label' => 'Hero Color',
+                    'label' => 'Hero Colour',
                     'value' => '#ffffff'
                 ),
-            'menu-text-color-top' =>
+            'menu-text-color' =>
                 array(
-                    'slug'  => 'menu-text-color-top',
-                    'label' => 'Menu Text Color (without background color)',
-                    'value' => '#000000'
-                ),
-            'menu-text-color-scroll' =>
-                array(
-                    'slug'  => 'menu-text-color-scroll',
-                    'label' => 'Menu Text Color (with background color)',
+                    'slug'  => 'menu-text-color',
+                    'label' => 'Menu Text Colour',
                     'value' => '#ffffff'
-                ),
-
-
-
+                )
         );
     }
 

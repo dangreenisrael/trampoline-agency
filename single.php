@@ -9,8 +9,8 @@
  * @since    Timber 0.1
  */
 
-$context = Timber\Timber::get_context();
-$post = Timber\Timber::query_post();
+$context = Timber::get_context();
+$post = Timber::query_post();
 $context['post'] = $post;
 if (has_post_thumbnail($post)){
 	$context['background'] = "background-image: url(".get_the_post_thumbnail_url().")";
@@ -19,7 +19,7 @@ if (has_post_thumbnail($post)){
 }
 
 if ( post_password_required( $post->ID ) ) {
-	Timber\Timber::render( 'single-password.twig', $context );
+	Timber::render( 'single-password.twig', $context );
 } else {
-	Timber\Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
+	Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
 }

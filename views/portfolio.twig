@@ -26,13 +26,15 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
-							{% if page.client_site %}
-								<a href="{{ page.client_site }}" target="_blank">
-									{{ page|full_image("img-responsive", "Portfolio image for"~portfolio_item.project_title)}}
-								</a>
-							{% else %}
-								<img src="{{page.thumbnail.src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>
-							{% endif %}
+								{#<a href="{{ page.client_site }}" target="_blank">#}
+									{#{{ page|full_image("img-responsive", "Portfolio image for"~portfolio_item.project_title)}}#}
+								{#</a>#}
+								{#<img src="{{page.thumbnail.src}}" class="img-responsive img-centered" alt="Portfolio image for {{ portfolio_item.project_title }}"/>#}
+								<img src="{{ page.thumbnail.src | resize(720, 400) }}" class="img-responsive img-centered" srcset="
+                                {{ page.thumbnail.src | resize(720, 400)   | retina(1) }}  1x,
+                                {{ page.thumbnail.src | resize(1440, 800)  | retina(2) }}  2x,
+                                {{ page.thumbnail.src | resize(2160, 1200) | retina(3) }}  3x
+                                ">
 							{{ page.content }}
 						</div>
 					</div>
