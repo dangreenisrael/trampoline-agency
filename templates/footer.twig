@@ -4,7 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; {{ site.name }} {{"now"|date('Y')}}</span>
+                <span class="copyright">
+                    {% if theme.theme_mod('copyright_text') %}
+                        {{ theme.theme_mod('copyright_text') }}
+                    {%  else %}
+                        Copyright &copy; {{ site.name }} {{"now"|date('Y')}}
+                    {% endif %}
+                </span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">

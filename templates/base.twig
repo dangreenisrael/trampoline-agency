@@ -16,7 +16,6 @@
 <body class="{{body_class}} {{ white_header }}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">
-		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" id="toggleMenu">
@@ -25,17 +24,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-
-					{% if theme.theme_mods.header_logo %}
-						<a class="navbar-brand page-scroll logo" href="/">
-							<img src="{{theme.theme_mods.header_logo}}">
-						</a>
-					{% else %}
-						<a class="navbar-brand page-scroll text" href="/">
-							{{site.name}}
-						</a>
-					{% endif %}
-				</a>
+				{% if theme.theme_mod('header_logo') %}
+					<a class="navbar-brand page-scroll logo" href="/">
+						<img src="{{theme.theme_mod('header_logo')}}">
+					</a>
+				{% else %}
+					<a class="navbar-brand page-scroll text" href="/">
+						{{ function('bloginfo','name') }}
+					</a>
+				{% endif %}
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="navbar-mobilized">
@@ -54,8 +51,6 @@
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid -->
 	</nav>
 
 	<div id="content" role="main" class="content-wrapper">

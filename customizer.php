@@ -129,8 +129,6 @@ Kirki::add_field( CONFIG, array(
 ));
 
 
-
-
 /*
  * Site Identity
  */
@@ -147,9 +145,16 @@ Kirki::add_field( CONFIG, array(
 
 
 /*
- * Footer Links
+ * Footer Menu
  */
-
+Kirki::add_field( CONFIG, array(
+    'type'     => 'text',
+    'settings' => 'copyright_text',
+    'label'    => __( 'Copyright Text', DOMAIN ),
+    'section'  => 'footer',
+    'priority' => 0,
+    'sanitize_callback' => 'sanitize_text_field'
+) );
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'facebook',
@@ -211,12 +216,11 @@ Kirki::add_field( CONFIG, array(
 Kirki::add_field( CONFIG, array(
     'type'        	=> 'checkbox',
     'settings'    	=> 'show_contact',
-    'label'       	=> __( 'Show Site Menu', DOMAIN ),
+    'label'       	=> __( 'Show Contact Area', DOMAIN ),
     'section'		=> 'contact',
     'default'     	=> '0',
     'priority'    	=> 1,
 ));
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'contact_title',
@@ -224,6 +228,7 @@ Kirki::add_field( CONFIG, array(
     'section'  => 'contact',
     'default'  => esc_attr__( 'Contact Us', DOMAIN ),
     'priority' => 2,
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
@@ -232,6 +237,8 @@ Kirki::add_field( CONFIG, array(
     'section'  => 'contact',
     'default'  => esc_attr__( '', DOMAIN ),
     'priority' => 3,
+    'sanitize_callback' => 'sanitize_text_field'
+
 ) );
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
@@ -239,7 +246,8 @@ Kirki::add_field( CONFIG, array(
     'label'    => __( 'Publicly Visible Display Number (1-800-123-4567)', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( '', DOMAIN ),
-    'priority' => 5,
+    'priority' => 4
+
 ) );
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
@@ -247,34 +255,31 @@ Kirki::add_field( CONFIG, array(
     'label'    => __( 'Publicly Visible Actual Number (18001234567)', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( '', DOMAIN ),
-    'priority' => 4,
+    'priority' => 5
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'public_email',
     'label'    => __( 'Publicly Visible Contact Email', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( '', DOMAIN ),
-    'priority' => 5,
+    'priority' => 6
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'phone_mobile_text',
     'label'    => __( 'Text for "Phone Us" button on mobile', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( 'Call', DOMAIN ),
-    'priority' => 6,
+    'priority' => 7
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'email_mobile_text',
     'label'    => __( 'Text for "Email Us" button on mobile', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( 'Email', DOMAIN ),
-    'priority' => 7,
+    'priority' => 7
 ) );
 
 
