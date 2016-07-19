@@ -9,6 +9,11 @@ require_once(__DIR__ . '/vendor/wp-less/wp-less.php' );
 require_once(__DIR__ . '/vendor/kirki/kirki.php' );
 require_once(__DIR__ . '/customizer-defaults.php');
 require_once(__DIR__ . '/customizer.php');
+require_once(__DIR__ . '/theme_update_check.php');
+//$MyUpdateChecker = new ThemeUpdateChecker(
+//    'trampoline-agency',
+//    'https://kernl.us/api/v1/theme-updates/578d0fbb7524d7381175980e/'
+//);
 
 $timber = new \Timber\Timber();
 
@@ -21,18 +26,18 @@ function agency_blog_load_jquery(){
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_jquery' );
 
 function agency_blog_load_styles(){
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css' );
-	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
-	wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/less/global.less' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'global', get_template_directory_uri() . '/assets/less/global.less' );
 }
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_styles' );
 
 function agency_blog_load_scripts(){
-	wp_enqueue_script('bootstrap', get_stylesheet_directory_uri().'/assets/js/bootstrap.min.js', 'jQuery', null, true);
-	wp_enqueue_script('jquery_easing', get_stylesheet_directory_uri().'/assets/js/jquery.easing.min.js', 'jQuery', null, true);
-	wp_enqueue_script('classie', get_stylesheet_directory_uri().'/assets/js/classie.js', 'jQuery', null, true);
-	wp_enqueue_script('animated_header', get_stylesheet_directory_uri().'/assets/js/cbpAnimatedHeader.js', 'jQuery', null, true);
-	wp_enqueue_script('agency_scripts', get_stylesheet_directory_uri().'/assets/js/agency.js', 'jQuery', null, true);
+	wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', 'jQuery', null, true);
+	wp_enqueue_script('jquery_easing', get_template_directory_uri().'/assets/js/jquery.easing.min.js', 'jQuery', null, true);
+	wp_enqueue_script('classie', get_template_directory_uri().'/assets/js/classie.js', 'jQuery', null, true);
+	wp_enqueue_script('animated_header', get_template_directory_uri().'/assets/js/cbpAnimatedHeader.js', 'jQuery', null, true);
+	wp_enqueue_script('agency_scripts', get_template_directory_uri().'/assets/js/agency.js', 'jQuery', null, true);
 }
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_scripts' );
 

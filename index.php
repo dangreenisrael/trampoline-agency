@@ -19,7 +19,7 @@ $context['posts'] = Timber::get_posts();
 $templates = array( 'single.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'archive.twig' );
-	$context['background'] = "background-image: url(".get_stylesheet_directory_uri()."/static/img/post-default-bg.jpg)";
+	$context['background'] = "background-image: url(".get_template_directory_uri()."/static/img/post-default-bg.jpg)";
 }
 
 Timber::render( $templates, $context );

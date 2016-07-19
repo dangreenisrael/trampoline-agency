@@ -466,7 +466,7 @@ class acf_field_image_crop extends acf_field_image {
 
 
     function input_admin_enqueue_scripts() {
-        $dir = get_stylesheet_directory_uri() . "/acf/acf-image-crop-add-on-customized/";
+        $dir = get_template_directory_uri() . "/acf/acf-image-crop-add-on-customized/";
         // // register & include JS
         // wp_register_script( 'acf-input-image_crop', "{$dir}js/input.js" );
         // wp_enqueue_script('acf-input-image_crop');

@@ -7,6 +7,7 @@
 /* Global Styles */
 body{
   font-size: 18px;
+  background-color: @background-primary-color;
 }
 p {
   line-height: 1.7em;
@@ -207,15 +208,13 @@ body {
 }
 
 ::-moz-selection {
-  color: @whitish-color;
   text-shadow: none;
-  background: @brand-primary;
+  background: @selection-color;
 }
 
 ::selection {
-  color: @whitish-color;
   text-shadow: none;
-  background: @brand-primary;
+  background: @selection-color;
 }
 
 img::selection {

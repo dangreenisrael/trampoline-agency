@@ -39,7 +39,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					{% block menu_items %}
 						{% include "menu-items.twig" %}
-						{% if  theme.theme_mods.show_main_menu %}
+						{% if  theme.theme_mod('show_main_menu') %}
 							{% for item in menu.get_items %}
 								<li class="{{item.classes | join(' ')}}">
 									<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
@@ -66,9 +66,7 @@
 		{% endif %}
 	</div>
 	{% block footer %}
-		<footer id="footer">
-			{% include 'footer.twig' %}
-		</footer>
+		{% include 'footer.twig' %}
 		{{ function('wp_footer') }}
 	{% endblock %}
 

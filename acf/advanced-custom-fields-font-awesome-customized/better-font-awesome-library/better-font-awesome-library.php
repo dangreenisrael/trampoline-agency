@@ -368,7 +368,7 @@ class Better_Font_Awesome_Library {
 
 		// Get BFA directory and theme root directory paths.
 		$bfa_directory = dirname(__FILE__);
-		$theme_directory = get_stylesheet_directory();
+		$theme_directory = get_template_directory();
 		$plugin_dir = plugin_dir_url( __FILE__ );
 
 		/**

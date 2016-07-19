@@ -1,7 +1,7 @@
 <li class="hidden">
 	<a href="/"></a>
 </li>
-{% if theme.theme_mods.menu_services %}
+{% if theme.theme_mod('menu_services') %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#services">
 			{{__('Services', domain)}}
@@ -22,7 +22,8 @@
 		{% endif %}
 	</li>
 {% endif %}
-{% if theme.theme_mods.menu_portfolio %}
+
+{% if theme.theme_mod('menu_portfolio') %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
 			{{__('Portfolio', domain)}}
@@ -43,14 +44,14 @@
 		{% endif %}
 	</li>
 {% endif %}
-{% if theme.theme_mods.menu_team %}
+{% if theme.theme_mod('menu_team') %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#team">
 			{{__('Team', domain)}}
 		</a>
 	</li>
 {% endif %}
-{% if theme.theme_mods.menu_contact %}
+{% if theme.theme_mod('menu_contact') %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#contact">
 			{{__('Contact', domain)}}

@@ -35,7 +35,7 @@ class acf_field_font_awesome extends acf_field {
 
 		$this->settings = array(
 			'path' => dirname(__FILE__),
-			'dir' =>  $dir = get_stylesheet_directory_uri() . "/acf/advanced-custom-fields-font-awesome-customized/",
+			'dir' =>  $dir = get_template_directory_uri() . "/acf/advanced-custom-fields-font-awesome-customized/",
 			'version' => '1.5'
 		);
 

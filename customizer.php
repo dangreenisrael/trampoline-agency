@@ -9,7 +9,7 @@
 
 if ( ! function_exists( 'my_theme_kirki_update_url' ) ) {
     function my_theme_kirki_update_url( $config ) {
-        $config['url_path'] = get_stylesheet_directory_uri() . '/vendor/kirki/';
+        $config['url_path'] = get_template_directory_uri() . '/vendor/kirki/';
         return $config;
     }
 }
@@ -73,7 +73,6 @@ Kirki::add_section( 'typography', array(
     'priority'       => 5,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
-
 ) );
 
 
@@ -147,12 +146,16 @@ Kirki::add_field( CONFIG, array(
 /*
  * Footer Menu
  */
+
+$originalCopyright = "Copyright © ". get_bloginfo('name') ." ". date("Y");
+
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'copyright_text',
     'label'    => __( 'Copyright Text', DOMAIN ),
     'section'  => 'footer',
     'priority' => 0,
+    'default'  => esc_attr__( $originalCopyright, DOMAIN ),
     'sanitize_callback' => 'sanitize_text_field'
 ) );
 Kirki::add_field( CONFIG, array(
@@ -310,7 +313,8 @@ foreach ($defaults->get_colors() as $color){
         'label'       => __( $color['label'], DOMAIN ),
         'section'     => 'colors',
         'default'     => $color['value'],
+        'tooltip'     => $color['tooltip'],
         'priority'    => 10,
-        'panel'          => 'trampoline'
+        'panel'       => 'trampoline'
     ) );
 }

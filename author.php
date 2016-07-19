@@ -12,7 +12,6 @@ global $wp_query;
 
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/agency/less/global.less' );
 
 if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author = new TimberUser( $wp_query->query_vars['author'] );
