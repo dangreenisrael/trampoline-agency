@@ -161,6 +161,20 @@ Kirki::add_field( CONFIG, array(
 
 
 /*
+ * Static front page
+ */
+Kirki::add_field( CONFIG, array(
+    'type'        => 'image',
+    'settings'    => 'archive_image',
+    'label'       => __( 'Blog Image', DOMAIN ),
+    'description' => __( 'This is header image for blog archive pages', DOMAIN ),
+    'section'     => 'static_front_page',
+    'default'     => '',
+    'priority'    => 10,
+) );
+
+
+/*
  * Footer Menu
  */
 $originalCopyright = "Copyright © ". get_bloginfo('name') ." ". date("Y");
@@ -297,6 +311,10 @@ Kirki::add_field( CONFIG, array(
     'default'  => esc_attr__( 'Email', DOMAIN ),
     'priority' => 7
 ) );
+
+/*
+ * Static Front Page
+ */
 
 
 /*
