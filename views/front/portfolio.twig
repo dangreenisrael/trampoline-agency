@@ -27,8 +27,7 @@
                             <img src="{{ item.featured_image.src | resize(360, 200) }}" class="img-responsive" srcset="
                                 {{ item.featured_image.src | resize(360, 200)  | retina(1) }}  1x,
                                 {{ item.featured_image.src | resize(720, 400)  | retina(2) }}  2x,
-                                {{ item.featured_image.src | resize(1080, 600) | retina(3) }}  3x,
-                                {{ item.featured_image.src | resize(1440, 800) | retina(4) }}  4x">
+                                {{ item.featured_image.src | resize(1080, 600) | retina(3) }}  ">
                         </a>
                     </div>
                 {% endfor %}

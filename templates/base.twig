@@ -16,41 +16,45 @@
 <body class="{{body_class}} {{ white_header }}" data-template="base.twig">
 	<!-- Navigation -->
 	<nav id="nav-main" role="navigation" class="navbar navbar-default navbar-fixed-top nav-main">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" id="toggleMenu">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				{% if theme.theme_mod('header_logo') %}
-					<a class="navbar-brand page-scroll logo" href="/">
-						<img src="{{theme.theme_mod('header_logo')}}">
-					</a>
-				{% else %}
-					<a class="navbar-brand page-scroll text" href="/">
-						{{ function('bloginfo','name') }}
-					</a>
-				{% endif %}
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="navbar-mobilized">
-				<ul class="nav navbar-nav navbar-right">
-					{% block menu_items %}
-						{% include "menu-items.twig" %}
-						{% if  theme.theme_mod('show_main_menu') %}
-							{% for item in menu.get_items %}
-								<li class="{{item.classes | join(' ')}}">
-									<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
-									{% include "menu.twig" with {'menu': item.get_children} %}
-								</li>
-							{% endfor %}
-						{% endif %}
-					{% endblock %}
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" id="toggleMenu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			{% if theme.theme_mod('header_logo') %}
+				<a class="navbar-brand page-scroll logo" href="/">
+					<!-- TODO: This-->
+                    <img src="{{ theme.theme_mod('header_logo') | resize(null, 50) }}" class="img-responsive" srcset="
+                                {{ theme.theme_mod('header_logo') | resize(null, 50)  | retina(1) }}  1x,
+                                {{ theme.theme_mod('header_logo') | resize(null, 100) | retina(2) }}  2x,
+                                {{ theme.theme_mod('header_logo') | resize(null, 150) | retina(3) }}  3x">
+				</a>
+			{% else %}
+				<a class="navbar-brand page-scroll text" href="/">
+					{{ function('bloginfo','name') }}
+				</a>
+			{% endif %}
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="navbar-mobilized">
+			<ul class="nav navbar-nav navbar-right">
+				{% block menu_items %}
+					{% include "menu-items.twig" %}
+					{% if  theme.theme_mod('show_main_menu') %}
+						{% for item in menu.get_items %}
+							<li class="{{item.classes | join(' ')}}">
+								<a href="{{item.get_link}}" class="page-scroll"> {{item.title}}</a>
+								{% include "menu.twig" with {'menu': item.get_children} %}
+							</li>
+						{% endfor %}
+					{% endif %}
+				{% endblock %}
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
 	</nav>
 
 	<div id="content" role="main" class="content-wrapper">
@@ -69,12 +73,6 @@
 		{% include 'footer.twig' %}
 		{{ function('wp_footer') }}
 	{% endblock %}
-
-
-
-	<!-- Contact Form JavaScript -->
-
-	<!-- Custom Theme JavaScript -->
 	<div id="backdrop" class="modal-backdrop fade" style="display: none;"></div>
 </body>
 </html>
