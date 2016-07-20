@@ -25,44 +25,44 @@ Kirki::add_config( CONFIG , array(
  */
 Kirki::add_panel( 'trampoline', array(
     'priority'    => 1,
-    'title'       => __( 'Trampoline Options', 'DOMAIN' ),
+    'title'       => __( 'Trampoline Options', DOMAIN ),
     'description' => __( 'All of the options for your trampoline site', DOMAIN ),
 ) );
 Kirki::add_section( 'main_menu', array(
-    'title'          => __( 'Main Menu' ),
-    'description'    => __( 'Choose the sections and text you want visible in the main menu' ),
+    'title'          => __( 'Main Menu', DOMAIN ),
+    'description'    => __( 'Choose the sections and text you want visible in the main menu', DOMAIN ),
     'priority'       => 1,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
 
 ));
 Kirki::add_section( 'footer', array(
-    'title'          => __( 'Footer Menu' ),
-    'description'    => __( 'The stuff that goes in the site footer' ),
+    'title'          => __( 'Footer Menu', DOMAIN ),
+    'description'    => __( 'The stuff that goes in the site footer', DOMAIN ),
     'priority'       => 2,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
 
 ) );
 Kirki::add_section( 'contact', array(
-    'title'          => __( 'Contact Area' ),
-    'description'    => __( 'Set your public contact information' ),
+    'title'          => __( 'Contact Area', DOMAIN ),
+    'description'    => __( 'Set your public contact information', DOMAIN ),
     'priority'       => 3,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
 
 ) );
 Kirki::add_section( 'colors', array(
-    'title'          => __( 'Colours' ),
-    'description'    => __( 'These are all the colours for the site' ),
+    'title'          => __( 'Colours', DOMAIN ),
+    'description'    => __( 'These are all the colours for the site', DOMAIN ),
     'priority'       => 4,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
 
 ));
 Kirki::add_section( 'typography', array(
-    'title'          => __( 'Fonts' ),
-    'description'    => __( 'Choose the fonts for this site' ),
+    'title'          => __( 'Fonts', DOMAIN ),
+    'description'    => __( 'Choose the fonts for this site', DOMAIN ),
     'priority'       => 5,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
@@ -210,13 +210,13 @@ Kirki::add_field( CONFIG, array(
     'fields' => array(
         'text' => array(
             'type'        => 'text',
-            'label'       => esc_attr__( 'Link Text', 'DOMAIN' ),
+            'label'       => esc_attr__( 'Link Text', DOMAIN ),
             'description' => esc_attr__( 'This will be the label for your link', DOMAIN ),
             'default'     => '',
         ),
         'url' => array(
             'type'        => 'text',
-            'label'       => esc_attr__( 'Link URL', 'DOMAIN' ),
+            'label'       => esc_attr__( 'Link URL', DOMAIN ),
             'description' => esc_attr__( 'This will be the link URL', DOMAIN ),
             'default'     => '',
         ),
@@ -259,7 +259,8 @@ Kirki::add_field( CONFIG, array(
     'settings' => 'public_phone_number_display',
     'label'    => __( 'Publicly Visible Display Number (1-800-123-4567)', DOMAIN ),
     'section'  => 'contact',
-    'default'  => esc_attr__( '', DOMAIN ),
+    'default'  => esc_attr__( '111.111.1111', DOMAIN ),
+    'tooltip'  => esc_attr__( 'This is the number that people will see', DOMAIN),
     'priority' => 4
 
 ) );
@@ -269,6 +270,7 @@ Kirki::add_field( CONFIG, array(
     'label'    => __( 'Publicly Visible Actual Number (18001234567)', DOMAIN ),
     'section'  => 'contact',
     'default'  => esc_attr__( '', DOMAIN ),
+    'tooltop'  => esc_attr__( 'This is the number that will dial if people tap with on their phones', DOMAIN),
     'priority' => 5
 ) );
 Kirki::add_field( CONFIG, array(
