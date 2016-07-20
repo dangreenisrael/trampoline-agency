@@ -6,7 +6,6 @@
  * Time: 10:44
  */
 
-
 if ( ! function_exists( 'my_theme_kirki_update_url' ) ) {
     function my_theme_kirki_update_url( $config ) {
         $config['url_path'] = get_template_directory_uri() . '/vendor/kirki/';
@@ -21,7 +20,6 @@ Kirki::add_config( CONFIG , array(
     'option_type'   => 'theme_mod',
 ) );
 
-
 /*
  * Add Sections
  */
@@ -30,16 +28,14 @@ Kirki::add_panel( 'trampoline', array(
     'title'       => __( 'Trampoline Options', 'DOMAIN' ),
     'description' => __( 'All of the options for your trampoline site', DOMAIN ),
 ) );
-
 Kirki::add_section( 'main_menu', array(
     'title'          => __( 'Main Menu' ),
-    'description'    => __( 'Choose the sections you want visible in the main menu' ),
+    'description'    => __( 'Choose the sections and text you want visible in the main menu' ),
     'priority'       => 1,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
 
 ));
-
 Kirki::add_section( 'footer', array(
     'title'          => __( 'Footer Menu' ),
     'description'    => __( 'The stuff that goes in the site footer' ),
@@ -48,7 +44,6 @@ Kirki::add_section( 'footer', array(
     'panel'          => 'trampoline'
 
 ) );
-
 Kirki::add_section( 'contact', array(
     'title'          => __( 'Contact Area' ),
     'description'    => __( 'Set your public contact information' ),
@@ -57,7 +52,6 @@ Kirki::add_section( 'contact', array(
     'panel'          => 'trampoline'
 
 ) );
-
 Kirki::add_section( 'colors', array(
     'title'          => __( 'Colours' ),
     'description'    => __( 'These are all the colours for the site' ),
@@ -66,7 +60,6 @@ Kirki::add_section( 'colors', array(
     'panel'          => 'trampoline'
 
 ));
-
 Kirki::add_section( 'typography', array(
     'title'          => __( 'Fonts' ),
     'description'    => __( 'Choose the fonts for this site' ),
@@ -76,62 +69,86 @@ Kirki::add_section( 'typography', array(
 ) );
 
 
-
 /*
  * Menu
  */
-
-
 Kirki::add_field( CONFIG, array(
-    'type'        	=> 'checkbox',
+    'type'        	=> 'toggle',
     'section'		=> 'main_menu',
     'settings'    	=> 'menu_services',
     'label'       	=> __( 'Services', DOMAIN ),
     'default'     	=> '0',
     'priority'    	=> 1,
 ));
-
 Kirki::add_field( CONFIG, array(
-    'type'        	=> 'checkbox',
+    'type'     => 'text',
+    'settings' => 'menu_services_text',
+    'section'  => 'main_menu',
+    'default'  => esc_attr__( 'Services', DOMAIN ),
+    'priority' => 2,
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+Kirki::add_field( CONFIG, array(
+    'type'        	=> 'toggle',
     'section'		=> 'main_menu',
     'settings'    	=> 'menu_team',
     'label'       	=> __( 'Team', DOMAIN ),
     'default'     	=> '0',
-    'priority'    	=> 2,
+    'priority'    	=> 3,
 ));
-
 Kirki::add_field( CONFIG, array(
-    'type'        	=> 'checkbox',
+    'type'     => 'text',
+    'settings' => 'menu_team_text',
+    'section'  => 'main_menu',
+    'default'  => esc_attr__( 'Team', DOMAIN ),
+    'priority' => 4,
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+Kirki::add_field( CONFIG, array(
+    'type'        	=> 'toggle',
     'section'		=> 'main_menu',
     'settings'    	=> 'menu_portfolio',
     'label'       	=> __( 'Portfolio', DOMAIN ),
     'default'     	=> '0',
-    'priority'    	=> 3,
+    'priority'    	=> 5,
 ));
-
 Kirki::add_field( CONFIG, array(
-    'type'        	=> 'checkbox',
+    'type'     => 'text',
+    'settings' => 'menu_portfolio_text',
+    'section'  => 'main_menu',
+    'default'  => esc_attr__( 'Portfolio', DOMAIN ),
+    'priority' => 6,
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+Kirki::add_field( CONFIG, array(
+    'type'        	=> 'toggle',
     'section'		=> 'main_menu',
     'settings'    	=> 'menu_contact',
     'label'       	=> __( 'Contact', DOMAIN ),
     'default'     	=> '0',
-    'priority'    	=> 4,
+    'priority'    	=> 7,
 ));
-
 Kirki::add_field( CONFIG, array(
-    'type'        	=> 'checkbox',
+    'type'     => 'text',
+    'settings' => 'menu_contact_text',
+    'section'  => 'main_menu',
+    'default'  => esc_attr__( 'Contact', DOMAIN ),
+    'priority' => 8,
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+Kirki::add_field( CONFIG, array(
+    'type'        	=> 'toggle',
     'section'		=> 'main_menu',
     'settings'    	=> 'show_main_menu',
     'label'       	=> __( 'Show Site Menu', DOMAIN ),
     'default'     	=> '0',
-    'priority'    	=> 5,
+    'priority'    	=> 9,
 ));
 
 
 /*
  * Site Identity
  */
-
 Kirki::add_field( CONFIG, array(
     'type'        => 'image',
     'settings'    => 'header_logo',
@@ -146,9 +163,7 @@ Kirki::add_field( CONFIG, array(
 /*
  * Footer Menu
  */
-
 $originalCopyright = "Copyright © ". get_bloginfo('name') ." ". date("Y");
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'copyright_text',
@@ -166,7 +181,6 @@ Kirki::add_field( CONFIG, array(
     'default'  => esc_attr__( '', DOMAIN ),
     'priority' => 1,
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'twitter',
@@ -175,7 +189,6 @@ Kirki::add_field( CONFIG, array(
     'default'  => esc_attr__( '', DOMAIN ),
     'priority' => 2,
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'     => 'text',
     'settings' => 'linkedin',
@@ -184,7 +197,6 @@ Kirki::add_field( CONFIG, array(
     'default'  => esc_attr__( '', DOMAIN ),
     'priority' => 3,
 ) );
-
 Kirki::add_field( CONFIG, array(
     'type'        	=> 'repeater',
     'label'       	=> esc_attr__( 'Footer Links', DOMAIN ),
@@ -209,13 +221,12 @@ Kirki::add_field( CONFIG, array(
             'default'     => '',
         ),
     )
-) );
+));
 
 
 /*
  * Contact
  */
-
 Kirki::add_field( CONFIG, array(
     'type'        	=> 'checkbox',
     'settings'    	=> 'show_contact',

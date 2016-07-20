@@ -5,7 +5,9 @@
                 <header class="col-lg-12 text-center">
                     <h2 class="section-heading">{{ page.team_title }}</h2>
                     {% if  page.team_subtitle%}
-                        <span class="section-subheading text-muted">{{ page.team_subtitle }}</span>
+                        <h3 class="section-subheading text-muted">
+                            {{ page.team_subtitle }}
+                        </h3>
                     {% endif %}
                 </header>
             </div>
@@ -17,7 +19,7 @@
             <div class="row">
                 {% for team_member in team_members %}
                     <div class="{{ loop.length|bootstrapCol }}">
-                        <div class="team-member">
+                        <figure class="team-member">
                             <img src="{{ TimberImage(team_member.picture).src | resize(200, 200) }}" class="img-responsive img-circle"
                                  alt="Profile picture for {{ team_member.name }}"
                                  srcset="
@@ -27,8 +29,11 @@
                                 {{ TimberImage(team_member.picture).src | resize(800, 800) | retina(4) }}  4x">
 
                             <h3>{{ team_member.name }}</h3>
-                            <p class="text-muted">{{ team_member.role }}</p>
-                            <div class="text-center">{{ team_member.bio }}</div>
+                            <figcaption class="text-center">
+                                <p class="text-muted">{{ team_member.role }}</p>
+                                {{ team_member.bio }}
+                            </figcaption>
+
                             <ul class="list-inline social-buttons">
                                 {% if team_member.twitter %}
                                     <li><a href="{{ team_member.twitter }}"><i class="fa fa-twitter"></i></a>
@@ -51,7 +56,7 @@
                                     </li>
                                 {% endif %}
                             </ul>
-                        </div>
+                        </figure>
                     </div>
                 {% endfor %}
             </div>

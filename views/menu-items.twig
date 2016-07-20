@@ -4,7 +4,7 @@
 {% if theme.theme_mod('menu_services') %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#services">
-			{{__('Services', domain)}}
+			{{ theme.theme_mod('menu_services_text') }}
 		</a>
 		{% if  service_items %}
 			<ul>
@@ -26,7 +26,7 @@
 {% if theme.theme_mod('menu_portfolio') %}
 	<li class="menu-item-has-children">
 		<a class="page-scroll" href="{{ menu_slash }}#portfolio">
-			{{__('Portfolio', domain)}}
+			{{ theme.theme_mod('menu_portfolio_text') }}
 		</a>
 		{% if  portfolio_items %}
 			<ul>
@@ -47,14 +47,14 @@
 {% if theme.theme_mod('menu_team') %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#team">
-			{{__('Team', domain)}}
+			{{ theme.theme_mod('menu_team_text') }}
 		</a>
 	</li>
 {% endif %}
 {% if theme.theme_mod('menu_contact') %}
 	<li>
 		<a class="page-scroll" href="{{ menu_slash }}#contact">
-			{{__('Contact', domain)}}
+			{{ theme.theme_mod('menu_contact_text') }}
 		</a>
 	</li>
 {% endif %}

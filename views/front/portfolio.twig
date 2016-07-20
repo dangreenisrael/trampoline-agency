@@ -19,15 +19,18 @@
                 {% for item in portfolio_items %}
                     <div class="{{ loop.length | bootstrapCol }} portfolio-item">
                         <a href="{{ item | permalink }}" class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{ item.featured_image.src | resize(360, 200) }}" class="img-responsive" srcset="
-                                {{ item.featured_image.src | resize(360, 200)  | retina(1) }}  1x,
-                                {{ item.featured_image.src | resize(720, 400)  | retina(2) }}  2x,
-                                {{ item.featured_image.src | resize(1080, 600) | retina(3) }}  ">
+                            <figure>
+                                <figcaption class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        {{ item.menu_title }}
+                                    </div>
+                                </figcaption>
+                                <img src="{{ item.featured_image.src | resize(360, 200) }}" class="img-responsive" srcset="
+                                    {{ item.featured_image.src | resize(360, 200)  | retina(1) }}  1x,
+                                    {{ item.featured_image.src | resize(720, 400)  | retina(2) }}  2x,
+                                    {{ item.featured_image.src | resize(1080, 600) | retina(3) }}  "
+                                     alt="Portfolio image for {{ item.post_title }}, {{ item.subtitle }}">
+                            </figure>
                         </a>
                     </div>
                 {% endfor %}
