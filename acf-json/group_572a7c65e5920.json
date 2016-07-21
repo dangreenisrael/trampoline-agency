@@ -59,6 +59,82 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_578fcb34e46d5",
+            "label": "Order",
+            "name": "order",
+            "type": "number",
+            "instructions": "The order in which you would like this item to appear on the home page.  If you don't care, put in 99.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 99,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 99,
+            "step": 1,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_579021e43af30",
+            "label": "Link To",
+            "name": "link_to",
+            "type": "select",
+            "instructions": "Where should the portfolio item on the home page link to?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "portfolio_page": "This Page",
+                "external_link": "Another Website",
+                "nothing": "Nothing (Not a link)"
+            },
+            "default_value": [
+                "portfolio_page"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_579022433af31",
+            "label": "External Link",
+            "name": "external_link",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_579021e43af30",
+                        "operator": "==",
+                        "value": "external_link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -78,5 +154,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466080126
+    "modified": 1469063781
 }
