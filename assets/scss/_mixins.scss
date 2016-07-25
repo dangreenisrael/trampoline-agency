@@ -1,0 +1,64 @@
+// Bootstrap Button Variant
+@import "variables";
+@mixin button-variant($color; $background; $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+	.open .dropdown-toggle& {
+		color: $color;
+		background-color: lighten($background, 10%);
+        border-color: lighten($border, 12%);
+	}
+	&:active,
+	&.active,
+	.open .dropdown-toggle& {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+// Background Features
+
+@mixin background-cover() {
+	$main: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+    -webkit-background-size: $main;
+    -moz-background-size: $main;
+    background-size: $main;
+    -o-background-size: $main;
+	background-color: $brand-primary;
+	//@media(max-width:1024px) {
+	//	background-image: none;
+	//}
+}
+
+
+@mixin transition($params) {
+	-webkit-transition: $params;
+	-moz-transition: $params;
+	transition: $params;
+}
+

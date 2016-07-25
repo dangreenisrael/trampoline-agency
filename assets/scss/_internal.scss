@@ -1,0 +1,261 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+// Global Components
+
+
+a {
+	color: $gray-darkest;
+	&:hover,
+	&:focus {
+		color: $brand-primary;
+	}
+}
+
+p{
+	margin: 10px 0;
+}
+
+
+blockquote {
+	color: $gray;
+	font-style: italic;
+}
+
+
+
+img{
+	margin-top:40px;
+	margin-bottom: 40px;
+	width: auto;
+}
+// Header
+.intro-header {
+	background-color: $gray;
+	@include background-cover;
+	// NOTE: Background images are set within the HTML using inline CSS!
+	.site-heading,
+	.post-heading,
+	.page-heading {
+		padding: 20px 0;
+		color: $whitish-color;
+		@media only screen and (min-width: 768px) {
+			padding: 200px 0;
+		}
+	}
+	.site-heading,
+	.page-heading,
+	.post-heading {
+		text-align: center;
+		h1 {
+			font-size: 35px;
+		}
+		.subheading,
+		.meta {
+			line-height: 1.1;
+			display: block;
+		}
+		.subheading {
+			//.body-font;
+			@include serif-font;
+			margin: 10px 0 30px;
+			font-weight: 600;
+		}
+		.meta {
+			@include serif-font;
+			a {
+				color: $whitish-color;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			h1 {
+				font-size: 55px;
+			}
+			.subheading {
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+body.white-header{
+	.intro-header{
+		background: none;
+		.page-heading{
+			color: $gray-darkest;
+			@media only screen and (min-width: 768px) {
+				padding: 100px 0 20px;
+			}
+		}
+		hr{
+			border-color: $gray-darkest;
+		}
+	}
+
+}
+// Post Preview Pages
+
+.post-preview {
+	> a {
+		color: $gray-darkest;
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: $brand-primary;
+		}
+		> .post-title {
+			font-size: 30px;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+		> .post-subtitle {
+			margin: 0;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+	}
+	> .post-meta {
+		color: $gray;
+		font-size: 18px;
+		font-style: italic;
+		margin-top: 0;
+		> a {
+			text-decoration: none;
+			color: $gray-darkest;
+			&:hover,
+			&:focus {
+				color: $brand-primary;
+				text-decoration: underline;
+			}
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		> a {
+			> .post-title {
+				font-size: 36px;
+			}
+		}
+	}
+}
+
+// Sections
+
+.section-heading {
+	font-size: 36px;
+	margin-top: 60px;
+	font-weight: 700;
+
+}
+
+.caption {
+	text-align: center;
+	font-size: 14px;
+	padding: 10px;
+	font-style: italic;
+	margin: 0;
+	display: block;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+
+// Contact Form Styles
+
+.floating-label-form-group {
+	font-size: 14px;
+	position: relative;
+	margin-bottom: 0;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid $gray-lighter;
+	input,
+	textarea {
+		z-index: 1;
+		position: relative;
+		padding-right: 0;
+		padding-left: 0;
+		border: none;
+		border-radius: 0;
+		font-size: 1.5em;
+		background: none;
+		box-shadow: none !important;
+		resize: none;
+	}
+	label {
+		display: block;
+		z-index: 0;
+		position: relative;
+		top: 2em;
+		margin: 0;
+		font-size: 0.85em;
+		line-height: 1.764705882em;
+		vertical-align: middle;
+		vertical-align: baseline;
+		opacity: 0;
+		@include transition("top 0.3s ease, opacity 0.3s ease");
+	}
+	&::not(:first-child) {
+		padding-left: 14px;
+		border-left: 1px solid $gray-lighter;
+	}
+}
+
+.floating-label-form-group-with-value {
+	label {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.floating-label-form-group-with-focus {
+	label {
+		color: $brand-primary;
+	}
+}
+
+form .row:first-child .floating-label-form-group {
+	border-top: 1px solid $gray-lighter;
+}
+
+
+
+/*
+ * Pager Styling
+ */
+
+.pager {
+
+	margin: 20px 0 0;
+
+	li {
+		> a,
+		> span {
+			@include body-font;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 800;
+			letter-spacing: 1px;
+			padding: 15px 25px;
+			background-color: $whitish-color;
+			border-radius: 0;
+		}
+
+		> a:hover,
+		> a:focus {
+			color: $whitish-color;
+			background-color: $brand-primary;
+			border: 1px solid $brand-primary;
+		}
+	}
+
+	.disabled {
+		> a,
+		> a:hover,
+		> a:focus,
+		> span {
+			color: $gray;
+			background-color: $gray-darkest;
+			cursor: not-allowed;
+		}
+	}
+}
+

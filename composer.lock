@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bad6c46664078bf661c74a0fdb0c8092",
-    "content-hash": "9593e63a543e714cb94122c3f8b05209",
+    "hash": "ed52a2e07631a423533e84af824efa58",
+    "content-hash": "85a6154205860c13bd43b9de17183bf6",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -261,7 +261,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sanchothefat/wp-less.git",
+                "url": "https://github.com/roborourke/wp-less.git",
                 "reference": "62fb8fd59c26171347cd75713d759c8b5da0e7a3"
             },
             "require": {
@@ -324,17 +324,70 @@
             "time": "2013-08-09 17:09:19"
         },
         {
-            "name": "timber/timber",
-            "version": "1.1.0",
+            "name": "leafo/scssphp",
+            "version": "v0.6.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/timber/timber.git",
-                "reference": "ba39c3824b77e3c4b352f71829e4a314e2af8a43"
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "0649d38dfef6808be1a89040a3312e8bda0b3aed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/ba39c3824b77e3c4b352f71829e4a314e2af8a43",
-                "reference": "ba39c3824b77e3c4b352f71829e4a314e2af8a43",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/0649d38dfef6808be1a89040a3312e8bda0b3aed",
+                "reference": "0649d38dfef6808be1a89040a3312e8bda0b3aed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "kherge/box": "~2.5",
+                "phpunit/phpunit": "~3.7",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "bin": [
+                "bin/pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leafo\\ScssPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://leafo.github.io/scssphp/",
+            "keywords": [
+                "css",
+                "less",
+                "sass",
+                "scss",
+                "stylesheet"
+            ],
+            "time": "2016-06-20 15:25:08"
+        },
+        {
+            "name": "timber/timber",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timber/timber.git",
+                "reference": "3f20343c487c09f3adf5161fde20d5e9a28e9710"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timber/timber/zipball/3f20343c487c09f3adf5161fde20d5e9a28e9710",
+                "reference": "3f20343c487c09f3adf5161fde20d5e9a28e9710",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +395,7 @@
                 "composer/installers": "~1.0",
                 "php": ">=5.3.0",
                 "twig/twig": "1.*",
-                "upstatement/routes": "0.3"
+                "upstatement/routes": "0.4"
             },
             "require-dev": {
                 "jarednova/markdowndocs": "dev-master",
@@ -381,7 +434,52 @@
                 "timber",
                 "twig"
             ],
-            "time": "2016-07-05 23:33:53"
+            "time": "2016-07-19 17:16:34"
+        },
+        {
+            "name": "trampoline-digital/wp-scss",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trampoline-digital/wp-scss.git",
+                "reference": "a685af980963e238c9e2bcc6efe248c46221d5bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trampoline-digital/wp-scss/zipball/a685af980963e238c9e2bcc6efe248c46221d5bd",
+                "reference": "a685af980963e238c9e2bcc6efe248c46221d5bd",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "leafo/scssphp": "^v0.6.5",
+                "php": ">5.2.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Interconnect/IT",
+                    "homepage": "http://interconnectit.com/"
+                },
+                {
+                    "name": "Robert O'Rourke",
+                    "email": "rob@interconnectit.com"
+                },
+                {
+                    "name": "Dan Green-Leipciger",
+                    "email": "dan@trampolinedigital.com"
+                },
+                {
+                    "name": "Trampoline Digital",
+                    "homepage": "http://trampolinedigital.com"
+                }
+            ],
+            "description": "Provides a SCSS compiler compatible with wp_enqueue_style() for rapid CSS development in themes and plugins.",
+            "time": "2016-07-23 19:57:11"
         },
         {
             "name": "twig/twig",
@@ -446,16 +544,16 @@
         },
         {
             "name": "upstatement/routes",
-            "version": "0.3",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Upstatement/routes.git",
-                "reference": "40d003b69c0f5c52fb4b15e5d1fa4d5c522c9475"
+                "reference": "fae7d46f56e8b5775f072774941a5f0a25cb86f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Upstatement/routes/zipball/40d003b69c0f5c52fb4b15e5d1fa4d5c522c9475",
-                "reference": "40d003b69c0f5c52fb4b15e5d1fa4d5c522c9475",
+                "url": "https://api.github.com/repos/Upstatement/routes/zipball/fae7d46f56e8b5775f072774941a5f0a25cb86f3",
+                "reference": "fae7d46f56e8b5775f072774941a5f0a25cb86f3",
                 "shasum": ""
             },
             "require": {
@@ -493,14 +591,15 @@
                 "routes",
                 "routing"
             ],
-            "time": "2015-03-07 13:41:29"
+            "time": "2016-07-06 12:53:24"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "icit/wp-less": 20
+        "icit/wp-less": 20,
+        "trampoline-digital/wp-scss": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

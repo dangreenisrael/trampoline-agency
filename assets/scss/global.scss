@@ -1,0 +1,268 @@
+//@import "../bourbon/bourbon";
+@import "variables";
+@import "mixins";
+@import "navbar/global";
+@import "contact";
+@import "internal";
+
+/* Global Styles */
+body{
+  @include font($body);
+  background-color: $background-primary-color;
+}
+
+code{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.hide-mobile{
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.show-mobile{
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.vertically-center{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+a:hover,
+a:hover *:not(.fa),
+a:active,
+a:active *:not(.fa){
+  color: $brand-darken!important;
+}
+
+
+h1, h2, h3 {
+  //@include heading-font;
+  font-weight: 700;
+}
+
+h1{
+  text-transform: uppercase;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: $whitish-color;
+}
+
+li{
+  list-style: none;
+}
+
+.img-responsive{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aligncenter{
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 766px) and (max-width:992px) {
+  .container{
+   width: auto;
+  }
+}
+.modal-backdrop.in{
+  opacity: 0.2;
+}
+
+
+/* Footer */
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+  span.copyright {
+    line-height: 40px;
+    @include heading-font;
+    text-transform: none;
+  }
+  ul.quicklinks {
+    margin-bottom: 0;
+    line-height: 40px;
+    @include heading-font;
+    text-transform: none;
+  }
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
+/* Social Buttons */
+
+ul.social-buttons {
+  margin-bottom: 0;
+  li {
+    a {
+      display: block;
+      background-color: $brand-primary;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      font-size: 30px;
+      line-height: 58px;
+      color: $whitish-color;
+      outline: none;
+      //@include transition("all 0.3s");
+      &:hover,
+      &:hover,
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $contrast-color;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* Bootstrap Callouts */
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 0 solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+  margin-top: -5px;
+}
+.bs-callout-default {
+  border-left-color: #777;
+}
+.bs-callout-default h4 {
+  color: #777;
+}
+.bs-callout-primary {
+  border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+  color: #428bca;
+}
+.bs-callout-success {
+  border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+  color: #5cb85c;
+}
+.bs-callout-danger {
+  border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+  color: #d9534f;
+}
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+  color: #5bc0de;
+}
+
+// Highlight Color Customization
+
+body {
+  -webkit-tap-highlight-color: $brand-primary;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: $selection-color;
+}
+
+::selection {
+  text-shadow: none;
+  background: $selection-color;
+}
+
+img::selection {
+  color: $whitish-color;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: $whitish-color;
+  background: transparent;
+}
+
+
+/*
+ * Buttons
+ */
+
+.btn-lg {
+  font-size: 16px;
+  padding: 25px 35px;
+}
+
+.btn-default {
+  &:hover,
+  &:focus {
+    background-color: $brand-primary;
+    border: 1px solid $brand-primary;
+    color: $whitish-color;
+  }
+}
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+  outline: none;
+}
+
+
+.btn-primary {
+  @include button-variant($whitish-color, $contrast-color, $contrast-color);
+  @include heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  @include button-variant($whitish-color, $contrast-color, $contrast-color);
+  @include heading-font;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px;
+  @media (max-width: 760px) {
+    padding: 20px;
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
+  "name": "dangreenisrael/trampoline-agency",
+  "description": "Trampoline starter theme",
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
       {
-          "name": "jarednova",
-          "email": "jared@upstatement.com"
+          "name": "Dan Green",
+          "email": "dan@trampolinedigital.com"
       }
   ],
   "repositories": [
@@ -16,7 +16,7 @@
     },
     {
       "type": "git",
-      "url": "https://github.com/sanchothefat/wp-less.git"
+      "url": "https://github.com/roborourke/wp-less.git"
     }
   ],
   "extra": {
@@ -30,6 +30,7 @@
   "require": {
     "timber/timber"  : "^1.1",
     "icit/wp-less"   : "dev-master",
-    "aristath/kirki" : "2.3.2"
+    "aristath/kirki" : "2.3.2",
+    "trampoline-digital/wp-scss": "dev-master"
   }
 }
