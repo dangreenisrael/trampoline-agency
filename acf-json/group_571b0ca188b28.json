@@ -19,6 +19,30 @@
             "default_value": 0
         },
         {
+            "key": "field_57963fb0b490f",
+            "label": "Show Services in Main Menu",
+            "name": "services_show_in_menu",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_571b11ac3e774",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1
+        },
+        {
             "key": "field_571b11793e773",
             "label": "Services Title",
             "name": "services_title",
@@ -122,5 +146,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468935720
+    "modified": 1469464591
 }

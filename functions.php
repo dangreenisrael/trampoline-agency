@@ -5,15 +5,11 @@ define('DOMAIN', 'agency-blog');
 
 require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
-require_once(__DIR__ . '/vendor/wp-less/wp-less.php' );
+require_once(__DIR__ . '/vendor/wp-scss/wp-scss.php' );
 require_once(__DIR__ . '/vendor/kirki/kirki.php' );
-require_once(__DIR__ . '/customizer-defaults.php');
-require_once(__DIR__ . '/customizer.php');
+require_once(__DIR__ . '/customizer/customizer-defaults.php');
+require_once(__DIR__ . '/customizer/customizer.php');
 require_once(__DIR__ . '/theme_update_check.php');
-//$MyUpdateChecker = new ThemeUpdateChecker(
-//    'trampoline-agency',
-//    'https://kernl.us/api/v1/theme-updates/578d0fbb7524d7381175980e/'
-//);
 
 $timber = new \Timber\Timber();
 
@@ -25,11 +21,15 @@ function agency_blog_load_jquery(){
 }
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_jquery' );
 
-function agency_blog_load_styles(){
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
-	wp_enqueue_style( 'font-awesome', '//cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css?ver=4.6.3' );
-	wp_enqueue_style( 'global', get_template_directory_uri() . '/assets/less/global.less' );
+function agency_blog_load_styles()
+{
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+    wp_enqueue_style('font-awesome', '//cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css?ver=4.6.3');
+    wp_enqueue_style('global', get_template_directory_uri() . '/assets/scss/global.scss');
 }
+
+
+
 add_action( 'wp_enqueue_scripts', 'agency_blog_load_styles' );
 
 function agency_blog_load_scripts(){
@@ -76,7 +76,7 @@ class AgencySite extends TimberSite {
 			'meta_key' => '_wp_page_template',
 			'meta_value' => 'template-service.php'
 		));
-
+		$context['front_page'] = new TimberPost(get_option('page_on_front '));
 		return $context;
 	}
 
@@ -159,21 +159,3 @@ function page_template_column_content( $column_name, $post_id ) {
 add_action('admin_head', 'page_template_column_css');
 add_filter( 'manage_pages_columns', 'pages_template_columns' );
 add_action( 'manage_pages_custom_column', 'page_template_column_content', 10, 2 );
-
-// pass variables into all .less files
-add_filter( 'less_vars', 'my_less_vars', 10, 2 );
-// $handle is a reference to the handle used with wp_enqueue_style()
-function my_less_vars( $vars, $handle ) {
-	$defaults = new CustomizerDefaults();
-	$fonts = $defaults->get_fonts();
-	$colors = $defaults->get_colors();
-	foreach ($defaults->get_fonts() as $font){
-		$slug = $font['slug'];
-		$vars[$slug] = "'".get_theme_mod( $slug, $fonts[$slug])['font-family'] ."'";
-	}
-	foreach ($defaults->get_colors() as $color){
-		$slug = $color['slug'];
-		$vars[$slug] 		= get_theme_mod($slug, $colors[$slug]['value']);
-	}
-	return $vars;
-}

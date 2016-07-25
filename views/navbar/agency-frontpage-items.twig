@@ -1,0 +1,50 @@
+{% if theme.theme_mod('menu_services') %}
+    <li class="menu-item-has-children">
+        <a class="page-scroll" href="{{ menu_slash }}#services">
+            {{ theme.theme_mod('menu_services_text', __('Services', domain)) }}
+        </a>
+        {% if  service_items %}
+            <ul>
+                {% for item in service_items %}
+                    <li>
+                        <a href="{{ item | permalink }}">
+                            {{ item.menu_title }}
+                            {% if not item.menu_title %}
+                                {{item.post_title}}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endif %}
+
+{% if theme.theme_mod('menu_portfolio') %}
+    <li class="menu-item-has-children">
+        <a class="page-scroll" href="{{ menu_slash }}#portfolio">
+            {{ theme.theme_mod('menu_portfolio_text', __('Portfolio', domain)) }}
+        </a>
+        {% if  portfolio_items %}
+            <ul>
+                {% for item in portfolio_items %}
+                    <li>
+                        <a href="{{ item | permalink }}">
+                            {{ item.menu_title }}
+                            {% if not item.menu_title %}
+                                {{item.post_title}}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endif %}
+{% if theme.theme_mod('menu_team') %}
+    <li>
+        <a class="page-scroll" href="{{ menu_slash }}#team">
+            {{ theme.theme_mod('menu_team_text', __('Team', domain)) }}
+        </a>
+    </li>
+{% endif %}
