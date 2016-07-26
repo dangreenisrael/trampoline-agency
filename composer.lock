@@ -375,12 +375,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/trampoline-digital/wp-scss.git",
-                "reference": "d8da08b549ca09d9792eac18635af664ad4d0ad0"
+                "reference": "e4a10dda29f8bc282a35e471c8e5d1a9485b39f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/trampoline-digital/wp-scss/zipball/d8da08b549ca09d9792eac18635af664ad4d0ad0",
-                "reference": "d8da08b549ca09d9792eac18635af664ad4d0ad0",
+                "url": "https://api.github.com/repos/trampoline-digital/wp-scss/zipball/e4a10dda29f8bc282a35e471c8e5d1a9485b39f9",
+                "reference": "e4a10dda29f8bc282a35e471c8e5d1a9485b39f9",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +408,7 @@
                 }
             ],
             "description": "Provides a SCSS compiler compatible with wp_enqueue_style() for rapid CSS development in themes and plugins.",
-            "time": "2016-07-26 18:06:16"
+            "time": "2016-07-26 20:47:55"
         },
         {
             "name": "twig/twig",
