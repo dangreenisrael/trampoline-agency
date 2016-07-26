@@ -13,10 +13,6 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/roborourke/wp-less.git"
     }
   ],
   "extra": {
@@ -29,7 +25,6 @@
 	},
   "require": {
     "timber/timber"  : "^1.1",
-    "icit/wp-less"   : "dev-master",
     "aristath/kirki" : "2.3.2",
     "trampoline-digital/wp-scss": "dev-master"
   }
