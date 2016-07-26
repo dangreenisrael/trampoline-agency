@@ -52,10 +52,10 @@ class acf_field_font_awesome extends acf_field {
 			'version'				=> 'latest',
 			'minified'				=> true,
 			'remove_existing_fa'	=> false,
-			'load_styles'			=> false,
-			'load_admin_styles'		=> false,
-			'load_shortcode'		=> false,
-			'load_tinymce_plugin'	=> false
+			'load_styles'			=> true,
+			'load_admin_styles'		=> true,
+			'load_shortcode'		=> true,
+			'load_tinymce_plugin'	=> true
 		);
 
 		$bfa 		= Better_Font_Awesome_Library::get_instance( $args );

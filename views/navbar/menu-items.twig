@@ -2,11 +2,15 @@
 	<a href="/"></a>
 </li>
 
-{% include "navbar/agency-frontpage-items.twig" %}
+{% if ('agency-front' in front_page.slug )%}
+	{% include "navbar/agency-frontpage-items.twig" %}
+{% elseif ('landing-front' in front_page.slug ) %}
+	Landing Page
+{% endif %}
 
 {% if theme.theme_mod('menu_contact') %}
 	<li>
-		<a class="page-scroll" href="{{ menu_slash }}#contact">
+		<a class="page-scroll" href="#contact">
 			{{ theme.theme_mod('menu_contact_text', __('Contact', domain)) }}
 		</a>
 	</li>

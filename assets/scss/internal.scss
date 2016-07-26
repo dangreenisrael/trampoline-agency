@@ -1,12 +1,16 @@
-
+@import "variables.scss";
+@import "mixins.scss";
 // Global Components
 
 
-a {
-	color: $gray-darkest;
+p a {
+	color: $brand-primary;
+	text-decoration: none;
+	border-bottom: solid 2px $contrast-color;
 	&:hover,
 	&:focus {
-		color: $brand-primary;
+		text-decoration: none;
+		color: $contrast-color;
 	}
 }
 
@@ -30,7 +34,7 @@ img{
 // Header
 .intro-header {
 	background-color: $gray;
-	@include background-cover;
+	@include background-cover();
 	// NOTE: Background images are set within the HTML using inline CSS!
 	.site-heading,
 	.post-heading,
@@ -43,10 +47,9 @@ img{
 	}
 	.site-heading,
 	.page-heading,
-	.post-heading {
+	.post-heading{
 		text-align: center;
 		h1 {
-			font-size: 35px;
 		}
 		.subheading,
 		.meta {
@@ -54,13 +57,10 @@ img{
 			display: block;
 		}
 		.subheading {
-			//.font($body);
-			@include serif-font;
 			margin: 10px 0 30px;
 			font-weight: 600;
 		}
 		.meta {
-			@include serif-font;
 			a {
 				color: $whitish-color;
 			}
@@ -88,6 +88,15 @@ body.white-header{
 		hr{
 			border-color: $gray-darkest;
 		}
+	}
+
+}
+
+body:not(.white-header){
+	.site-heading *,
+	.post-heading *,
+	.page-heading *{
+		color: white!important;
 	}
 
 }
@@ -187,7 +196,6 @@ body.white-header{
 		font-size: 0.85em;
 		line-height: 1.764705882em;
 		vertical-align: middle;
-		vertical-align: baseline;
 		opacity: 0;
 		@include transition("top 0.3s ease, opacity 0.3s ease");
 	}
@@ -227,7 +235,6 @@ form .row:first-child .floating-label-form-group {
 	li {
 		> a,
 		> span {
-			@include font($body);
 			text-transform: uppercase;
 			font-size: 14px;
 			font-weight: 800;
@@ -256,4 +263,3 @@ form .row:first-child .floating-label-form-group {
 		}
 	}
 }
-

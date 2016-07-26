@@ -4,7 +4,6 @@
   border-color: transparent;
   .navbar-brand {
     color: $menu-text-color;
-    @include script-font;
     &:hover,
     &:focus {
       color: $menu-text-color;
@@ -26,7 +25,6 @@
   .nav {
     li {
       a {
-        @include heading-font;
         font-weight: 400;
         letter-spacing: 1px;
         color: $menu-text-color;
@@ -60,8 +58,6 @@
       display: block;
       background-color: $contrast-color;
       border-color: $contrast-color;
-      //margin-right: -5px;
-      //float:right;
       .icon-bar {
         background-color: $menu-text-color;
       }
@@ -113,7 +109,7 @@
     @include transition(ease transform 0.5s);
 
     &.show{
-      transform: rotateX(0);
+      transform: rotateX(0deg);
       .backdrop{
 
       }

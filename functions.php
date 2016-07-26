@@ -7,7 +7,6 @@ require_once(__DIR__ . "/acf/fields.php");
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/vendor/wp-scss/wp-scss.php' );
 require_once(__DIR__ . '/vendor/kirki/kirki.php' );
-require_once(__DIR__ . '/customizer/customizer-defaults.php');
 require_once(__DIR__ . '/customizer/customizer.php');
 require_once(__DIR__ . '/theme_update_check.php');
 
@@ -76,7 +75,9 @@ class AgencySite extends TimberSite {
 			'meta_key' => '_wp_page_template',
 			'meta_value' => 'template-service.php'
 		));
-		$context['front_page'] = new TimberPost(get_option('page_on_front '));
+		$front_page_id = get_option('page_on_front ');
+		$context['front_page'] = new TimberPost($front_page_id);
+		$context['front_page']->slug = get_page_template_slug( $front_page_id );
 		return $context;
 	}
 

@@ -21,7 +21,7 @@
         {
             "key": "field_57963fb0b490f",
             "label": "Show Services in Main Menu",
-            "name": "services_show_in_menu",
+            "name": "show_services_in_menu",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -41,6 +41,35 @@
             },
             "message": "",
             "default_value": 1
+        },
+        {
+            "key": "field_57964d790cfbd",
+            "label": "Services Menu Text",
+            "name": "services_menu_text",
+            "type": "text",
+            "instructions": "This is the text you want to show in the page menu",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57963fb0b490f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Services",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_571b11793e773",
@@ -132,7 +161,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-front.php"
+                "value": "template-agency-front.php"
             }
         ]
     ],
@@ -146,5 +175,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1469464591
+    "modified": 1469468463
 }

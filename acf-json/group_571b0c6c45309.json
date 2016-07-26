@@ -279,7 +279,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-front.php"
+                "value": "template-agency-front.php"
             }
         ]
     ],
@@ -293,5 +293,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468932806
+    "modified": 1469466223
 }

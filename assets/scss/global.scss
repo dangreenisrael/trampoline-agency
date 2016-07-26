@@ -1,13 +1,13 @@
-//@import "../bourbon/bourbon";
 @import "variables";
 @import "mixins";
 @import "navbar/global";
 @import "contact";
-@import "internal";
+@import "typography";
+@import "internal.scss";
+
 
 /* Global Styles */
 body{
-  @include font($body);
   background-color: $background-primary-color;
 }
 
@@ -35,22 +35,8 @@ code{
   transform: translateY(-50%);
 }
 
-a:hover,
-a:hover *:not(.fa),
-a:active,
-a:active *:not(.fa){
-  color: $brand-darken!important;
-}
 
 
-h1, h2, h3 {
-  //@include heading-font;
-  font-weight: 700;
-}
-
-h1{
-  text-transform: uppercase;
-}
 
 hr.small {
   max-width: 100px;
@@ -68,7 +54,7 @@ li{
   margin-right: auto;
 }
 
-.aligncenter{
+.centered{
   text-align: center;
   display: block;
   margin-left: auto;
@@ -91,13 +77,11 @@ footer {
   text-align: center;
   span.copyright {
     line-height: 40px;
-    @include heading-font;
     text-transform: none;
   }
   ul.quicklinks {
     margin-bottom: 0;
     line-height: 40px;
-    @include heading-font;
     text-transform: none;
   }
   @media (max-width: 767px) {
@@ -112,21 +96,16 @@ ul.social-buttons {
   li {
     a {
       display: block;
-      background-color: $brand-primary;
-      height: 60px;
-      width: 60px;
-      border-radius: 100%;
-      font-size: 30px;
-      line-height: 58px;
-      color: $whitish-color;
+      font-size: 40px;
+      color: $brand-primary;
       outline: none;
-      //@include transition("all 0.3s");
+      @include transition("all 0.3s");
       &:hover,
       &:hover,
       &:hover,
       &:focus,
       &:active {
-        background-color: $contrast-color;
+        color: transparentize($contrast-color, 10%);
       }
     }
   }
@@ -251,14 +230,10 @@ img::-moz-selection {
 
 .btn-primary {
   @include button-variant($whitish-color, $contrast-color, $contrast-color);
-  @include heading-font;
-  font-weight: 700;
 }
 
 .btn-xl {
   @include button-variant($whitish-color, $contrast-color, $contrast-color);
-  @include heading-font;
-  font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 40px;

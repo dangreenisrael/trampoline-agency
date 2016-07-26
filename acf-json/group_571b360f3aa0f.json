@@ -19,6 +19,51 @@
             "default_value": 0
         },
         {
+            "key": "field_57964e43a96e5",
+            "label": "Show Portfolio in Menu",
+            "name": "show_portfolio_in_menu",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_57964e6da96e6",
+            "label": "Portfolio Menu Text",
+            "name": "portfolio_menu_text",
+            "type": "text",
+            "instructions": "The text to show for the portfolio section in the main menu",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57964e43a96e5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Portfolio",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_571b361ab6782",
             "label": "Portfolio Title",
             "name": "portfolio_title",
@@ -108,7 +153,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-front.php"
+                "value": "template-agency-front.php"
             }
         ]
     ],
@@ -122,5 +167,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1468861300
+    "modified": 1469468448
 }
