@@ -58,15 +58,8 @@ Kirki::add_section( 'colors', array(
     'priority'       => 4,
     'capability'     => 'edit_theme_options',
     'panel'          => 'trampoline'
-
 ));
-Kirki::add_section( 'typography', array(
-    'title'          => __( 'Fonts', DOMAIN ),
-    'description'    => __( 'Choose the fonts for this site', DOMAIN ),
-    'priority'       => 5,
-    'capability'     => 'edit_theme_options',
-    'panel'          => 'trampoline'
-) );
+
 
 
 
@@ -99,35 +92,3 @@ Kirki::add_field( CONFIG, array(
     'default'     => '',
     'priority'    => 10,
 ) );
-
-
-/*
- * Pass in LESS variables
- */
-//
-//add_filter( 'less_vars', 'my_less_vars', 10, 2 );
-//// $handle is a reference to the handle used with wp_enqueue_style()
-//
-//function my_less_vars( $vars, $handle ) {
-//    $defaults = new CustomizerDefaults();
-//    $fonts = $defaults->get_fonts();
-//    $colors = $defaults->get_colors();
-//    foreach ($defaults->get_fonts() as $font){
-//        $slug = $font['slug'];
-//        $vars[$slug] = "'".get_theme_mod( $slug, $fonts[$slug])['font-family'] ."'";
-//        $value = get_theme_mod( $slug, $fonts[$slug]);
-//            echo '<pre> '.$slug;
-//            $keywords = preg_split('#(?<=\d)(?=[a-z])#i', $value['variant']);
-//            var_dump($keywords);
-//            foreach ($keywords as $keyword){
-//                if(is_numeric().
-//            }
-//            echo '</pre>';
-//
-//    }
-//    foreach ($defaults->get_colors() as $color){
-//        $slug = $color['slug'];
-//        $vars[$slug] = get_theme_mod($slug, $colors[$slug]['value']);
-//    }
-//    return $vars;
-//}

@@ -1,11 +1,11 @@
 <header id="hero" style="background-image: url({{ heroImage }})">
     <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead">{{page.hero_lead_in}}</div>
-            <h1 class="intro-heading">
+        <div class="hero-text">
+            <div class="hero-sub">{{page.hero_lead_in}}</div>
+            <h1 class="hero-main">
                 {{page.hero_heading}}
             </h1>
-            <div class="intro-lead">{{page.hero_lead_out}}</div>
+            <div class="hero-sub">{{page.hero_lead_out}}</div>
             {% if page.show_hero_cta %}
                 <a href="{{ hero_link }}" target="{{ hero_link_target }}" class="page-scroll btn btn-xl">{{page.hero_cta}}</a>
             {% endif %}

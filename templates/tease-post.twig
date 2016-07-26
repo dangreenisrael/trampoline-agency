@@ -3,13 +3,13 @@
 {% block content %}
 	<article class="post-preview">
 		<a href="{{ post.link }}">
-			<h2 class="post-title">
+			<h2 class="post-title section-heading">
 				{{post.title}}
 			</h2>
-			<h3 class="post-subtitle">
+			<h3 class="post-subtitle section-subheading">
 				{{post.subtitle}}
 			</h3>
 		</a>
-		<p class="post-meta">Posted to the series <a href="#">{{post.category}}</a> on {{ post.post_date|date}}</p>
+		<p class="post-meta meta">Posted to the series <a href="#">{{post.category}}</a> on {{ post.post_date|date}}</p>
 	</article>
 {% endblock %}

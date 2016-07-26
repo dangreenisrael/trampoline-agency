@@ -18,14 +18,14 @@
                 {% for service in service_items %}
                     <a href="{{ service | permalink }}">
                         <div class="{{ loop.length|bootstrapCol }}">
-                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fa {{ service.icon }} fa-stack-1x fa-inverse"></i>
+                            <span class="fa-stack service-icons">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa {{ service.icon }} fa-stack-1x"></i>
                             </span>
-                            <h3 class="service-heading">
+                            <h3 class="caption-heading">
                                 {{ service.post_title }}
                             </h3>
-                            <p>
+                            <p class="caption-text">
                                 {{ service.blurb }}
                             </p>
                         </div>

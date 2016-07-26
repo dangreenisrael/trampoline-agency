@@ -1,7 +1,9 @@
-{% if theme.theme_mod('menu_services') %}
+
+
+{% if front_page.show_services_in_menu %}
     <li class="menu-item-has-children">
         <a class="page-scroll" href="{{ menu_slash }}#services">
-            {{ theme.theme_mod('menu_services_text', __('Services', domain)) }}
+            {{ front_page.services_menu_text }}
         </a>
         {% if  service_items %}
             <ul>
@@ -20,10 +22,10 @@
     </li>
 {% endif %}
 
-{% if theme.theme_mod('menu_portfolio') %}
+{% if front_page.show_portfolio_in_menu %}
     <li class="menu-item-has-children">
         <a class="page-scroll" href="{{ menu_slash }}#portfolio">
-            {{ theme.theme_mod('menu_portfolio_text', __('Portfolio', domain)) }}
+            {{ front_page.portfolio_menu_text }}
         </a>
         {% if  portfolio_items %}
             <ul>
@@ -41,10 +43,10 @@
         {% endif %}
     </li>
 {% endif %}
-{% if theme.theme_mod('menu_team') %}
+{% if front_page.show_team_in_menu %}
     <li>
         <a class="page-scroll" href="{{ menu_slash }}#team">
-            {{ theme.theme_mod('menu_team_text', __('Team', domain)) }}
+            {{ front_page.team_menu_text }}
         </a>
     </li>
 {% endif %}

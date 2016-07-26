@@ -19,6 +19,51 @@
             "default_value": 0
         },
         {
+            "key": "field_57964ea759272",
+            "label": "Show Team in Menu",
+            "name": "show_team_in_menu",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_57964ed359273",
+            "label": "Team Menu Text",
+            "name": "team_menu_text",
+            "type": "text",
+            "instructions": "The text to show for Team in the page menu",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57964ea759272",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Team",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_571c17a97c81c",
             "label": "Team Title",
             "name": "team_title",
@@ -130,30 +175,6 @@
             "button_label": "Add Another Team Member (Hit Update First)",
             "sub_fields": [
                 {
-                    "key": "field_571c187e84cbc",
-                    "label": "Picture",
-                    "name": "picture",
-                    "type": "image_crop",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "crop_type": "hard",
-                    "target_size": "thumbnail",
-                    "width": "",
-                    "height": "",
-                    "preview_size": "medium",
-                    "force_crop": "yes",
-                    "save_in_media_library": "no",
-                    "retina_mode": "yes",
-                    "save_format": "url",
-                    "library": "all"
-                },
-                {
                     "key": "field_571c185584cba",
                     "label": "Name",
                     "name": "name",
@@ -194,6 +215,30 @@
                     "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
+                },
+                {
+                    "key": "field_571c187e84cbc",
+                    "label": "Picture",
+                    "name": "picture",
+                    "type": "image_crop",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "crop_type": "hard",
+                    "target_size": "thumbnail",
+                    "width": "",
+                    "height": "",
+                    "preview_size": "medium",
+                    "force_crop": "yes",
+                    "save_in_media_library": "no",
+                    "retina_mode": "yes",
+                    "save_format": "url",
+                    "library": "all"
                 },
                 {
                     "key": "field_571c519fe3059",
@@ -301,7 +346,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-front.php"
+                "value": "template-agency-front.php"
             }
         ]
     ],
@@ -315,5 +360,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1469047286
+    "modified": 1469468566
 }

@@ -28,31 +28,33 @@
                                 {{ TimberImage(team_member.picture).src | resize(600, 600) | retina(3) }}  3x,
                                 {{ TimberImage(team_member.picture).src | resize(800, 800) | retina(4) }}  4x">
 
-                            <h3>{{ team_member.name }}</h3>
+                            <h3 class="caption-heading">{{ team_member.name }}</h3>
                             <figcaption class="text-center">
                                 <p class="text-muted">{{ team_member.role }}</p>
-                                {{ team_member.bio }}
+                                <div class="caption-text">
+                                    {{ team_member.bio }}
+                                </div>
                             </figcaption>
 
                             <ul class="list-inline social-buttons">
                                 {% if team_member.twitter %}
-                                    <li><a href="{{ team_member.twitter }}"><i class="fa fa-twitter"></i></a>
+                                    <li><a href="{{ team_member.twitter }}"><i class="fa fa-twitter-square"></i></a>
                                     </li>
                                 {% endif %}
                                 {% if team_member.facebook %}
-                                    <li><a href="{{ team_member.facebook }}"><i class="fa fa-facebook"></i></a>
+                                    <li><a href="{{ team_member.facebook }}"><i class="fa fa-facebook-square"></i></a>
                                     </li>
                                 {% endif %}
                                 {% if team_member.linkedin %}
-                                    <li><a href="{{ team_member.linkedin }}"><i class="fa fa-linkedin"></i></a>
+                                    <li><a href="{{ team_member.linkedin }}"><i class="fa fa-linkedin-square "></i></a>
                                     </li>
                                 {% endif %}
                                 {% if team_member.github %}
-                                    <li><a href="{{ team_member.github }}"><i class="fa fa-github"></i></a>
+                                    <li><a href="{{ team_member.github }}"><i class="fa fa-github-square "></i></a>
                                     </li>
                                 {% endif %}
                                 {% if team_member.stack_overflow %}
-                                    <li><a href="{{ team_member.stack_overflow }}"><i class="fa fa-stack-overflow"></i></a>
+                                    <li><a href="{{ team_member.stack_overflow }}"><i class="fa fa-stack-exchange "></i></a>
                                     </li>
                                 {% endif %}
                             </ul>

@@ -4,30 +4,16 @@
 
 $brand-darken: darken($brand-primary, 0%);
 $brand-danger: #e74c3c; // This is the color of error messages
-$gray-darkest: $primary-text-color; // This is the color instead of black #131317 (Adobe Stock)
-$gray: $secondary-text-color; // This is the color of subheadings
+$gray-darkest: map-get($body, color);; // This is the color instead of black #131317 (Adobe Stock)
+$gray: gray; // This is the color of subheadings
 $placeholder-text: #bbbbbb; // This is the color of placeholder text
 $selection-color: lighten($contrast-color, 20%);
-$menu-text-color:$whitish-color;
+$menu-text-color: #ffffff;
 $gray-lighter: lightgray;
-
+$whitish-color: #fff;
 
 // Font Selections
 
-@mixin script-font() {
-  font-family:  "Helvetica Neue", Helvetica, Arial, cursive;
-  text-transform: none;
-}
-@mixin heading-font() {
-  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-@mixin serif-font() {
-  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: oblique;
-  font-size: 25px;
-  font-weight: 100;
-}
 @mixin font ($slug) {
   font-family:  map-get($slug, font-family), "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: map-get($slug, text-transform);
@@ -37,5 +23,5 @@ $gray-lighter: lightgray;
   line-height: map-get($slug, line-height);
   letter-spacing: map-get($slug, letter-spacing);
   color: map-get($slug, color);
-  text-align: map-get($slug, text-align);
+  //text-align: map-get($slug, text-align);
 }

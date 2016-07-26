@@ -1,0 +1,45 @@
+#hero{
+  text-align: center;
+  .hero-main{
+    @include font($agency-hero);
+  }
+  .hero-sub{
+    @include font($agency-hero-sub);
+  }
+}
+
+body{
+  @include font($body);
+}
+p{
+  @include font($body);
+  @media (max-width: 767px) {
+    text-align: justify;
+  }
+}
+
+h1, h2.section-heading {
+  @include font($heading);
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
+}
+
+h3.section-subheading, .meta {
+  @include font($subheading);
+}
+h3.caption-heading{
+  @include font($agency-caption-heading)
+}
+.caption-text, .caption-text p{
+  @include font($agency-caption-text)
+}
+
+.navbar{
+  @include font($nav-bar);
+
+}
+
+#footer{
+  @include font($footer);
+}
